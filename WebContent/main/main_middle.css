@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.middle_box{
+	width: 95%; height: 500px;
+	background-color: #f2f2f2;
+	margin:auto;
+	
+}
+.item{
+	width: 250px; height: 450px;
+	border:1px solid #b7b7b7;
+	background-color: white;
+	padding:15px;
+	box-sizing: border-box;
+	float: left;
+	
+}
+.upper{
+	p
+}
+.upper > img{
+	width: 200px;
+	position:fixed;
+	top:10px;left:10px;
+}
+ .slide_box ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+}
+
+ul, li{
+    padding: 2px;
+    margin: 2px;
+    list-style: none;
+}
+.boxoffice {
+	border: 1px solid black;
+	width:40px; height: 40px;
+	background-color: #3ea1c1;
+	color:white;
+	font-size: 35px;
+	text-align: center;
+	line-height: 35px;
+	padding: 4px;
+	box-sizing:border-box;
+	
+	
+}
+
+#flip_wrapper li.item .thumb .upper img {
+    width: 100%;
+    height: 336px;
+    display: block;
+    z-index: -1;
+    border: 1px solid black;
+}
+.btn_wrap button{
+	width: 80px; 
+	border: 1px solid transparent;
+	padding : 10px;
+	
+}
+.lower .sm_film> .age_12 {
+	width: 10px;height: 10px;
+	background-color: #00aace;
+	color:white;
+	padding: 3px;
+	box-sizing:border-box;
+	border-radius:4px; 
+}
+.sm_film> .movie_title{
+	height:60px;
+	text-align: center;
+	font-size:25px;
+	
+}
