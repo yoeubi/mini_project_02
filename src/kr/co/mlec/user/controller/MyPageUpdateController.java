@@ -1,5 +1,5 @@
 package kr.co.mlec.user.controller;
 
-public class mtPageController {
+public class MyPageUpdateController {
 
 }

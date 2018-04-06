@@ -1,5 +1,5 @@
 package kr.co.mlec.user.controller;
 
-public class idSearchController {
+public class IdSearchController {
 
 }

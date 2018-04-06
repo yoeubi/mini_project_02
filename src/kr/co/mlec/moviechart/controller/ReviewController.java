@@ -1,5 +1,5 @@
 package kr.co.mlec.moviechart.controller;
 
-public class ChartController {
+public class ReviewController {
 
 }
