@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.container {
+  width: 940px;
+  .center-block();
+}
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loginV17 .container {
+    background-color: #f5f5f5;
+}
+div {
+    display: block;
+}
+.formBoxV17 {
+    padding: 55px 76px 60px;
+    color: #888;
+    border: 1px solid #eee;
+    border-top: 3px solid #d50c0c;
+    background-color: #fff;
+}
+.loginV17 #contentWrap {
+    position: relative;
+    width: 820px;
+    padding-top: 85px;
+}
+#contentWrap {
+    padding: 30px 0 80px 0;
+}
+#contentWrap {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 30px 0 75px 0;
+    z-index: 40;
+}
+.loginV17 .formBoxV17 > .overHidden {
+    position: relative;
+}
+.overHidden {
+    overflow: hidden;
+}
+.tMar25 {
+    margin-top: 25px;
+}
+body, h1, h2, h3, h4 {
+    font-size: 12px;
+    font-family: verdana, tahoma, dotum, dotumche, '돋움', '돋움체', sans-serif;
+    line-height: 1.6;
+}
+.formBoxV17 h3 img {
+    vertical-align: top;
+}
+
+fieldset, img {
+    border: 0;
+}
+.flexFormV17 input[type=text], .flexFormV17 input[type=password] {
+    width: 100%;
+    height: 48px;
+    padding: 0 19px;
+    color: #333;
+    font-weight: bold;
+    line-height: 48px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.txtInp {
+    font-size: 12px;
+    border: 1px solid #bbb;
+    vertical-align: middle;
+    font-family: verdana, tahoma, dotum, dotumche, '돋움', '돋움체', sans-serif;
+    float:left;
+}
+input {
+    outline-style: none;
+}
+input, textarea, select, button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    font: 400 13.3333px Arial;
+}
+fieldset {
+    display: block;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    min-width: -webkit-min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+.btnSocialV17 .naver {
+    background-position: -60px 0;
+}
+.btnSocialV17 .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url(http://fiximage.10x10.co.kr/web2017/member/ico_sns.png) 0 0 no-repeat;
+    color: transparent;
+    font-size: 0;
+    vertical-align: top;
+}
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb !important;
+}
+#idLabel{
+	color : red;
+	background-color: black;
+}
+.flexFormV17 div{
+	float:left;
+}
