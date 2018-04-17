@@ -4,7 +4,9 @@
 		<meta charset="UTF-8">
 		<title>BitCinema</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<style type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<style>
 			#box {
 				border: 1px solid black;
 				width: 500px; height: 500px;
@@ -12,42 +14,89 @@
 		</style>
 	</head>
 	<body>
-		<div>
-			<form action="selectMovie.html">
-				<h2>날짜</h2>
-				<input type="date" id="date">
-				
-			</form>
-		</div>
-		<div>
-			<form action="">
-				<h2>상영관</h2>
-				<select id="location" name="location">
-					<option selected>서울</option>
-					<option>경기</option>
-					<option>인천</option>
-					<option>강원</option>
-					<option>대전/충청</option>
-					<option>대구</option>
-					<option>부산/울산</option>
-					<option>경상</option>
-					<option>광주/전라/제주</option>
-				</select>
-				<select id="center" name="center">
-					<option selected>CGV강남</option>
-					<option>CGV강동</option>
-					<option>CGV강변</option>
-					<option>CGV건대입구</option>
-					<option>CGV구로</option>
-					<option>CGV군자</option>
-					<option>CGV대학로</option>
-					<option>CGV동대문</option>
-					<option>CGV명동</option>
-				</select>
-			</form>
-		</div>
-		<div id="box">
-			
-		</div>
+		<header>
+		
+		</header>
+		<main class="jumbotron">
+			<div>
+				<form action="">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger">Month</button>
+				  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">4월</a></li>
+				    <li><a href="#">5월</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger">Day</button>
+				  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">1일</a></li>
+				    <li><a href="#">2일</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>
+				</form>
+				<form action="">
+					<div class="btn-group">
+				  <button type="button" class="btn btn-danger">지역</button>
+				  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">서울</a></li>
+				    <li><a href="#">경기</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger">상영관</button>
+				  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">CGV강남</a></li>
+				    <li><a href="#">2일</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>
+				</form>
+			</div>
+			<div id="box">
+				<form action="">
+					<div class="btn-group" role="group" aria-label="...">
+  					<button type="button" class="btn btn-default">1시</button>
+ 					<button type="button" class="btn btn-default">2시</button>
+ 					<button type="button" class="btn btn-default">3시</button>
+ 					<button type="button" class="btn btn-default">4시</button>
+ 					<button type="button" class="btn btn-default">5시</button>
+ 					<button type="button" class="btn btn-default">6시</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>
+		
+		
+		</footer>
+		
 	</body>
 </html>
