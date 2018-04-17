@@ -70,7 +70,7 @@
            </div>
            <div class="form-group">
              <div class="col-sm-offset-1 col-sm-10">
-	           <a href="" class="icon naver"><img src="/minipro2/images/icon/naver_logo.jpg" width="50px"></a>
+	           <a href="" class="icon naver"><img src="../../images/icon/naver_logo.jpg" width="50px" /></a>
 	         </div>
           </div>
           
