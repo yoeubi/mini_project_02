@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.MemberMapper">
+	<resultMap id="memberMap" type="member">
+		<result column="member_iD" property="memberID" />
+		<result column="member_name" property="memberName" />
+		<result column="member_pass" property="memberPass" />
+		<result column="member_phone_no" property="memberPhoneNo" />
+		<result column="member_email" property="memberEmail" />
+		<result column="member_profile" property="memberProfile" />
+		<result column="member_type" property="memberType" />
+	</resultMap>
+    <select id="selectMemberById" parameterType="string" resultType="memberMap">
+    	select *
+    	  from tb_member
+    	 where id = #{id}
+    </select>
+    <insert id = "insertMember" parameterType = "member">
+    	insert into tb_member(
+    		member_id,
+    		member_name,
+    		member_pass,
+    		member_phone_no,
+    		member_email,
+    		member_profile,
+    		member_type
+    	)
+    	values(
+    		#{memberID},
+    		#{memberName},
+    		#{memberPass},
+    		#{memberPhoneNo},
+    		#{memberEmail},
+    		#{memberProfile},
+    		#{memberType}
+    	)
+    </insert>
+    <update id="updateMemberInfo" parameterType="member">
+    	update tb_member
+    	   set member_name = #{memberName},
+    	   	   member_phone_no = #{memberPhoneNo},
+    	   	   member_email = #{memberEmail}
+    	 where member_id = #{memberID}
+    </update>
+    <update id="updateMemberPass" parameterType="String">
+    	update tb_member
+    	   set member_pass = #{memberPass}
+    	 where member_id = #{memberID}
+    </update>
+    <update id="updateMemberProfile" parameterType="String">
+    	update tb_member
+    	   set member_pass = #{memberPass}
+    	 where member_profile = #{memberProfile}
+    </update>
+</mapper>
+
+
+
