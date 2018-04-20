@@ -7,8 +7,23 @@ public class Member {
 	private String memberPass;
 	private String memberPhoneNo;
 	private String memberEmail;
-	private String memberProfile;
 	private String memberType;
+	private String memberPhotoName;
+	private String memberPhotoPath;
+	
+	public String getMemberPhotoName() {
+		return memberPhotoName;
+	}
+	public void setMemberPhotoName(String memberPhotoName) {
+		this.memberPhotoName = memberPhotoName;
+	}
+	public String getMemberPhotoPath() {
+		return memberPhotoPath;
+	}
+	public void setMemberPhotoPath(String memberPhotoPath) {
+		this.memberPhotoPath = memberPhotoPath;
+	}
+	
 	public String getMemberID() {
 		return memberID;
 	}
@@ -38,12 +53,6 @@ public class Member {
 	}
 	public void setMemberEmail(String memberEmail) {
 		this.memberEmail = memberEmail;
-	}
-	public String getMemberProfile() {
-		return memberProfile;
-	}
-	public void setMemberProfileNo(String memberProfile) {
-		this.memberProfile= memberProfile;
 	}
 	public String getMemberType() {
 		return memberType;

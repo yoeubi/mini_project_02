@@ -14,6 +14,23 @@
            <h1>개인정보 수정<h6>개인정보를 수정할 수 있습니다.</h6></h1>
        </div>
        <form class="form-horizontal">
+       
+         <div class="form-group"> 
+           <label class="col-sm-2 control-label">프로필사진</label>
+           <div class="col-sm-7">
+            <img src="/minipro2/images/icon/default_profile.jpg" class="img-thumbnail" style="width:140px;height:140px; float:left;" >
+           </div>
+            <div class="col-sm-3"></div>
+         </div>
+         <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+	        <div class="helpV17">
+	        	<p class="ftRt"><p class="text-left"><button type="button" class="btn btn-default btn-sm">사진업로드</button></p>
+	        </div>
+            </div>
+            <div class="col-sm-3"> </div>
+          </div>
+          <hr>
          <div class="form-group"> 
            <label class="col-sm-2 control-label">아이디</label>
            <div class="col-sm-7">

@@ -16,7 +16,20 @@
     	  from tb_member
     	 where id = #{id}
     </select>
-    <insert id = "insertMember" parameterType = "member">
+    <select id="searchId" parameterType="member" resultType = "String">
+    	select member_iD
+    	  from tb_member
+    	 where member_name = #{memberName} and
+    	 	   member_email = #{memberEmail}
+    </select>
+    <select id="searchPass" parameterType="member" resultType="String">
+    	select member_pass
+    	  from tb_member
+    	 where member_name = #{memberName} and
+    	 	   member_iD = #{memberID} and
+    	 	   member_email = #{memberEmail}
+    </select>
+    <insert id = "insertMember" parameterType = "member" >
     	insert into tb_member(
     		member_id,
     		member_name,
@@ -36,6 +49,7 @@
     		#{memberType}
     	)
     </insert>
+    
     <update id="updateMemberInfo" parameterType="member">
     	update tb_member
     	   set member_name = #{memberName},
@@ -53,6 +67,12 @@
     	   set member_pass = #{memberPass}
     	 where member_profile = #{memberProfile}
     </update>
+    <insert id = "insertProfilePhoto" parameterType = "String">
+    	update tb_member
+    	   set member_photo_name = #{memberPhotoName},
+    	   	   member_photo_path = #{memberPhotoPath}
+    	 where member_id = #{memberID}
+    </insert>
 </mapper>
 
 
