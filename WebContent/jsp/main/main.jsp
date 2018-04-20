@@ -1,25 +1,19 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Free Theater Website Template | Home :: w3layouts</title>
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href=".../css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="all" />
-
+<link rel="stylesheet" href="/minipro2/css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/minipro2/css/flexslider.css" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="../js/modernizr.js"></script>
-<script src='../js/jquery.min.js'></script>
-<script src='../js/jquery.color-RGBa-patch.js'></script>
-<script src='../js/example.js'></script>
+<script src="/minipro2/js/modernizr.js"></script>
+<script src='/minipro2/js/jquery.min.js'></script>
+<script src='/minipro2/js/jquery.color-RGBa-patch.js'></script>
+<script src='/minipro2/js/example.js'></script>
 <!-- jQuery -->
 <!-- FlexSlider -->
-  <script defer src="../js/jquery.flexslider.js"></script>
+  <script defer src="/minipro2/js/jquery.flexslider.js"></script>
   <script type="text/javascript">
     $(function(){
       SyntaxHighlighter.all();
@@ -39,18 +33,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/jquery.min.js"></script> <!-- (do not call twice) -->
  <!-- DC Tabs JS -->
 <!--<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/tabs/js/tsc_tabs.js"></script>-->
-<link rel="stylesheet" href="css/tsc_tabs.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/minipro2/css/tsc_tabs.css" type="text/css" media="all" />
 </head>
 <body>
+
 <div class="header">
 	<div class="header-top">
 		<div class="wrap">
 			<div class="banner-no">
-		  		<img src="images/banner-no.png" alt=""/>
+		  		<img src="/minipro2/images/preferences/banner-no.png" alt=""/>
 		    </div>
 			  <div class="nav-wrap">
 					<ul class="group" id="example-one">
-			           <li class="current_page_item"><a href="index.html">메인</a></li>
+			           <li class="current_page_item"><a href="main.jsp">메인</a></li>
 			           <li><a href="about.html">영화</a></li>
 			  		   <li><a href="movies_events.html">예매</a></li>
 			  		   <li><a href="contact.html">로그인</a></li>
@@ -65,16 +60,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="flexslider">
           <ul class="slides">
             <li>
-  	    	    <img src="images/banner3_1.jpg" alt=""/>
+  	    	    <img src="/minipro2/images/banner/banner3_1.jpg" alt=""/>
   	    	</li>
   	    	<li>
-  	    	    <img src="images/banner3_2.jpg"  alt=""/>
+  	    	    <img src="/minipro2/images/banner/banner3_2.jpg"  alt=""/>
   	    	</li>
   	    	<li>
-  	    	    <img src="images/banner3_3.jpg"  alt=""/>
+  	    	    <img src="/minipro2/images/banner/banner3_3.jpg"  alt=""/>
   	    	</li>
   	    	<li>
-  	    	    <img src="images/banner3_4.jpg"  alt=""/>
+  	    	    <img src="/minipro2/images/banner/banner3_4.jpg"  alt=""/>
   	    	</li>
           </ul>
         </div>
@@ -89,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Movie News</h3>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap">
@@ -102,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic4.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic4.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap">
@@ -116,7 +111,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic1.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic1.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap">
@@ -129,7 +124,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic2.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic2.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap">
@@ -146,33 +141,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Trailers</h3>
 					<div class="middle-list">
 						<div class="listimg1">
-							 <img src="images/pic5.jpg" alt=""/>
+							 <img src="/minipro2/images/preferences/pic5.jpg" alt=""/>
 							 <a href="#" class="link">diam nonummy nibh euismod tincidunt</a>
 						</div>
 						<div class="listimg2">
-							<img src="images/pic6.jpg" alt=""/>
+							<img src="/minipro2/images/preferences/pic6.jpg" alt=""/>
 							<a href="#" class="link">diam nonummy nibh euismod tincidunt</a>
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div class="middle-list">
 						<div class="listimg1">
-							<img src="images/pic7.jpg" alt=""/>
+							<img src="/minipro2/images/preferences/pic7.jpg" alt=""/>
 							<a href="#" class="link">diam nonummy nibh</a>
 						</div>
 						<div class="listimg2">
-							<img src="images/pic8.jpg" alt=""/>
+							<img src="/minipro2/images/preferences/pic8.jpg" alt=""/>
 							<a href="#" class="link">diam nonummy nibh</a>
 						</div>
 						<div class="clear"></div>
 					</div>	
 					<div class="middle-list">
 						<div class="listimg1">
-							<img src="images/pic5.jpg" alt=""/>
+							<img src="/minipro2/images/preferences/pic5.jpg" alt=""/>
 							<a href="#" class="link">diam nonummy nibh euismod tincidunt</a>
 						</div>
 						<div class="listimg2">
-							<img src="images/pic6.jpg" alt=""/>
+							<img src="/minipro2/images/preferences/pic6.jpg" alt=""/>
 							<a href="#" class="link">diam nonummy nibh euismod tincidunt</a>
 						</div>
 						<div class="clear"></div>
@@ -235,7 +230,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Films in Theaters</h3>
 					<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic9.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic9.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap1">
@@ -249,7 +244,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic10.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic10.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap1">
@@ -264,7 +259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 					<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic11.jpg" alt=""/>
+						 <img src="/minipro2/images/pic11.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap1">
@@ -278,7 +273,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="content-left">
 					<div class="listimg listimg_1_of_2">
-						 <img src="images/pic12.jpg" alt=""/>
+						 <img src="/minipro2/images/preferences/pic12.jpg" alt=""/>
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap1">
@@ -326,10 +321,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class=social>
-						<a href="#"><img src="images/fb.png" alt=""/></a>
-						<a href="#"><img src="images/tw.png" alt=""/></a>
-						<a href="#"><img src="images/dribble.png" alt=""/></a>
-						<a href="#"><img src="images/pinterest.png" alt=""/></a>
+						<a href="#"><img src="/minipro2/images/preferences/fb.png" alt=""/></a>
+						<a href="#"><img src="/minipro2/images/preferences/tw.png" alt=""/></a>
+						<a href="#"><img src="/minipro2/images/preferences/dribble.png" alt=""/></a>
+						<a href="#"><img src="/minipro2/images/preferences/pinterest.png" alt=""/></a>
 					</div>
 				</div>
 				<div class="clear"></div>
