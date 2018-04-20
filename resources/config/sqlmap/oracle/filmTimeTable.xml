@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+	<resultMap id="" type="">
+	</resultMap>
+    
+    <select id="selectTimeTable" resultMap="">
+    	select *
+		from tb_location lo
+		inner join tb_branch br
+		on lo.location_no = br.location_no
+		inner join tb_days da
+		on br.branch_no = da.branch_no
+		inner join tb_theater th
+		on th.showing_no = da.showing_no
+		inner join tb_film fi
+		on th.film_seq = fi.film_seq
+		inner join tb_times ti
+		on ti.theater_no = fi.theater_no
+		where da.showing_days = '04/20'
+		and th.film_name = '어벤저스';
+    </select>
+</mapper>
+
+
+
