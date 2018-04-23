@@ -11,10 +11,11 @@
 		<result column="member_profile" property="memberProfile" />
 		<result column="member_type" property="memberType" />
 	</resultMap>
-    <select id="selectMemberById" parameterType="string" resultType="memberMap">
+    <select id="login" parameterType="string" resultType="memberMap">
     	select *
     	  from tb_member
-    	 where id = #{id}
+    	 where member_iD = #{memberID} 
+    	   and member_pass = #{memberPass}
     </select>
     <select id="searchId" parameterType="member" resultType = "String">
     	select member_iD
