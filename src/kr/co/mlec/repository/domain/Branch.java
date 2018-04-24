@@ -3,28 +3,28 @@ package kr.co.mlec.repository.domain;
 public class Branch {
 
     //  지역번호
-    private String locationNo;
+    private String locationSeq;
 
     //  지점번호
-    private int branchNo;
+    private Integer branchSeq;
 
     //  지점이름
     private String branchName;
 
-    public String getLocationNo() {
-        return locationNo;
+    public String getLocationSeq() {
+        return locationSeq;
     }
 
-    public void setLocationNo(String locationNo) {
-        this.locationNo = locationNo;
+    public void setLocationSeq(String locationSeq) {
+        this.locationSeq = locationSeq;
     }
 
-    public int getBranchNo() {
-        return branchNo;
+    public Integer getBranchSeq() {
+        return branchSeq;
     }
 
-    public void setBranchNo(int branchNo) {
-        this.branchNo = branchNo;
+    public void setBranchSeq(Integer branchSeq) {
+        this.branchSeq = branchSeq;
     }
 
     public String getBranchName() {

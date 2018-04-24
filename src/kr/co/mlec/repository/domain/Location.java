@@ -3,17 +3,17 @@ package kr.co.mlec.repository.domain;
 public class Location {
 
     //  지역번호
-    private int locationNo;
+    private String locationSeq;
 
     //  지역이름
     private String locationName;
 
-    public int getLocationNo() {
-        return locationNo;
+    public String getLocationSeq() {
+        return locationSeq;
     }
 
-    public void setLocationNo(int locationNo) {
-        this.locationNo = locationNo;
+    public void setLocationSeq(String locationSeq) {
+        this.locationSeq = locationSeq;
     }
 
     public String getLocationName() {

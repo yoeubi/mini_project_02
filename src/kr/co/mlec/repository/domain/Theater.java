@@ -2,37 +2,59 @@ package kr.co.mlec.repository.domain;
 
 public class Theater {
 
-    //  상영날짜 번호
-    private int showingNo;
-
     //  영화번호
-    private String filmSeq;
+    private Integer filmSeq;
 
-    //  영화이름
-    private String filmName;
+    //  상영관 번호
+    private Integer theaterSeq;
 
-    public int getShowingNo() {
-        return showingNo;
-    }
+    //  상영관 이름
+    private String theaterName;
 
-    public void setShowingNo(int showingNo) {
-        this.showingNo = showingNo;
-    }
+    //  상영관좌석
+    private Integer theaterTotalSeat;
 
-    public String getFilmSeq() {
+    //  예약된 좌석
+    private String theaterSoldSeat;
+
+    public Integer getFilmSeq() {
         return filmSeq;
     }
 
-    public void setFilmSeq(String filmSeq) {
+    public void setFilmSeq(Integer filmSeq) {
         this.filmSeq = filmSeq;
     }
 
-    public String getFilmName() {
-        return filmName;
+    public Integer getTheaterSeq() {
+        return theaterSeq;
     }
 
-    public void setFilmName(String filmName) {
-        this.filmName = filmName;
+    public void setTheaterSeq(Integer theaterSeq) {
+        this.theaterSeq = theaterSeq;
+    }
+
+    public String getTheaterName() {
+        return theaterName;
+    }
+
+    public void setTheaterName(String theaterName) {
+        this.theaterName = theaterName;
+    }
+
+    public Integer getTheaterTotalSeat() {
+        return theaterTotalSeat;
+    }
+
+    public void setTheaterTotalSeat(Integer theaterTotalSeat) {
+        this.theaterTotalSeat = theaterTotalSeat;
+    }
+
+    public String getTheaterSoldSeat() {
+        return theaterSoldSeat;
+    }
+
+    public void setTheaterSoldSeat(String theaterSoldSeat) {
+        this.theaterSoldSeat = theaterSoldSeat;
     }
 
 }
