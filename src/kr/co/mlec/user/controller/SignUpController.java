@@ -12,7 +12,7 @@ import kr.co.mlec.common.db.MyAppSqlConfig;
 import kr.co.mlec.repository.domain.Member;
 import kr.co.mlec.repository.mapper.MemberMapper;
 
-@WebServlet("/minipro2/src/kr/co/mlec/user/controller/SignUpController.java")
+@WebServlet("/signup")
 public class SignUpController extends HttpServlet{
 
 	@Override

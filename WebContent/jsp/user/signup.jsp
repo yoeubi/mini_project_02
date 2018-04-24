@@ -13,7 +13,7 @@
       <div class="page-header">
           <h1>회원가입<h6>환영합니다</h6> </h1>
        </div>
-       <form class="form-horizontal" method="post" action="/minipro2/src/kr/co/mlec/user/controller/SignUpController.java">
+       <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/signup">
          <div class="form-group"> 
             <label for="inputIdl3" class="col-sm-2 control-label">아이디</label>
             <div class="col-sm-7">
