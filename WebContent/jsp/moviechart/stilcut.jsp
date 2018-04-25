@@ -43,18 +43,6 @@
 		<div class= "col-md-12">
 			<h1 class="movie_chart">Movie_Chart</h1>
 		</div>
-		<div id="tabs">
-			<div class= "col-md-8"></div>
-			<div class= "col-md-2">
-				<button>상영중</button>
-			</div>
-			<div class= "col-md-2">
-				<button>상영예정작</button>
-			</div>
-		</div>
-		<div class= "col-md-12">
-			<hr style= "border-top: 5px double black;">
-		</div>  
 	</div>
 
 	<div id="middle">
@@ -76,12 +64,12 @@
 			</div>
 			<div id="midbutton">
 				<hr style= "border-top: 2px solid black; width: 94%;">
-					<p>
-					<a href="" role="button">주요정보</a>
-					<a href="">트레일러</a>
-					<a href="">스틸컷</a>
-					<a href="">평점/리뷰</a>
-					</p>
+					<div class="btn-group" role="group">
+					  <button type="button" class="btn btn-default" onclick="location.href='detail.jsp' ">주요정보</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='trailer.jsp' ">트레일러</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='stilcut.jsp' ">스틸컷</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='review.jsp' ">평점/리뷰</button>
+					</div>
 				<hr style= "border-top: 2px solid black; width: 94%;">
 		    </div>
 	
@@ -121,33 +109,6 @@
         </div>
 	</div>
 	</div>
-	
-		<div id="realad">
-		<div class="realtime">
-			<h2>실시간 인기 검색어</h2>
-			<h3>1. 아아아아아</h3>
-			<h3>2. 아아아</h3>
-			<h3>3. 아아아아아</h3>
-			<h3>4. 아아아</h3>
-			<h3>5. 아아아아아</h3>
-			<h3>6. 아아아</h3>
-			<h3>7. 아아아아아</h3>
-			<h3>8. 아아아</h3>
-			<h3>9. 아아아아아</h3>
-			<h3>10. 아아아</h3>
-		</div>
-		<div class="ad1">
-			광고이미지가 들어갈곳
-		</div>
-		<div class="ad2">
-			광고이미지가 들어갈곳
-		</div>
-		<div class="ad3">
-			광고이미지가 들어갈곳
-		</div>
-	</div>
-	
-	
 	
 </body>
 </html>
