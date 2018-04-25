@@ -49,7 +49,7 @@
           <div class="form-group" style="height: 15px">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	<p class="ftRt"><p class="text-right"><a href="${pageContext.request.contextPath}/jsp/user/signup.jsp">회원가입하기 &gt;</a></p></p>
+	        	<p class="ftRt"><p class="text-right"><a href="${pageContext.request.contextPath}/signupform">회원가입하기 &gt;</a></p></p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>

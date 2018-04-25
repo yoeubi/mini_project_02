@@ -13,7 +13,7 @@
       <div class="page-header">
           <h1>회원가입<h6>환영합니다</h6> </h1>
        </div>
-       <form class="form-horizontal" >
+       <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/signup">
          <div class="form-group"> 
             <label for="inputIdl3" class="col-sm-2 control-label">아이디</label>
             <div class="col-sm-7">
@@ -24,14 +24,14 @@
          <div class="form-group"> 
             <label for="inputPassl3" class="col-sm-2 control-label">비밀번호</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="inputPass3" placeholder="비밀번호를 입력하세요">
+              <input type="password" class="form-control" id="inputPass3" placeholder="비밀번호를 입력하세요">
             </div>
              <div class="col-sm-3"></div>
           </div>
          <div class="form-group"> 
             <label for="inputCheckPassl3" class="col-sm-2 control-label">비밀번호확인</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="inputCheckPass3" placeholder="비밀번호를 입력하세요">
+              <input type="password" class="form-control" id="inputCheckPass3" placeholder="비밀번호를 입력하세요">
             </div>
              <div class="col-sm-3"></div>
           </div>

@@ -5,19 +5,19 @@ import java.util.Date;
 public class Confirm {
 
     //  예매번호
-    private int confirmNo;
+    private Integer confirmSeq;
 
     //  사용자명
     private String memberId;
 
-    //  영화이름
+    //  영화번호
     private String movieSeq;
 
     //  지점번호
-    private int branchNo;
+    private Integer branchSeq;
 
-    //  시작시간
-    private String startTime;
+    //  상영시간
+    private String showTime;
 
     //  좌석들
     private String seats;
@@ -31,12 +31,12 @@ public class Confirm {
     //  상영날짜
     private String showingDays;
 
-    public int getConfirmNo() {
-        return confirmNo;
+    public Integer getConfirmSeq() {
+        return confirmSeq;
     }
 
-    public void setConfirmNo(int confirmNo) {
-        this.confirmNo = confirmNo;
+    public void setConfirmSeq(Integer confirmSeq) {
+        this.confirmSeq = confirmSeq;
     }
 
     public String getMemberId() {
@@ -55,20 +55,20 @@ public class Confirm {
         this.movieSeq = movieSeq;
     }
 
-    public int getBranchNo() {
-        return branchNo;
+    public Integer getBranchSeq() {
+        return branchSeq;
     }
 
-    public void setBranchNo(int branchNo) {
-        this.branchNo = branchNo;
+    public void setBranchSeq(Integer branchSeq) {
+        this.branchSeq = branchSeq;
     }
 
-    public String getStartTime() {
-        return startTime;
+    public String getShowTime() {
+        return showTime;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setShowTime(String showTime) {
+        this.showTime = showTime;
     }
 
     public String getSeats() {

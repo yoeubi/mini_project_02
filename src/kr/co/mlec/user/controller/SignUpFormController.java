@@ -9,14 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login")
-public class LoginController extends HttpServlet{
+import kr.co.mlec.common.db.MyAppSqlConfig;
+import kr.co.mlec.repository.domain.Member;
+import kr.co.mlec.repository.mapper.MemberMapper;
+
+@WebServlet("/signupform")
+public class SignUpFormController extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/user/login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/user/signup.jsp");
 		rd.forward(request, response);
 	}
-	
-
 }

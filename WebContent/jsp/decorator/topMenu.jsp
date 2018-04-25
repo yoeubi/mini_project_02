@@ -9,10 +9,10 @@
 		    </div>
 			  <div class="nav-wrap">
 					<ul class="group" id="example-one">
-			           <li class="current_page_item"><a href="/minipro2/jsp/main/main.jsp">메인</a></li>
+			           <li class="current_page_item"><a href="${pageContext.request.contextPath}/main">메인</a></li>
 			           <li><a href="/minipro2/jsp/moviechart/main.jsp">영화</a></li>
 			  		   <li><a href="movies_events.html">예매</a></li>
-			  		   <li><a href="/minipro2/jsp/user/login.jsp">로그인</a></li>
+			  		   <li><a href="${pageContext.request.contextPath}/login">로그인</a></li>
 			        </ul>
 			  </div>
  			<div class="clear"></div>

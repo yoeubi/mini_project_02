@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.form-group{
+	padding: 10px;
+	margin: 10px;
+}
+.form-group span{
+	width: 60px;
+	height: 60px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 60px;
+}
+.form-group #index{
+	font-size: 30px;
+}
+div.col-sm-6{
+	line-height: 40px;
+}
+.form-group #movieTitle{
+	font-weight:bolder;
+	font-size: 30px;
+	padding: 50px;
+	background-color: #e0e0e0;
+}
+.fileBox{
+	margin : 0px;
+	padding:0px;
+	height: 100px;
+}
+.page-body{
+	padding:20px;
+	height: 600px;
+}
+#poster-box,#trailer-box {
+	font-size: 16px;
+	height: 60px;
+}
+#steelCut-box{
+	height: 300px;
+	font-size: 16px;
+}
+.form-group .col-sm-2{
+	font-size: 18px;
+	font-weight: bold;
+} 
