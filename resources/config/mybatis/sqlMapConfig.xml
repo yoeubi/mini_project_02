@@ -9,6 +9,14 @@
 	<typeAliases>
 		<!--<typeAlias alias="board" type="kr.co.mlec.repository.domain.Board" />-->
 		<typeAlias alias="member" type="kr.co.mlec.repository.domain.Member" />
+		<typeAlias alias="movieinfo" type="kr.co.mlec.repository.domain.MovieInfo" />
+		<typeAlias alias="comment" type="kr.co.mlec.repository.domain.Comment" />
+		<typeAlias alias="actors" type="kr.co.mlec.repository.domain.Actors" />
+		<typeAlias alias="genres" type="kr.co.mlec.repository.domain.Genres" />
+		<typeAlias alias="plot" type="kr.co.mlec.repository.domain.Plot" />
+		<typeAlias alias="stilcut" type="kr.co.mlec.repository.domain.StilCut" />
+		<typeAlias alias="trailer" type="kr.co.mlec.repository.domain.Trailer" />
+		<typeAlias alias="movieposter" type="kr.co.mlec.repository.domain.MoviePoster" />
 		
 	</typeAliases>
 	
@@ -30,6 +38,15 @@
 	<mappers>
 		<!-- <mapper resource="config/sqlmap/oracle/board.xml"/> -->
 		<mapper resource="config/sqlmap/oracle/member.xml"/>
+		<mapper resource="config/sqlmap/oracle/movieinfo.xml"/>
+		<mapper resource="config/sqlmap/oracle/comment.xml"/>
+		<mapper resource="config/sqlmap/oracle/actors.xml"/>
+		<mapper resource="config/sqlmap/oracle/genres.xml"/>
+		<mapper resource="config/sqlmap/oracle/plot.xml"/>
+		<mapper resource="config/sqlmap/oracle/moviePoster.xml"/>
+		<mapper resource="config/sqlmap/oracle/stilCut.xml"/>
+		<mapper resource="config/sqlmap/oracle/trailer.xml"/>
+		
 	</mappers>
 </configuration>
 
