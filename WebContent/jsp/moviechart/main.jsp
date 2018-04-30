@@ -4,11 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>MOVIE CHART MAIN</title>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/minipro2/js/lightslider.js"></script> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../../css/detail.css"> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet"  href="../../css/lightslider.css"/>
+<link rel="stylesheet" href="/minipro2/css/detail.css"> 
 <style>
 		.content-slider li{
 			height: 600px;
@@ -26,8 +27,6 @@
 		color: black;
 		}
     </style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="../../js/lightslider.js"></script> 
 <script>
     	 $(document).ready(function() {
 			$("#content-slider").lightSlider({
@@ -59,65 +58,65 @@
 	<div id="chart">
 		  <div class="item">
             <ul id="content-slider" class="content-slider">
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>1</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>2</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>3</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>4</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>5</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>6</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>7</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>8</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>
                 </li>
-                <li onclick="location.href='detail.jsp' ">
+                <li onclick="location.href='detail' ">
                     <h1>9</h1>
-                    <img src="../../images/poster/carol poster.jpg">
+                    <img src="/minipro2/images/poster/carol poster.jpg">
                		<h2>영화명</h2>
                		<h4>00.00.00 개봉</h4>
                		<h4>예매율: 00%</h4>

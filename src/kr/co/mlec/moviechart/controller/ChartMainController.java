@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/moviechart/detail")
-public class DetailController extends HttpServlet{
+@WebServlet("/moviechart/main")
+public class ChartMainController extends HttpServlet{
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/moviechart/detail.jsp");
+//		MovieInfoMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(MovieInfoMapper.class);
+//		List<MovieInfo> chart = mapper.selectMovieInfo();
+//		request.setAttribute("chart", chart);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/moviechart/main.jsp");
 		rd.forward(request, response);
-	
 	}
 }

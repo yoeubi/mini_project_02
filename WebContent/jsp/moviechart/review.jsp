@@ -6,7 +6,7 @@
 <title>MOVIE CHART review</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../../css/detail.css"> 
+<link rel="stylesheet" href="/minipro2/css/detail.css"> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -18,10 +18,10 @@
 
 	<div id="middle">
 		<div class="topx">
-			<img src="../../images/icon/x.png">
+			<img src="/minipro2/images/icon/x.png">
 		</div>
 			<div class="pos">
-				<img src="../../images/poster/moonlight poster.jpg">
+				<img src="/minipro2/images/poster/moonlight poster.jpg">
 			</div>
 			<div class="title">
 				<h1>영화명을 입력할곳</h1>
@@ -36,10 +36,10 @@
 			<div id="midbutton">
 				<hr style= "border-top: 2px solid black; width: 94%;">
 					<div class="btn-group" role="group">
-					  <button type="button" class="btn btn-default" onclick="location.href='detail.jsp' ">주요정보</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='trailer.jsp' ">트레일러</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='stilcut.jsp' ">스틸컷</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='review.jsp' ">평점/리뷰</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='detail' ">주요정보</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='trailer' ">트레일러</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='stilcut' ">스틸컷</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='review' ">평점/리뷰</button>
 					</div>
 				<hr style= "border-top: 2px solid black; width: 94%;">
 			</div>

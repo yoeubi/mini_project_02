@@ -6,7 +6,7 @@
 <title>MOVIE CHART stilcut</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../../css/detail.css"> 
+<link rel="stylesheet" href="/minipro2/css/detail.css"> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
     	ul{
@@ -16,7 +16,7 @@
 		}
     </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="../../js/lightslider.js"></script> 
+<script src="/minipro2/js/lightslider.js"></script> 
 <script>
     	 $(document).ready(function() {
 			$("#content-slider").lightSlider({
@@ -47,10 +47,10 @@
 
 	<div id="middle">
 		<div class="topx">
-			<img src="../../images/icon/x.png">
+			<img src="/minipro2/images/icon/x.png">
 		</div>
 			<div class="pos">
-				<img src="../../images/poster/moonlight poster.jpg">
+				<img src="/minipro2/images/poster/moonlight poster.jpg">
 			</div>
 			<div class="title">
 				<h1>영화명을 입력할곳</h1>
@@ -65,10 +65,10 @@
 			<div id="midbutton">
 				<hr style= "border-top: 2px solid black; width: 94%;">
 					<div class="btn-group" role="group">
-					  <button type="button" class="btn btn-default" onclick="location.href='detail.jsp' ">주요정보</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='trailer.jsp' ">트레일러</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='stilcut.jsp' ">스틸컷</button>
-					  <button type="button" class="btn btn-default" onclick="location.href='review.jsp' ">평점/리뷰</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='detail' ">주요정보</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='trailer' ">트레일러</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='stilcut' ">스틸컷</button>
+					  <button type="button" class="btn btn-default" onclick="location.href='review' ">평점/리뷰</button>
 					</div>
 				<hr style= "border-top: 2px solid black; width: 94%;">
 		    </div>
@@ -77,32 +77,32 @@
 		<div class="item">            
         <div class="clearfix" style="max-width:606px; height:450px;">
           <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> <!-- 70 * 50 -->
-                        <img src="../../images/stil/movie_image (1).jpg" /> <!-- 605 * 400 -->
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> <!-- 70 * 50 -->
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> <!-- 605 * 400 -->
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
-                    <li data-thumb="../../images/stil/thumb/movie_image (1).jpg"> 
-                        <img src="../../images/stil/movie_image (1).jpg" /> 
+                    <li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> 
+                        <img src="/minipro2/images/stil/movie_image (1).jpg" /> 
                     </li>
                 </ul>
         </div>
