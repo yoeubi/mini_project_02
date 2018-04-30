@@ -18,6 +18,7 @@ public class SignUpController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(MemberMapper.class);
+		request.setCharacterEncoding("utf-8");
 		Member member = new Member();
 		String memberID = request.getParameter("inputId3");
 		String memberPass = request.getParameter("inputPass3");

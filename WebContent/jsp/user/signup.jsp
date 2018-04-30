@@ -81,7 +81,7 @@
    				var msg="<div class=\"alert alert-success\" role=\"alert\">사용가능한 아이디입니다.</div>"
    				if(data.result == 1){msg="<div class=\"alert alert-danger\" role=\"alert\">이미 사용중인 아이디입니다.</div>"};
    				$("#idAlert").html(msg);
-   			},
+   			}, 
   			error : function(e){
    				console.log(e);
    			}

@@ -38,7 +38,7 @@
 	<mappers>
 		<!-- <mapper resource="config/sqlmap/oracle/board.xml"/> -->
 		<mapper resource="config/sqlmap/oracle/member.xml"/>
-		<mapper resource="config/sqlmap/oracle/movieinfo.xml"/>
+		<mapper resource="config/sqlmap/oracle/movieInfo.xml"/>
 		<mapper resource="config/sqlmap/oracle/comment.xml"/>
 		<mapper resource="config/sqlmap/oracle/actors.xml"/>
 		<mapper resource="config/sqlmap/oracle/genres.xml"/>

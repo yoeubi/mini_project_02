@@ -10,7 +10,7 @@
 <body>
 <!--아이디 찾기 -->
    <div class="container">
-     <div id="center-block">
+     <div id="center-block"> 
       <div class="page-header">
           <h1>아이디찾기 <h6>이름과 이메일을 입력하세요</h6></h1>
        </div>
@@ -32,7 +32,7 @@
          <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	<p class="ftRt"><p class="text-right"><button type="submit" class="btn btn-default">확인</button></p>
+	        	<p class="ftRt"><p class="text-right"><button type="submit" class="btn btn-default" id="idSearchBtn">확인</button></p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>
@@ -79,5 +79,25 @@
        </form>
      </div>
    </div>
+   <script >
+   $("#idSearchBtn").click(function(){
+	  $.ajax({
+		  url:"/minipro2/user/idSearch",
+		  data:"{\"name\":\""+$("#inputName3").val()+"\", \"email\":\""+$("#inputEmail3").val()+"\"}",
+		  dataType:"json",
+		  type:"GET",
+		  success:function(id){
+			  console.log(id)
+			  var msg = "정보와 일치하는 아이디가 없습니다."
+			  if(data.id != ""){msg="당신의 아이디는 "+id+"입니다."};
+			  alert(msg);
+		  },
+		  error:function(e){
+			  console.log(e);
+		  }
+	  }); 
+   });
+   </script>
  </body>
+ 
 </html>
