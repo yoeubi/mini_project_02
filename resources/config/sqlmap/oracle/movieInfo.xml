@@ -14,11 +14,21 @@
 		<result column="movie_sales_share" property="movieSalesShare"/>
 	</resultMap>
 
+	<insert id="insertMovieInfo" parameterType="movieinfo">
+		insert into tb_movieinfo(
+			movie_seq, movie_title, movie_title_eng, movie_release_date, movie_director, movie_rating, movie_runtime, movie_nation, movie_sales_share
+		) values (
+			s_movie_no.nextval, ${movieTitle}, ${movieTitleEng}, ${movieReleaseDate}, ${movieDirector}, ${movieRating}, ${movieRuntime}, ${movieNation}, ${movieSalesShare}
+		)
+	</insert>
+
+
 <!-- 갯수 -->
 	<select id="selectMovieInfo" resultMap="removie">
 		select *
 		  from tb_movieinfo
 	</select>
+	
 	
 <!-- 	고유번호로 -->
 	<select id="selectMovieInfoByRank" parameterType="int" resultMap="removie">

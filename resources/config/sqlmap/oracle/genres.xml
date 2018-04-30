@@ -6,6 +6,14 @@
 		<result column="movie_seq" property="movieSeq"/>
 		<result column="movie_genre" property="movieGenre"/>
 	</resultMap>
+	
+	<insert id="insertGenres" parameterType="genres">
+		insert into tb_movie_genres(
+			movie_seq, movie_genre
+		) values (
+			${movieSeq}, ${movieGenre}
+		)
+	</insert>
 
 	<select id="selectGenres" parameterType="int" resultMap="regenres">
 		select *

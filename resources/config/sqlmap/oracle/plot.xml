@@ -7,6 +7,14 @@
 		<result column="movie_plot" property="movieplot"/>
 	</resultMap>
 
+	<insert id="insertPlot" parameterType="plot">
+		insert into tb_movie_plot (
+			movie_seq, movie_plot
+		) values (
+			${movieSeq}, ${moviePlot}
+		)
+	</insert>
+
 	<select id="selectPlot" parameterType="int" resultMap="replot">
 		select *
 		  from tb_movie_plot

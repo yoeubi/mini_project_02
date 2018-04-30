@@ -6,6 +6,14 @@
 		<result column="movie_seq" property="movieSeq"/>
 		<result column="movie_actor" property="movieActor"/>
 	</resultMap>
+	
+	<insert id="insertActors" parameterType="actors">
+		insert into tb_movie_actors(
+			movie_seq, movie_actor
+		) values (
+			${movieSeq}, ${movieActor}
+		)
+	</insert>
 
 	<select id="selectActors" parameterType="int" resultMap="reactors">
 		select *
