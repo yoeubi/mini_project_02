@@ -14,12 +14,12 @@
     <select id="login" parameterType="string" resultMap="memberMap">
     	select *
     	  from tb_member
-    	 where member_iD = #{memberID} 
+    	 where member_iD = #{memberId} 
     	   and member_pass = #{memberPass}	
 	</select>
 	
 	<select id="searchId" parameterType="member" resultType="string">
-    	select member_iD
+    	select member_id
     	  from tb_member
     	 where member_name = #{memberName} and
     	 	   member_email = #{memberEmail}
@@ -28,7 +28,7 @@
     	select member_pass
     	  from tb_member
     	 where member_name = #{memberName} and
-    	 	   member_iD = #{memberID} and
+    	 	   member_id = #{memberId} and
     	 	   member_email = #{memberEmail}
     </select>
      <insert id = "insertMember" parameterType = "member">
@@ -40,7 +40,7 @@
     		member_email
     	)
     	values(
-    		#{memberID},
+    		#{memberId},
     		#{memberName},
     		#{memberPass},
     		#{memberPhoneNo},
@@ -51,7 +51,7 @@
     	update tb_member
     	   set member_photo_name = #{memberPhotoName},
     	   	   member_photo_path = #{memberPhotoPath}
-    	 where member_id = #{memberID}
+    	 where member_id = #{memberId}
     </insert>
     
     <update id="updateMemberInfo" parameterType="member">
@@ -59,13 +59,13 @@
     	   set member_name = #{memberName},
     	   	   member_phone_no = #{memberPhoneNo},
     	   	   member_email = #{memberEmail}
-    	 where member_id = #{memberID}
+    	 where member_id = #{memberId}
     </update>
     
     <update id="updateMemberPass" parameterType="string">
     	update tb_member
     	   set member_pass = #{memberPass}
-    	 where member_id = #{memberID}
+    	 where member_id = #{memberId}
     </update>  
     
     <update id="updateMemberProfile" parameterType="string">

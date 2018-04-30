@@ -41,7 +41,7 @@
           <div class="form-group" style="height: 13px">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	<p class="ftRt"><p class="text-right"><a href="${pageContext.request.contextPath}/jsp/user/searchinfo.jsp">아이디/비밀번호 찾기 &gt;</a></p></p>
+	        	<p class="ftRt"><p class="text-right"><a href="${pageContext.request.contextPath}/searchInfoForm">아이디/비밀번호 찾기 &gt;</a></p></p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>

@@ -8,7 +8,7 @@ public interface MemberMapper {
 	void updateMemberInfo(Member member);
 	void updateMemberPass(String id);
 	void updateMemberProfile(String id);
-	void searchId(Member member);
-	void searchPass(Member member);
+	String searchId(Member member);
+	String searchPass(Member member);
 	int doubleCheckId(String id);
 }
