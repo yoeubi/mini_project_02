@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="mapper.ShowtimesMapper">
+	<resultMap type="showtimes" id="showtimesMap">
+		<result column="theater_code" property="theaterCode" />
+		<result column="show_code" property="showCode" />
+		<result column="show_time" property="showTime" />
+	</resultMap>
+	
+	<select id="selectShowtimes" parameterType="string" resultMap="showtimesMap">
+		select *
+		from tb_showtimes
+		where theater_code = #{theaterCode}
+	</select>
+	
+	<select id="selectShowTime" parameterType="string" resultType="string">
+		select show_time
+		from tb_showtimes
+		where show_code = #{showCode}
+	</select>
+</mapper>

@@ -47,6 +47,7 @@
 		<mapper resource="config/sqlmap/oracle/stilCut.xml"/>
 		<mapper resource="config/sqlmap/oracle/trailer.xml"/>
 		
+		
 	</mappers>
 </configuration>
 

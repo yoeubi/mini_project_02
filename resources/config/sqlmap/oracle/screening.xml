@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="mapper.ScreeningMapper">
+	<resultMap type="screening" id="screeningMap">
+		<result column="branch_code" property="branchCode" />
+		<result column="screening_code" property="screeningCode" />
+		<result column="screening_date" property="screeningDate" />
+	</resultMap>
+	
+	<select id="selectScreening" parameterType="string" resultMap="screeningMap">
+		select *
+		from tb_screening
+		where branch_code = #{branchCode}
+		order by screening_date
+	</select>
+	
+	<select id="selectScreeningDate" parameterType="string" resultType="string">
+		select screening_date
+		from tb_screening
+		where screening_code = #{screeningCode}
+	</select>
+</mapper>

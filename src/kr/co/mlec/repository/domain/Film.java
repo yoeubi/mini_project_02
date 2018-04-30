@@ -3,28 +3,28 @@ package kr.co.mlec.repository.domain;
 public class Film {
 
     //  상영날짜 번호
-    private Integer screeningSeq;
+    private String screeningCode;
 
     //  영화번호
-    private String filmSeq;
+    private String filmCode;
 
     //  영화이름
     private String filmName;
 
-    public Integer getScreeningSeq() {
-        return screeningSeq;
+    public String getScreeningCode() {
+        return screeningCode;
     }
 
-    public void setScreeningSeq(Integer screeningSeq) {
-        this.screeningSeq = screeningSeq;
+    public void setScreeningCode(String screeningCode) {
+        this.screeningCode = screeningCode;
     }
 
-    public String getFilmSeq() {
-        return filmSeq;
+    public String getFilmCode() {
+        return filmCode;
     }
 
-    public void setFilmSeq(String filmSeq) {
-        this.filmSeq = filmSeq;
+    public void setFilmCode(String filmCode) {
+        this.filmCode = filmCode;
     }
 
     public String getFilmName() {
