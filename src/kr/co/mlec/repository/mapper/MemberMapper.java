@@ -10,5 +10,5 @@ public interface MemberMapper {
 	void updateMemberProfile(String id);
 	void searchId(Member member);
 	void searchPass(Member member);
-	
+	int doubleCheckId(String id);
 }

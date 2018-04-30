@@ -29,10 +29,9 @@ public class SignUpController extends HttpServlet{
 		member.setMemberEmail(memberEmail);
 		member.setMemberPhoneNo(memberPhoneNo);
 		member.setMemberName(memberName);
-		member.setMemberType("U");
 		
 		mapper.insertMember(member);
-		
+		response.sendRedirect("login");
 	}
 	
 }
