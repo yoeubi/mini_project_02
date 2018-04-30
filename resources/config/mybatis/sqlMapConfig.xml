@@ -18,6 +18,14 @@
 		<typeAlias alias="trailer" type="kr.co.mlec.repository.domain.Trailer" />
 		<typeAlias alias="movieposter" type="kr.co.mlec.repository.domain.MoviePoster" />
 		
+		<typeAlias alias="branch" type="kr.co.mlec.repository.domain.Branch" /> 
+		<typeAlias alias="confirm" type="kr.co.mlec.repository.domain.Confirm" /> 
+		<typeAlias alias="film" type="kr.co.mlec.repository.domain.Film" /> 
+		<typeAlias alias="location" type="kr.co.mlec.repository.domain.Location" /> 
+		<typeAlias alias="screening" type="kr.co.mlec.repository.domain.Screening" /> 
+		<typeAlias alias="showtimes" type="kr.co.mlec.repository.domain.Showtimes" /> 
+		<typeAlias alias="theater" type="kr.co.mlec.repository.domain.Theater" /> 
+		
 	</typeAliases>
 	
 	<environments default="development">
@@ -38,7 +46,7 @@
 	<mappers>
 		<!-- <mapper resource="config/sqlmap/oracle/board.xml"/> -->
 		<mapper resource="config/sqlmap/oracle/member.xml"/>
-		<mapper resource="config/sqlmap/oracle/movieInfo.xml"/>
+		<mapper resource="config/sqlmap/oracle/movieinfo.xml"/>
 		<mapper resource="config/sqlmap/oracle/comment.xml"/>
 		<mapper resource="config/sqlmap/oracle/actors.xml"/>
 		<mapper resource="config/sqlmap/oracle/genres.xml"/>
@@ -47,9 +55,19 @@
 		<mapper resource="config/sqlmap/oracle/stilCut.xml"/>
 		<mapper resource="config/sqlmap/oracle/trailer.xml"/>
 		
+		<mapper resource="config/sqlmap/oracle/branch.xml"/>
+		<mapper resource="config/sqlmap/oracle/confirm.xml"/>
+		<mapper resource="config/sqlmap/oracle/film.xml"/>
+		<mapper resource="config/sqlmap/oracle/location.xml"/>
+		<mapper resource="config/sqlmap/oracle/screening.xml"/>
+		<mapper resource="config/sqlmap/oracle/showtimes.xml"/>
+		<mapper resource="config/sqlmap/oracle/theater.xml"/>
+		<mapper resource="config/sqlmap/oracle/nowshowing.xml"/>
 		
 	</mappers>
 </configuration>
+
+
 
 
 
