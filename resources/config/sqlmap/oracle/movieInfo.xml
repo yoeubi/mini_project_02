@@ -4,17 +4,14 @@
 <mapper namespace="kr.co.mlec.repository.mapper.MovieInfoMapper">
 	<resultMap type="movieinfo" id="removie">
 		<result column="movie_seq" property="movieSeq"/>
-		<result column="movie_rank" property="movieRank"/>
 		<result column="movie_title" property="movieTitle"/>
 		<result column="movie_title_eng" property="movieTitleEng"/>
 		<result column="movie_release_date" property="movieReleaseDate"/>
-		<result column="movie_plot" property="moviePlot"/>
 		<result column="movie_director" property="movieDirector"/>
-		<result column="movie_actor" property="movieActor"/>
-		<result column="movie_genre" property="movieGenre"/>
 		<result column="movie_rating" property="movieRating"/>
 		<result column="movie_runtime" property="movieRuntime"/>
 		<result column="movie_nation" property="movieNation"/>
+		<result column="movie_sales_share" property="movieSalesShare"/>
 	</resultMap>
 
 <!-- 갯수 -->
@@ -22,8 +19,6 @@
 		select *
 		  from tb_movieinfo
 	</select>
-	
-<!-- 	예매율 -->
 	
 <!-- 	고유번호로 -->
 	<select id="selectMovieInfoByRank" parameterType="int" resultMap="removie">
