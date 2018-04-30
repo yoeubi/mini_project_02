@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.StilCutMapper">
+	<resultMap type="stilcut" id="restilcut">
+		<result column="movie_seq" property="movieSeq"/>
+		<result column="stilcut_no" property="stilcutNo"/>
+		<result column="stilcut_path" property="stilcutPath"/>
+		<result column="stilcut_thumb_path" property="stilcutThumbPath"/>
+		<result column="stilcut_sys_name" property="stilcutSysName"/>
+		<result column="stilcut_thumb_sys_name" property="stilcutThumbSysName"/>
+	</resultMap>
+
+	<select id="selectStilCut" resultMap="restilcut" parameterType="int">
+		select *
+		  from tb_stilcut
+		 where movie_seq = ${movieSeq}
+	</select>
+	
+	<insert id="insertStilCut" parameterType="stilcut">
+		insert into tb_stilcut(
+			movie_seq, stilcut_no, stilcut_path, stilcut_thumb_path, stilcut_sys_name, stilcut_thumb_sys_name
+		) values (
+			${movieSeq}, s_stilcut_no.nextval, ${stilcutPath}, ${stilcutThumbPath}, 
+			${stilcutSysName}, ${stilcutThumbSysName}			
+		)
+	</insert>
+	
+	<update id="updateStilCut" parameterType="stilcut">
+		update tb_stilcut
+		   set stilcut_path = ${stilcutPath},
+		       stilcut_thumb_path = ${stilcutThumbPath}
+		 where stilcut_no = ${stilcutNo}
+	</update>	
+
+	<delete id="deleteStilCut" parameterType="int">
+		delete
+		  from tb_stilcut
+		 where stilcut_no = ${stilcutNo}
+	</delete>
+
+
+</mapper>

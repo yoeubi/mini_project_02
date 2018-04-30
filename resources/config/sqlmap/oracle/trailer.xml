@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.TrailerMapper">
+	<resultMap type="trailer" id="retrailer">
+		<result column="movie_seq" property="movieSeq"/>
+		<result column="trailer_no" property="trailerNo"/>
+		<result column="trailer_img_path" property="trailerImgPath"/>
+		<result column="trailer_link" property="trailerLink"/>
+		<result column="trailer_sys_name" property="trailerSysName"/>
+	</resultMap>
+
+	<select id="selectTrailer" parameterType="int" resultMap="retrailer">
+		select *
+		  from tb_trailer
+		 where movie_seq = ${movieSeq}
+	</select>
+	
+	<insert id="insertTrailer" parameterType="trailer">
+		insert into tb_trailer(
+			movie_seq, trailer_no, trailer_img_path, trailer_link
+		) values (
+			${movieSeq}, s_trailer_no.nextval, ${trailerImgPath}, ${trailerLink}		
+		)
+	</insert>
+	
+	<update id="updateTrailer" parameterType="trailer">
+		update tb_trailer
+		   set trailer_img_path = ${trailerImgPath},
+		       trailer_link = ${trailerLink}
+		 where trailer_no = ${trailerNo}
+	</update>	
+	
+	<delete id="deleteTrailer" parameterType="int">
+		delete
+		  from tb_trailer
+		 where trailer_no = ${trailerNo}
+	</delete>
+</mapper>

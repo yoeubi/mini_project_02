@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.MoviePosterMapper">
+	<resultMap type="movieposter" id="removieposter">
+		<result column="movie_seq" property="movieSeq"/>
+		<result column="poster_no" property="posterNo"/>
+		<result column="poster_path" property="posterPath"/>
+		<result column="poster_sys_name" property="posterSysName"/>
+	</resultMap>
+
+	<select id="selectMoviePoster" parameterType="int" resultMap="removieposter">
+		select *
+		  from tb_movie_poster
+		 where movie_Seq = ${movieSeq}
+	</select>
+	
+	<insert id="insertMoviePoster" parameterType="movieposter">
+		insert into tb_movie_poster(
+			movie_seq, poster_no, poster_path, poster_sys_name
+		) values (
+			${movieSeq}, s_movieposter_no.nextval, ${posterPath}, ${posterSysName}
+		)
+	</insert>
+
+	<update id="updateMoviePoster" parameterType="movieposter">
+		update tb_movie_poster
+		   set poster_path = ${posterPath}
+		 where poster_no = ${posterNo}
+	</update>
+	
+	<delete id="deleteMoviePoster" parameterType="int">
+		delete
+		  from tb_movie_poster
+		 where poster_no = ${posterNo}
+	</delete>
+	
+</mapper>

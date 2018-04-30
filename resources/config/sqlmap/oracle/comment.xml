@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.CommentMapper">
+	<resultMap type="comment" id="recomment">
+		<result column="comment_seq" property="commentSeq"/>
+		<result column="comment_star" property="commentStar"/>
+		<result column="content" property="content"/>
+		<result column="comment_regdate" property="commentRegdate"/>
+		<result column="member_id" property="memberId"/>
+		<result column="movie_seq" property="movieSeq"/>
+	</resultMap>
+	
+	<insert id="insertComment" parameterType="comment">
+		insert into tb_comment(
+			movie_seq, comment_seq, comment_star, content, comment_regdate, member_id
+		) values (
+			${movieSeq}, s_comment_no.nextval, ${commentStar}, ${content}, ${commentRegdate}, ${memberId}
+		)
+	</insert>
+	
+	<select id="selectComment" parameterType="int" resultMap="recomment">
+		select *
+		  from tb_comment
+		 where movie_seq = ${movieSeq}
+	</select>
+	
+	<update id="updateComment" parameterType="comment">
+		update tb_comment
+		   set content = ${content}
+		 where comment_seq = ${commentSeq}
+	</update>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete
+		  from tb_comment
+		 where comment_seq = ${commentSeq}
+	</delete>
+
+</mapper>
