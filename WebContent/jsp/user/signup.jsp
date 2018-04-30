@@ -79,7 +79,6 @@
    			dataType  :"json",
    			success : function(data){
    				var msg="<div class=\"alert alert-success\" role=\"alert\">사용가능한 아이디입니다.</div>"
-   				if(isEmpty(data.result)){msg="<div class=\"alert alert-danger\" role=\"alert\">아이디를 입력하세요</div>"};
    				if(data.result == 1){msg="<div class=\"alert alert-danger\" role=\"alert\">이미 사용중인 아이디입니다.</div>"};
    				$("#idAlert").html(msg);
    			},
@@ -98,9 +97,27 @@
    		$("#passAlert").html(msg);
    		 
    	 });
-     function doAction(){
-      	
-     };
+     	function doAction(){
+    	 if( $("#inputId3").val() == ""){ alert("아이디를 입력하세요");return false};
+    	 if($("#inputPass3").val() !=  $("#inputCheckPass3").val()) { alert("비밀번호가 일치하지 않습니다.");return false};
+    	 if( $("#inputPass3").val() == ""){ alert("비밀번호를 입력하세요");return false};
+    	 if( $("#inputName3").val() == ""){ alert("이름을 입력하세요");return false};
+    	 if( $("#inputEmail3").val() == ""){ alert("이메일을 입력하세요");return false};
+    	 if( $("#inputPhone3").val() == ""){ alert("핸드폰 번호를 입력하세요");return false};
+    	 return true
+    	 };
    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
