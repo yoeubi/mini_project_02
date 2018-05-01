@@ -13,19 +13,19 @@
 	     <div class="page-header">
            <h1>회원로그인 <h6>아이디와 비밀번호를 입력하세요.비밀번호는 대소문자를 구분합니다.</h6></h1>
         </div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="${pageContext.request.contextPath}/login">
           <div class = "loginBox" >
           <div class="form-group"> 
             <label for="inputIdl3" class="col-sm-2 control-label">아이디</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="inputId3" placeholder="Id">
+              <input type="text" class="form-control" id="inputId3" name = "inputId3" placeholder="Id">
             </div>
              <div class="col-sm-3"></div>
           </div>
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
             <div class="col-sm-7">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword3" name="inputPassword3" placeholder="Password">
             </div>
             <div class="col-sm-3"></div>
           </div>
@@ -57,7 +57,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	<p class="ftRt"><p class="text-right"><button type="submit" class="btn btn-default">로그인</button></p>
+	        	<p class="ftRt"><p class="text-right"><button type="submit" class="btn btn-default" id ="loginBtn">로그인</button></p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>
@@ -70,7 +70,7 @@
            </div>
            <div class="form-group">
              <div class="col-sm-offset-1 col-sm-10">
-	           <a href="" class="icon naver"><img src="../../images/icon/naver_logo.jpg" width="50px" /></a>
+	           <a href="" class="icon naver"><img src="${pageContext.request.contextPath}/images/icon/naver_logo.jpg" width="50px" /></a>
 	         </div>
           </div>
           
@@ -78,5 +78,6 @@
         </form>
       </div>
       </div>
+     
 </body>
 </html>
