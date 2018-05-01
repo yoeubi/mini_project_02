@@ -62,7 +62,6 @@
 		<mapper resource="config/sqlmap/oracle/screening.xml"/>
 		<mapper resource="config/sqlmap/oracle/showtimes.xml"/>
 		<mapper resource="config/sqlmap/oracle/theater.xml"/>
-		<mapper resource="config/sqlmap/oracle/nowshowing.xml"/>
 		
 	</mappers>
 </configuration>
