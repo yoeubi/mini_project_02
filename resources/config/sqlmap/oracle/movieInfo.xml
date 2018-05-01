@@ -15,10 +15,13 @@
 	</resultMap>
 
 	<insert id="insertMovieInfo" parameterType="movieinfo">
+		<selectKey keyProperty="movieSeq" resultType="int" order="BEFORE">
+			select s_movie_no.nextval from dual
+		</selectKey>
 		insert into tb_movieinfo(
 			movie_seq, movie_title, movie_title_eng, movie_release_date, movie_director, movie_rating, movie_runtime, movie_nation, movie_sales_share
 		) values (
-			s_movie_no.nextval, #{movieTitle}, #{movieTitleEng}, #{movieReleaseDate}, #{movieDirector}, #{movieRating}, #{movieRuntime}, #{movieNation}, #{movieSalesShare}
+			#{movieSeq}, #{movieTitle}, #{movieTitleEng}, #{movieReleaseDate}, #{movieDirector}, #{movieRating}, #{movieRuntime}, #{movieNation}, #{movieSalesShare}
 		)
 	</insert>
 

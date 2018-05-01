@@ -4,6 +4,6 @@ import kr.co.mlec.repository.domain.Actors;
 import kr.co.mlec.repository.domain.Genres;
 
 public interface ActorsMapper {
-	void insertGenres(Genres genres);
+	void insertActors(Actors act);
 	Actors selectActors(int movieNo);
 }
