@@ -11,13 +11,13 @@
 		insert into tb_movie_genres(
 			movie_seq, movie_genre
 		) values (
-			${movieSeq}, ${movieGenre}
+			#{movieSeq}, #{movieGenre}
 		)
 	</insert>
 
 	<select id="selectGenres" parameterType="int" resultMap="regenres">
 		select *
 		  from tb_movie_genres
-		 where movie_seq = ${movieSeq}
+		 where movie_seq = #{movieSeq}
 	</select>
 </mapper>

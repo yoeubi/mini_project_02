@@ -14,29 +14,29 @@
 	<select id="selectStilCut" resultMap="restilcut" parameterType="int">
 		select *
 		  from tb_stilcut
-		 where movie_seq = ${movieSeq}
+		 where movie_seq = #{movieSeq}
 	</select>
 	
 	<insert id="insertStilCut" parameterType="stilcut">
 		insert into tb_stilcut(
 			movie_seq, stilcut_no, stilcut_path, stilcut_thumb_path, stilcut_sys_name, stilcut_thumb_sys_name
 		) values (
-			${movieSeq}, s_stilcut_no.nextval, ${stilcutPath}, ${stilcutThumbPath}, 
-			${stilcutSysName}, ${stilcutThumbSysName}			
+			#{movieSeq}, s_stilcut_no.nextval, #{stilcutPath}, #{stilcutThumbPath}, 
+			#{stilcutSysName}, #{stilcutThumbSysName}			
 		)
 	</insert>
 	
 	<update id="updateStilCut" parameterType="stilcut">
 		update tb_stilcut
-		   set stilcut_path = ${stilcutPath},
-		       stilcut_thumb_path = ${stilcutThumbPath}
-		 where stilcut_no = ${stilcutNo}
+		   set stilcut_path = #{stilcutPath},
+		       stilcut_thumb_path = #{stilcutThumbPath}
+		 where stilcut_no = #{stilcutNo}
 	</update>	
 
 	<delete id="deleteStilCut" parameterType="int">
 		delete
 		  from tb_stilcut
-		 where stilcut_no = ${stilcutNo}
+		 where stilcut_no = #{stilcutNo}
 	</delete>
 
 

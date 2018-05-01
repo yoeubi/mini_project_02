@@ -11,13 +11,13 @@
 		insert into tb_movie_actors(
 			movie_seq, movie_actor
 		) values (
-			${movieSeq}, ${movieActor}
+			#{movieSeq}, #{movieActor}
 		)
 	</insert>
 
 	<select id="selectActors" parameterType="int" resultMap="reactors">
 		select *
 		  from tb_movie_actors
-		 where movie_seq = ${moviaeSeq}
+		 where movie_seq = #{moviaeSeq}
 	</select>
 </mapper>
