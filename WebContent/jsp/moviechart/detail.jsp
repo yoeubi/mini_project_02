@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +27,13 @@
 				<img src="/minipro2/images/poster/moonlight poster.jpg">
 			</div>
 			<div class="title">
-				<h1>영화명을 입력할곳</h1>
-				<h5>영어 영화명을 입력할곳</h5>
-				<h3 style="text-align: right;">예매율 : 예매율%</h3>
+				<h1>${movie.movieTitle }</h1>
+				<h4>${movie.movieTitleEng }</h4>
+				<h3 style="text-align: right;">예매율 : ${movie.movieSalesShare }%</h3>
 				<hr style= "border-top: 1px solid black;">
-				<h4>감독 : 감독이름  / 배우 : ooo, ooo, ooo, ooo...</h4>
-				<h4>장르 : oo, oo... / 기본 : 00세이상, 00분, 미국</h4>
-				<h4>개봉 : 0000.00.00</h4>
+				<h4>감독 : ${movie.movieDirector }  / 배우 : <c:forEach var="actor" items="${act }">${actor.movieActor } </c:forEach></h4>
+				<h4>장르 : <c:forEach var="genre" items="${gen }">${genre.movieGenre }</c:forEach> / 기본 : ${movie.movieRating}, ${movie.movieRuntime }분, ${movie.movieNation }</h4>
+				<h4>개봉 : ${movie.movieReleaseDate}</h4>
 				<button>예매</button>
 			</div>
 			<div id="midbutton">

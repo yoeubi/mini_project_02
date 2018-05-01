@@ -1,9 +1,10 @@
 package kr.co.mlec.repository.mapper;
 
+import java.util.List;
+
 import kr.co.mlec.repository.domain.Actors;
-import kr.co.mlec.repository.domain.Genres;
 
 public interface ActorsMapper {
 	void insertActors(Actors act);
-	Actors selectActors(int movieNo);
+	List<Actors> selectActors(int movieNo);
 }
