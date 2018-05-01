@@ -3,36 +3,39 @@ package kr.co.mlec.repository.domain;
 public class Screening {
 
     //  지점 번호
-    private Integer branchSeq;
+    private String branchCode;
 
     //  상영날짜 번호
-    private String screeningSeq;
+    private String screeningCode;
 
     //  상영날짜
     private String screeningDate;
 
-    public Integer getBranchSeq() {
-        return branchSeq;
-    }
+	public String getBranchCode() {
+		return branchCode;
+	}
 
-    public void setBranchSeq(Integer branchSeq) {
-        this.branchSeq = branchSeq;
-    }
+	public void setBranchCode(String branchCode) {
+		this.branchCode = branchCode;
+	}
 
-    public String getScreeningSeq() {
-        return screeningSeq;
-    }
+	public String getScreeningCode() {
+		return screeningCode;
+	}
 
-    public void setScreeningSeq(String screeningSeq) {
-        this.screeningSeq = screeningSeq;
-    }
+	public void setScreeningCode(String screeningCode) {
+		this.screeningCode = screeningCode;
+	}
 
-    public String getScreeningDate() {
-        return screeningDate;
-    }
+	public String getScreeningDate() {
+		return screeningDate;
+	}
 
-    public void setScreeningDate(String screeningDate) {
-        this.screeningDate = screeningDate;
-    }
+	public void setScreeningDate(String screeningDate) {
+		this.screeningDate = screeningDate;
+	}
+    
+    
+    
 
 }

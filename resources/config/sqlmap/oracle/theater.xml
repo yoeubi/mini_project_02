@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="mapper.TheaterMapper">
+	<resultMap type="theater" id="theaterMap">
+		<result column="film_code" property="filmCode" />
+		<result column="theater_code" property="theaterCode" />
+		<result column="theater_name" property="theaterName" />
+		<result column="theater_total_seat" property="theaterTotalSeat" />
+		<result column="theater_sold_seat" property="theaterSoldSeat" />
+	</resultMap>
+	
+	<select id="selectTheater" parameterType="string" resultMap="theaterMap">
+		select *
+		from tb_theater
+		where film_code = #{filmCode}
+	</select>
+	
+	<select id="selectTheaterName" parameterType="string" resultType="string">
+		select theater_name
+		from tb_theater
+		where theater_code = #{theaterCode}
+	</select>
+</mapper>

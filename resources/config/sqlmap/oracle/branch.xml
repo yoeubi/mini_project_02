@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="mapper.BranchMapper">
+	
+	<resultMap type="branch" id="branchMap">
+		<result column="location_code" property="locationCode" />
+		<result column="branch_code" property="branchCode" />
+		<result column="branch_name" property="branchName" />
+	</resultMap>
+	
+	<select id="selectBranch" parameterType="string" resultMap="branchMap">
+		select *
+		from tb_branch
+		where location_code = #{locationCode}
+	</select>
+	
+	<select id="selectBranchName" parameterType="string" resultType="string">
+		select branch_name
+		from tb_branch
+		where branch_code = #{branchCode}
+	</select>
+</mapper>

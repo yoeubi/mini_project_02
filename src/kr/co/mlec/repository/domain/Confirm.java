@@ -5,16 +5,16 @@ import java.util.Date;
 public class Confirm {
 
     //  예매번호
-    private Integer confirmSeq;
+    private int confirmSeq;
 
     //  사용자명
     private String memberId;
 
     //  영화번호
-    private String movieSeq;
+    private int movieSeq;
 
     //  지점번호
-    private Integer branchSeq;
+    private int branchSeq;
 
     //  상영시간
     private String showTime;
@@ -23,7 +23,7 @@ public class Confirm {
     private String seats;
 
     //  금액
-    private String price;
+    private int price;
 
     //  예매날짜
     private Date regDate;
@@ -31,11 +31,11 @@ public class Confirm {
     //  상영날짜
     private String showingDays;
 
-    public Integer getConfirmSeq() {
+    public int getConfirmSeq() {
         return confirmSeq;
     }
 
-    public void setConfirmSeq(Integer confirmSeq) {
+    public void setConfirmSeq(int confirmSeq) {
         this.confirmSeq = confirmSeq;
     }
 
@@ -47,19 +47,19 @@ public class Confirm {
         this.memberId = memberId;
     }
 
-    public String getMovieSeq() {
+    public int getMovieSeq() {
         return movieSeq;
     }
 
-    public void setMovieSeq(String movieSeq) {
+    public void setMovieSeq(int movieSeq) {
         this.movieSeq = movieSeq;
     }
 
-    public Integer getBranchSeq() {
+    public int getBranchSeq() {
         return branchSeq;
     }
 
-    public void setBranchSeq(Integer branchSeq) {
+    public void setBranchSeq(int branchSeq) {
         this.branchSeq = branchSeq;
     }
 
@@ -79,11 +79,11 @@ public class Confirm {
         this.seats = seats;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
