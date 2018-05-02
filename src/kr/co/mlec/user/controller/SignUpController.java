@@ -25,7 +25,7 @@ public class SignUpController extends HttpServlet{
 		String memberName = request.getParameter("inputName3");
 		String memberEmail = request.getParameter("inputEmail3");
 		String memberPhoneNo = request.getParameter("inputPhone3");
-		member.setMemberID(memberID);
+		member.setMemberId(memberID);
 		member.setMemberPass(memberPass);
 		member.setMemberEmail(memberEmail);
 		member.setMemberPhoneNo(memberPhoneNo);

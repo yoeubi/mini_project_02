@@ -14,7 +14,7 @@ public class MovieInfo {
     //  관람등급
     private String movieRating;
     //  상영시간
-    private int movieRuntime;
+    private String movieRuntime;
     //  제작국가
     private String movieNation;
     //  예매율
@@ -68,11 +68,11 @@ public class MovieInfo {
         this.movieRating = movieRating;
     }
 
-    public int getMovieRuntime() {
+    public String getMovieRuntime() {
         return movieRuntime;
     }
 
-    public void setMovieRuntime(int movieRuntime) {
+    public void setMovieRuntime(String movieRuntime) {
         this.movieRuntime = movieRuntime;
     }
 

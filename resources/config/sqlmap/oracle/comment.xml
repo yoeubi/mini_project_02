@@ -13,28 +13,29 @@
 	
 	<insert id="insertComment" parameterType="comment">
 		insert into tb_comment(
-			movie_seq, comment_seq, comment_star, content, comment_regdate, member_id
+			movie_seq, comment_seq, comment_star, content, member_id
 		) values (
-			${movieSeq}, s_comment_no.nextval, ${commentStar}, ${content}, ${commentRegdate}, ${memberId}
+			#{movieSeq}, s_comment_no.nextval, #{commentStar}, #{content}, #{memberId}
 		)
 	</insert>
 	
 	<select id="selectComment" parameterType="int" resultMap="recomment">
 		select *
 		  from tb_comment
-		 where movie_seq = ${movieSeq}
+		 where movie_seq = #{movieSeq}
+		 order by comment_seq desc
 	</select>
 	
 	<update id="updateComment" parameterType="comment">
 		update tb_comment
-		   set content = ${content}
-		 where comment_seq = ${commentSeq}
+		   set content = #{content}
+		 where comment_seq = #{commentSeq}
 	</update>
 	
 	<delete id="deleteComment" parameterType="int">
 		delete
 		  from tb_comment
-		 where comment_seq = ${commentSeq}
+		 where comment_seq = #{commentSeq}
 	</delete>
 
 </mapper>

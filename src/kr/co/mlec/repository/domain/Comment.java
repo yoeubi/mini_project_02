@@ -6,7 +6,7 @@ public class Comment {
 	//  댓글 고유번호
     private int commentSeq;
     //  별점
-    private String commentStar;
+    private int commentStar;
     //  한줄평
     private String content;
     //  댓글등록일
@@ -24,11 +24,12 @@ public class Comment {
 		this.commentSeq = commentSeq;
 	}
 
-	public String getCommentStar() {
+	
+	public int getCommentStar() {
 		return commentStar;
 	}
 
-	public void setCommentStar(String commentStar) {
+	public void setCommentStar(int commentStar) {
 		this.commentStar = commentStar;
 	}
 

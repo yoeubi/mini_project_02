@@ -2,7 +2,7 @@ package kr.co.mlec.repository.domain;
 
 public class Member {
 
-	private String memberID;
+	private String memberId;
 	private String memberName;
 	private String memberPass;
 	private String memberPhoneNo;
@@ -24,11 +24,11 @@ public class Member {
 		this.memberPhotoPath = memberPhotoPath;
 	}
 	
-	public String getMemberID() {
-		return memberID;
+	public String getMemberId() {
+		return memberId;
 	}
-	public void setMemberID(String memberID) {
-		this.memberID = memberID;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 	public String getMemberName() {
 		return memberName;
@@ -59,6 +59,15 @@ public class Member {
 	}
 	public void setMemberType(String memberType) {
 		this.memberType = memberType;
+	}
+	
+	public Member clone(Member m) {
+		Member member = new Member();
+		member.setMemberPhotoName(m.getMemberPhotoName());
+		member.setMemberPass(m.getMemberPass());
+		member.setMemberPhotoPath(m.getMemberPhotoPath());
+		member.setMemberType(m.getMemberType());
+		return member;
 	}
 	
 }
