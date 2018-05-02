@@ -23,7 +23,7 @@
 			  		   
 			           <li class="current_page_item"><a href="${pageContext.request.contextPath}/main">메인</a></li>
 			           <li><a href="/minipro2/moviechart/main">영화</a></li>
-			  		   <li><a href="movies_events.html">예매</a></li>
+			  		   <li><a href="${pageContext.request.contextPath}/controller/selectmain">예매</a></li>
 			  		   <c:choose>
 			  		   <c:when test="${empty sessionScope.user}">
 			  		   <li><a href="${pageContext.request.contextPath}/loginForm">로그인</a></li>
