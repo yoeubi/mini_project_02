@@ -57,7 +57,7 @@ public class BookingController extends HttpServlet {
 		String showTime = showtimesMapper.selectShowTime(showCode);
 		request.setAttribute("showTime", showTime);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/mini/booking.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/ticket/selectSeat.jsp");
 		rd.forward(request, response);
 	}
 }

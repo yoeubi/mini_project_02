@@ -15,7 +15,6 @@ public class ConfirmController extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/mini/mini/confirm.jsp");
-		rd.forward(request, response);
+		
 	}
 }

@@ -28,13 +28,13 @@
         }
       });
     });
-  </script>
+</script>
   <!-- DC Tabs CSS -->
 <link type="text/css" rel="stylesheet" href="http://www.dreamtemplate.com/dreamcodes/tabs/css/tsc_tabs.css" />
  <!-- jQuery Library (skip this step if already called on page ) -->
-<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/jquery.min.js"></script> <!-- (do not call twice) -->
+<!-- <script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/jquery.min.js"></script> (do not call twice) -->
  <!-- DC Tabs JS -->
-<!--<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/tabs/js/tsc_tabs.js"></script>-->
+<!--<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/tabs/js/tsc_tabs.js"></script> -->
 <link rel="stylesheet" href="/minipro2/css/tsc_tabs.css" type="text/css" media="all" />
 <sitemesh:write property="head" /> 
 </head>
