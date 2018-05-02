@@ -25,8 +25,10 @@
          <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	 <label class="col-sm-2 control-label">사진업로드</label><p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm" name="profilePhoto"></p>
-	        	 <label class="col-sm-2 control-label">프로필초기화</label><p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm" name="profileDefalt"></p>
+	        	<p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm" name="profilePhoto" id="profilePhoto">
+	        	 <button type="button" class="btn btn-default">사진 업로드</button>
+	        	 <button type="button" class="btn btn-default">기본이미지 변경</button>
+	        	 </p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>
@@ -115,6 +117,42 @@
    </div>	
 
 <script>
+$("#profilePhoto").click(function(){
+	
+});
+
+var upload = document.getElementsByTagName('input')[0],
+    holder = document.getElementById('holder'),
+    state = document.getElementById('status');
+
+if (typeof window.FileReader === 'undefined') {
+  state.className = 'fail';
+} else {
+  state.className = 'success';
+  state.innerHTML = 'File API & FileReader available';
+}
+ 
+upload.onchange = function (e) {
+  e.preventDefault();
+
+  var file = upload.files[0],
+      reader = new FileReader();
+  reader.onload = function (event) {
+    var img = new Image();
+    img.src = event.target.result;
+    // note: no onload required since we've got the dataurl...I think! :)
+    if (img.width > 560) { // holder width
+      img.width = 560;
+    }
+    holder.innerHTML = '';
+    holder.appendChild(img);
+  };
+  reader.readAsDataURL(file);
+
+  return false;
+};
+
+
 
 $("#updateInfoBtn").click(function(){
 	$("#updateInfoBtn").click(function(){
