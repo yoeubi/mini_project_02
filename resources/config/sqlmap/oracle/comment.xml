@@ -13,9 +13,9 @@
 	
 	<insert id="insertComment" parameterType="comment">
 		insert into tb_comment(
-			movie_seq, comment_seq, comment_star, content, comment_regdate, member_id
+			movie_seq, comment_seq, comment_star, content, member_id
 		) values (
-			#{movieSeq}, s_comment_no.nextval, #{commentStar}, #{content}, #{commentRegdate}, #{memberId}
+			#{movieSeq}, s_comment_no.nextval, #{commentStar}, #{content}, #{memberId}
 		)
 	</insert>
 	
@@ -23,6 +23,7 @@
 		select *
 		  from tb_comment
 		 where movie_seq = #{movieSeq}
+		 order by comment_seq desc
 	</select>
 	
 	<update id="updateComment" parameterType="comment">
