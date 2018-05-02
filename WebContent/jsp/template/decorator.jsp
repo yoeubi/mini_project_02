@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <title><sitemesh:write property="title" /></title> -->
-<!-- <link rel="stylesheet" href="/minipro2/css/style.css" type="text/css" media="all" /> -->
+<title><sitemesh:write property="title" /></title>
+<link rel="stylesheet" href="/minipro2/css/style.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/minipro2/css/flexslider.css" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script src="/minipro2/js/modernizr.js"></script>

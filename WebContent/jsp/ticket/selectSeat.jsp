@@ -139,7 +139,7 @@
 							    pay_method : 'card',
 							    merchant_uid : 'merchant_' + new Date().getTime(),
 							    name : '주문명:결제테스트',
-							    amount : $("#tatal").text(),
+							    amount : $("#total").text(),
 							    buyer_email : 'iamport@siot.do',
 							    buyer_name : "테스트용",
 							    buyer_tel : '010-1234-5678',
@@ -171,7 +171,6 @@
 				});
 			</script>
 	</div>
-	<p class="copy_rights">&copy; 2018 BitCinema. All Rights Reserved | Design by  <a href="" target="_blank"> Jungwon Seong</a></p>
 </div>
 </body>
 </html>
