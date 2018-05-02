@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.mapper.Mapper;
+
 import kr.co.mlec.common.db.MyAppSqlConfig;
 import kr.co.mlec.repository.domain.Member;
 import kr.co.mlec.repository.mapper.MemberMapper;
@@ -26,7 +28,9 @@ public class MyPagePassUpdateController extends HttpServlet{
 		Member user = (Member)session.getAttribute("user");
 		String id = user.getMemberId();
 		
+		
 		MemberMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(MemberMapper.class);
+		
 		Member member = new Member();
 		member.setMemberId(id);
 		member.setMemberPass(passNew);

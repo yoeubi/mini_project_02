@@ -1,6 +1,8 @@
 package kr.co.mlec.user.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+
 import kr.co.mlec.common.db.MyAppSqlConfig;
+import kr.co.mlec.common.file.MlecFileRenamePolicy;
 import kr.co.mlec.repository.domain.Member;
 import kr.co.mlec.repository.mapper.MemberMapper;
 
@@ -32,6 +37,35 @@ public class MyPageInfoUpdateController extends HttpServlet{
 		String sessionName= user.getMemberName();
 		String sessionEmail= user.getMemberEmail();
 		String sessionPhone= user.getMemberPhoneNo();
+		
+		
+		//프로필 사진 업로드
+		String uploadPath="${pageContext.request.contextPath}/images/upload";
+		String photoName = "/"+user.getMemberId();
+		File file = new File(uploadPath+photoName);
+		if(!file.exists()) file.mkdirs();
+		
+		MultipartRequest mRequest = new MultipartRequest(
+				request,  
+				uploadPath+photoName,
+				1024 * 1024 * 100, 
+				"utf-8",  
+				new MlecFileRenamePolicy() 
+				);
+		
+		Enumeration<String> names = mRequest.getFileNames();
+		if(names.hasMoreElements()) {
+			String fName = names.nextElement();
+			File f = mRequest.getFile(fName);
+			if (f != null) {
+				// 데이터베이스에 파일 정보 저장
+				Member fMember = new Member();
+				fMember.setMemberPhotoName(user.getMemberId());
+				fMember.setMemberPhotoPath(uploadPath+photoName);
+				
+				mapper.insertProfilePhoto(fMember);
+			}
+		}
 		
 		if(name == null) {
 			name=sessionName;
@@ -65,6 +99,31 @@ public class MyPageInfoUpdateController extends HttpServlet{
 		};
 		response.sendRedirect("myPageForm");
 		
+		
+		
+		
 	}
 	
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

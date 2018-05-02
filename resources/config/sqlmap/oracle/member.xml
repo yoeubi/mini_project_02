@@ -47,7 +47,7 @@
     	 	#{memberEmail}
     	)
     </insert>
-    <insert id = "insertProfilePhoto" parameterType = "string">
+    <insert id = "insertProfilePhoto" parameterType = "member">
     	update tb_member
     	   set member_photo_name = #{memberPhotoName},
     	   	   member_photo_path = #{memberPhotoPath}
@@ -68,11 +68,11 @@
     	 where member_id = #{memberId}
     </update>  
     
-    <update id="updateMemberProfile" parameterType="string">
-    	update tb_member
-    	   set member_pass = #{memberPass}
-    	 where member_profile = #{memberProfile}
-    </update>
+<!--     <update id="updateMemberProfile" parameterType="member"> -->
+<!--     	update tb_member -->
+<!--     	   set member_pass = #{memberPass} -->
+<!--     	 where member_profile = #{memberProfile} -->
+<!--     </update> -->
     <select id="doubleCheckId" parameterType="string" resultType="int">
     	select count(*)
     	  from tb_member
