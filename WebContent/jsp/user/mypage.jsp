@@ -13,19 +13,20 @@
       <div class="page-header">
            <h1>개인정보 수정<h6>개인정보를 수정할 수 있습니다.</h6></h1>
        </div>
-       <form class="form-horizontal" method="post" action = "${pageContext.request.contextPath}/myPageInfoUpdate" enctype="multipart/form-data" onsubmit="return doAction()">
+       <form class="form-horizontal" method="post" id="updateInfoForm"action = "${pageContext.request.contextPath}/myPageInfoUpdate" enctype="multipart/form-data">
        
          <div class="form-group"> 
            <label class="col-sm-2 control-label">프로필사진</label>
            <div class="col-sm-7">
-            <img src="${sessionScope.user.memberPhotoPath}" class="img-thumbnail" style="width:140px;height:140px; float:left;">
+            <img src="/minipro2/images/profileUpload/${sessionScope.user.memberPhotoName}" class="img-thumbnail" style="width:140px;height:140px; float:left;">
            </div>
             <div class="col-sm-3"></div>
          </div>
          <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
 	        <div class="helpV17">
-	        	<p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm"></p>
+	        	 <label class="col-sm-2 control-label">사진업로드</label><p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm" name="profilePhoto"></p>
+	        	 <label class="col-sm-2 control-label">프로필초기화</label><p class="ftRt"><p class="text-left"><input type="file" class="btn btn-default btn-sm" name="profileDefalt"></p>
 	        </div>
             </div>
             <div class="col-sm-3"> </div>
@@ -79,7 +80,7 @@
        <div class="page-header">
            <h1>비밀번호 수정<h6>비밀번호를 수정할 수 있습니다.</h6></h1>
        </div>
-        <form class="form-horizontal" id="updatepassform" method="post" action = "${pageContext.request.contextPath}/myPagePassUpdate"> 
+        <form class="form-horizontal" id="updatePassForm" method="post" action = "${pageContext.request.contextPath}/myPagePassUpdate"> 
        <div class="form-group" >
             <label for="inputPassword3" class="col-sm-2 control-label">기존비밀번호</label>
             <div class="col-sm-7">
@@ -115,12 +116,7 @@
 
 <script>
 
-function doAction(result){
-// 	console.log(result);
-	return result;
-};
-
-
+$("#updateInfoBtn").click(function(){
 	$("#updateInfoBtn").click(function(){
 		console.log("비밀번호 확인 접속중")
 		$.ajax({
@@ -130,11 +126,9 @@ function doAction(result){
 			 success:function(pass){
 				 if($("#inputPassword3").val() != pass){
 					 alert("비밀번호가 일치하지 않습니다.");
-					 doAction(false);
 				 }else{
 					 alert("마이페이지 수정 완료");
-					 doAction(true);
-					 
+					 $("#updateInfoForm")[0].submit();
 				 }
 			 },
 			 error:function(e){
@@ -142,6 +136,10 @@ function doAction(result){
 			 }
 		});
 	});
+});
+
+
+	
 	
 	$("#updatePassBtn").click(function(){
 		$.ajax({
@@ -167,8 +165,7 @@ function doAction(result){
 									alert("새로운 비밀번호가 일치하지 않습니다.");
 								}else{
 									alert("비밀번호 수정 완료!");
-									$("#updatepassform")[0].submit();
-									//location.assign($("#updatepassform").attr("action"));
+									$("#updatePassForm")[0].submit();
 								}
 							}
 					 	}

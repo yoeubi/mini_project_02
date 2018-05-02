@@ -8,7 +8,7 @@
 		<result column="member_pass" property="memberPass"/>
 		<result column="member_phone_no" property="memberPhoneNo"/>
 		<result column="member_email" property="memberEmail"/>
-		<result column="member_photo_path" property="memberPhotoPath"/>
+		<result column="member_photo_name" property="memberPhotoName"/>
 		<result column="member_type" property="memberType"/>	
 	</resultMap>
     <select id="login" parameterType="member" resultMap="memberMap">
@@ -17,7 +17,11 @@
     	 where member_id = #{memberId} and
     	       member_pass = #{memberPass}	
 	</select>
-	
+	<select id="findMember" parameterType="string" resultMap="memberMap">
+		select *
+		  from tb_member
+		 where  member_id = #{memberId}
+	</select>
 	<select id="searchId" parameterType="member" resultType="string">
     	select member_id
     	  from tb_member
@@ -83,7 +87,7 @@
           from tb_member
          where member_id=#{memberId}
     </select>
-
+	
 </mapper>  
 
 
