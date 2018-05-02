@@ -6,9 +6,10 @@ public interface MemberMapper {
 	Member login(Member member);
 	void insertMember(Member member);
 	void updateMemberInfo(Member member);
-	void updateMemberPass(String id);
+	void updateMemberPass(Member member);
 	void updateMemberProfile(String id);
 	String searchId(Member member);
 	String searchPass(Member member);
 	int doubleCheckId(String id);
+	String passCheck(String id);
 }

@@ -62,7 +62,7 @@
     	 where member_id = #{memberId}
     </update>
     
-    <update id="updateMemberPass" parameterType="string">
+    <update id="updateMemberPass" parameterType="member">
     	update tb_member
     	   set member_pass = #{memberPass}
     	 where member_id = #{memberId}
@@ -77,6 +77,11 @@
     	select count(*)
     	  from tb_member
     	 where member_id = #{id} 
+    </select>
+    <select id="passCheck" parameterType="string" resultType="string">
+    	select member_pass
+          from tb_member
+         where member_id=#{memberId}
     </select>
 
 </mapper>  

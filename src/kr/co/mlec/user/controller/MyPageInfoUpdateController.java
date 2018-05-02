@@ -49,13 +49,19 @@ public class MyPageInfoUpdateController extends HttpServlet{
 		if(sessionPass.equals(pass)) {
 			System.out.println("비번 같음 확인");
 			Member member = new Member();
-			member.setMemberEmail(email);
-			member.setMemberName(name);
-			member.setMemberPhoneNo(phone);
-			member.setMemberId(sessionId);
-			mapper.updateMemberInfo(member);
-		}else {
+			Member cloneMember = member.clone(user);
+			cloneMember.setMemberEmail(email);
+			cloneMember.setMemberName(name);
+			cloneMember.setMemberPhoneNo(phone);
+			cloneMember.setMemberId(sessionId);
+			mapper.updateMemberInfo(cloneMember);
+			System.out.println(cloneMember.getMemberEmail());
+			System.out.println(cloneMember.getMemberPhotoPath());
+			System.out.println(cloneMember.getMemberType());
+			session.setAttribute("user", cloneMember);
 			
+		}else {
+			request.setAttribute("errMsg", "비밀번호가 일치하지 않습니다.");
 		};
 		response.sendRedirect("myPageForm");
 		

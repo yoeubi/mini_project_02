@@ -64,7 +64,8 @@ public class Member {
 	public Member clone(Member m) {
 		Member member = new Member();
 		member.setMemberPhotoName(m.getMemberPhotoName());
-		member.setMemberPhotoPath(m.getMemberPhoneNo());
+		member.setMemberPass(m.getMemberPass());
+		member.setMemberPhotoPath(m.getMemberPhotoPath());
 		member.setMemberType(m.getMemberType());
 		return member;
 	}
