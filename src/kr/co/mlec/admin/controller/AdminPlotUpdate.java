@@ -23,8 +23,6 @@ public class AdminPlotUpdate extends HttpServlet{
 		MovieInfoMapper mapper =MyAppSqlConfig.getSqlSession().getMapper(MovieInfoMapper.class);
 		
 		int movieSeq = Integer.parseInt(request.getParameter("movieSeq"));
-		System.out.println(movieSeq);
-		System.out.println(request.getParameter("moviePlot"));
 		MovieInfo movie = new MovieInfo();
 		
 		movie.setMovieSeq(movieSeq);

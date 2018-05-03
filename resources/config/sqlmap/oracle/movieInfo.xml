@@ -12,7 +12,7 @@
 		<result column="movie_runtime" property="movieRuntime"/>
 		<result column="movie_nation" property="movieNation"/>
 		<result column="movie_sales_share" property="movieSalesShare"/>
-		<result column="movie_plot" property="movieplot"/>
+		<result column="movie_plot" property="moviePlot"/>
 	</resultMap>
 
 	<insert id="insertMovieInfo" parameterType="movieinfo">
