@@ -59,6 +59,16 @@ public class MyPageInfoUpdateController extends HttpServlet{
 		String name = mRequest.getParameter("inputName3");
 		String email = mRequest.getParameter("inputEmail3");
 		String phone = mRequest.getParameter("inputPhone3");
+		String wheatherD = mRequest.getParameter("defaltPhotoGrid");
+		
+		//프로필 기본값 변경
+		if(wheatherD.equals("Y")) {
+			Member dafaulMem = new Member();
+			dafaulMem.setMemberPhotoName("default_profile.jpg");
+			dafaulMem.setMemberPhotoPath(uploadPath);
+			dafaulMem.setMemberId(sessionId);
+			mapper.insertProfilePhoto(dafaulMem);		
+		}
 		
 		if(name.equals("")) {
 			name=sessionName;
