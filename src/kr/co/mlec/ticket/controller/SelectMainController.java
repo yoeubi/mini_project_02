@@ -18,7 +18,7 @@ public class SelectMainController extends HttpServlet {
 		if(filmName != null) {
 			
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("/mini/test01.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ticket/selectFilm.jsp");
 			rd.forward(request, response);
 		}
 	}

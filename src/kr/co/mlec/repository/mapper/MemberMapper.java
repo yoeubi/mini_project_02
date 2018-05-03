@@ -12,4 +12,5 @@ public interface MemberMapper {
 	String searchPass(Member member);
 	int doubleCheckId(String id);
 	String passCheck(String id);
+	Member findMember(String id);
 }

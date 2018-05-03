@@ -24,64 +24,82 @@ public class MyPageInfoUpdateController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		
 		MemberMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(MemberMapper.class);
 		HttpSession session = request.getSession();
-		String pass = request.getParameter("inputPassword3");
-		String name = request.getParameter("inputName3");
-		String email = request.getParameter("inputEmail3");
-		String phone = request.getParameter("inputPhone3");
-		
 		Member user = (Member)session.getAttribute("user");
 		String sessionId= user.getMemberId();
 		String sessionPass= user.getMemberPass();
 		String sessionName= user.getMemberName();
 		String sessionEmail= user.getMemberEmail();
 		String sessionPhone= user.getMemberPhoneNo();
-		
+		System.out.println("세션이름"+sessionName);
 		
 		//프로필 사진 업로드
-		String uploadPath="${pageContext.request.contextPath}/images/upload";
-		String photoName = "/"+user.getMemberId();
-		File file = new File(uploadPath+photoName);
-		if(!file.exists()) file.mkdirs();
+//		 String dir = System.getProperty("user.dir");
+//		 String dir = MyPageInfoUpdateController.class.getResource("").getPath();
+//		 System.out.println("현재경로"+dir);
+//		 System.out.println("프로젝트명 : "+request.getContextPath());
+		String uploadPath="E:\\java-lec\\git\\mini_pro_2\\WebContent\\images\\profileUpload";
+
+//		/minipro2/WebContent/images/profileUpload
+//		String photoName = user.getMemberId();
+		File file = new File(uploadPath);
 		
+		 
 		MultipartRequest mRequest = new MultipartRequest(
 				request,  
-				uploadPath+photoName,
+				uploadPath,
 				1024 * 1024 * 100, 
 				"utf-8",  
 				new MlecFileRenamePolicy() 
 				);
 		
+		String pass = mRequest.getParameter("inputPassword3");
+		String name = mRequest.getParameter("inputName3");
+		String email = mRequest.getParameter("inputEmail3");
+		String phone = mRequest.getParameter("inputPhone3");
+		
+		if(name.equals("")) {
+			name=sessionName;
+//			System.out.println("이름넣음");
+		}
+		if(email.equals("")) {
+			email=sessionEmail;
+//			System.out.println("이메일 넣음");
+		}
+		if(phone.equals("")) {
+			phone=sessionPhone;
+//			System.out.println("핸드폰넣음");
+		}
+		
 		Enumeration<String> names = mRequest.getFileNames();
 		if(names.hasMoreElements()) {
+//			if(!file.exists()) file.mkdirs();
 			String fName = names.nextElement();
-			File f = mRequest.getFile(fName);
-			if (f != null) {
+			System.out.println("파일이름"+fName) ;
+			File f2 = mRequest.getFile(fName);
+			
+			if (f2 != null) {
 				// 데이터베이스에 파일 정보 저장
 				Member fMember = new Member();
-				fMember.setMemberPhotoName(user.getMemberId());
-				fMember.setMemberPhotoPath(uploadPath+photoName);
+				fMember.setMemberId(user.getMemberId());
+				fMember.setMemberPhotoName(mRequest.getFilesystemName(fName));
+				System.out.println(mRequest.getFilesystemName("파일 시스템이름"+fName));
+				fMember.setMemberPhotoPath(uploadPath);
 				
 				mapper.insertProfilePhoto(fMember);
+				Member upMem = mapper.findMember(user.getMemberId());
+				session.setAttribute("user", upMem);
 			}
 		}
 		
-		if(name == null) {
-			name=sessionName;
-		}
-		if(email == "") {
-			email=sessionEmail;
-		}
-		if(phone == "") {
-			phone=sessionPhone;
-		}
 //		System.out.println("세션비밀번호"+sessionPass);
-		System.out.println("파라미터 "+name);
-		System.out.println("파라미터 "+email);
-		System.out.println("파라미터 "+phone);
-		if(sessionPass.equals(pass)) {
-			System.out.println("비번 같음 확인");
+//		System.out.println("파라미터이름 "+name);
+//		System.out.println("파라미터 이메일"+email);
+//		System.out.println("파라미터 번호"+phone);
+		if(sessionPass.equals(pass)) { 
+//			System.out.println("비번 같음 확인");
 			Member member = new Member();
 			Member cloneMember = member.clone(user);
 			cloneMember.setMemberEmail(email);
