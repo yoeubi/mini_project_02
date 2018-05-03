@@ -134,7 +134,7 @@
 			</div>
 			<form class="form-horizontal" method="post" id="updateInfoForm"
 				action="${pageContext.request.contextPath}/myPageInfoUpdate"
-				enctype="multipart/form-data">
+				enctype="multipart/form-data" runat="server">
 				<!-- 프로필 사진 수정 -->
 				<div class="form-group">
 					<label class="col-sm-2 control-label">프로필사진</label>
@@ -153,8 +153,12 @@
 						<div class="helpV17">
 							<p class="ftRt">
 							<p class="text-left">
-								<input type="file" class="btn btn-default btn-sm"
-									name="profilePhoto" id="profilePhoto">
+							    <input type='file' id="imgInput" name="profilePhoto" style="display: none"/>
+<!-- 								<input type="file" class="btn btn-default btn-sm" -->
+<!-- 									name="profilePhoto" id="profilePhoto"> -->
+<!-- <form id="form" runat="server"> -->
+<!--     <input type='file' id="imgInput" /> -->
+<!-- </form> -->
 								<button type="button" class="btn btn-default" id="profileUploadBtn">사진 업로드</button>
 								<button type="button" class="btn btn-default" id="profileResetBtn">기본이미지 변경</button>
 							</p>
@@ -264,46 +268,34 @@
 			</form>
 		</div>
 	</div>
+	
 
 	<script>
 		$("#profileUploadBtn").click(function(){
-			$('#profilePhoto').click();
+			$('#imgInput').click();
 		});
 		$("#profileResetBtn").click(function(){
 			$("#profildPhotoGrid").attr("src", "/minipro2/images/profileUpload/default_profile.jpg");
 			$("#defaltPhotoGrid").attr("value", "Y");
 		});
-
-		// var upload = document.getElementsByTagName('input')[0],
-		//     holder = document.getElementById('holder'),
-		//     state = document.getElementById('status');
-
-		// if (typeof window.FileReader === 'undefined') {
-		//   state.className = 'fail';
-		// } else {
-		//   state.className = 'success';
-		//   state.innerHTML = 'File API & FileReader available';
-		// }
-
-		// upload.onchange = function (e) {
-		//   e.preventDefault();
-
-		//   var file = upload.files[0],
-		//       reader = new FileReader();
-		//   reader.onload = function (event) {
-		//     var img = new Image();
-		//     img.src = event.target.result;
-		//     // note: no onload required since we've got the dataurl...I think! :)
-		//     if (img.width > 560) { // holder width
-		//       img.width = 560;
-		//     }
-		//     holder.innerHTML = '';
-		//     holder.appendChild(img);
-		//   };
-		//   reader.readAsDataURL(file);
-
-		//   return false;
-		// };
+		
+		//이미지 파일 바로 보여주기
+		function readURL(input) {
+			 
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+		 
+		        reader.onload = function (e) {
+		            $('#profildPhotoGrid').attr('src', e.target.result);
+		        }
+		 
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+		 
+		$("#imgInput").change(function(){
+		    readURL(this);
+		});
 
 		// Get the modal
 		var modal = document.getElementById('myModal');

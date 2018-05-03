@@ -15,8 +15,16 @@
 			  		   <li ></li>
 			  		   </c:when>
 			  		   <c:otherwise>
-						<li><a>${sessionScope.user.memberName}님 환영합니다</a></li>
-						<li><a href="${pageContext.request.contextPath}/myPageForm">마이페이지</a></li>
+			  		   <c:choose>
+			  		   		<c:when test="${sessionScope.user.memberType}.equals(S)">
+								<li><a>${sessionScope.user.memberName}님 환영합니다</a></li>
+								<li><a href="${pageContext.request.contextPath}/admin/main">관리자페이지</a></li>
+			  		   		</c:when>
+			  		   		<c:otherwise>
+								<li><a>${sessionScope.user.memberName}님 환영합니다</a></li>
+								<li><a href="${pageContext.request.contextPath}/myPageForm">마이페이지</a></li>
+			  		   		</c:otherwise>
+			  		   </c:choose>
 			  		   </c:otherwise>
 			  		   </c:choose>
 			  		   

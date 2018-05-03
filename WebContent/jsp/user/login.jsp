@@ -65,7 +65,7 @@
           </div>
            
            <div class="page-middle">
-             <h3>SNS로그인<h6>SNS계정으로 로그인을 할 수 있습니다.</h6></h3>
+             <h3>SNS로그인</h3><h6>SNS계정으로 로그인을 할 수 있습니다.</h6>
              <hr>
            </div>
            <div class="form-group">
@@ -80,4 +80,19 @@
       </div>
      
 </body>
+<script>
+$("#loginBtn").click(function(){
+	$.ajax({
+		url:"/minipro2/loginCheck",
+		data:{"inputId3":$("#inputId3"), "inputPassword3":$("#inputPassword3")},
+		dataType:"json", 
+		success:function(data){
+			console.log("에이작스 성공");
+			if(data == ""){
+			alert("로그인 실패");
+			}
+		}
+	});
+});
+</script>
 </html>

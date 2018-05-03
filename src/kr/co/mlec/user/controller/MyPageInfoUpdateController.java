@@ -40,8 +40,10 @@ public class MyPageInfoUpdateController extends HttpServlet{
 //		 String dir = MyPageInfoUpdateController.class.getResource("").getPath();
 //		 System.out.println("현재경로"+dir);
 //		 System.out.println("프로젝트명 : "+request.getContextPath());
-		String uploadPath="E:\\java-lec\\git\\mini_pro_2\\WebContent\\images\\profileUpload";
-
+		
+		
+		String uploadPath= request.getServletContext().getRealPath("/") + "images\\profileUpload";
+		System.out.println("uploadPath : " + uploadPath);
 //		/minipro2/WebContent/images/profileUpload
 //		String photoName = user.getMemberId();
 		File file = new File(uploadPath);
@@ -67,7 +69,13 @@ public class MyPageInfoUpdateController extends HttpServlet{
 			dafaulMem.setMemberPhotoName("default_profile.jpg");
 			dafaulMem.setMemberPhotoPath(uploadPath);
 			dafaulMem.setMemberId(sessionId);
-			mapper.insertProfilePhoto(dafaulMem);		
+			dafaulMem.setMemberEmail(sessionEmail);
+			dafaulMem.setMemberName(sessionName);
+			dafaulMem.setMemberPass(sessionPass);
+			dafaulMem.setMemberPhoneNo(sessionPhone);
+			dafaulMem.setMemberType("U");
+			mapper.insertProfilePhoto(dafaulMem);	
+			session.setAttribute("user", dafaulMem);
 		}
 		
 		if(name.equals("")) {
@@ -109,9 +117,10 @@ public class MyPageInfoUpdateController extends HttpServlet{
 //		System.out.println("파라미터 이메일"+email);
 //		System.out.println("파라미터 번호"+phone);
 		if(sessionPass.equals(pass)) { 
-//			System.out.println("비번 같음 확인");
+			System.out.println("비번 같음 확인");
+			
 			Member member = new Member();
-			Member cloneMember = member.clone(user);
+			Member cloneMember = member.clone((Member)session.getAttribute("user"));
 			cloneMember.setMemberEmail(email);
 			cloneMember.setMemberName(name);
 			cloneMember.setMemberPhoneNo(phone);
