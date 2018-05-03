@@ -69,7 +69,7 @@ h1 {
 		<div class="item">
 			<ul id="content-slider" class="content-slider">
 				<c:forEach var="movie" items="${chart}" varStatus="m">
-					<li onclick="location.href='detail?movieSeq=${movie.movieSeq }'">
+					<li onclick="location.href='/minipro2/moviechart/detail?movieSeq=${movie.movieSeq }'">
 						<h1>${m.index + 1}</h1> 
 						<img src="/minipro2/images/poster/carol poster.jpg">
 						<h3>${movie.movieTitle}</h3>

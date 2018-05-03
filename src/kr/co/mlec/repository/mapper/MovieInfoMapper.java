@@ -8,4 +8,5 @@ public interface MovieInfoMapper {
 	void insertMovieInfo(MovieInfo movieinfo);
 	List<MovieInfo> selectMovieInfo();
 	MovieInfo selectMovieInfoByRank(int movieNo);
+	void updateMoviePlot(MovieInfo movieinfo);
 }

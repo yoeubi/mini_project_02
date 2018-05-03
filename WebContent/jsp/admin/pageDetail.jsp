@@ -24,7 +24,7 @@
 			<form id="plotForm">
 				<div class="form-group" id="movie-plot">
 					<div class="col-sm-2">줄거리</div>
-					<textarea name="moviePlot" rows="1" cols="1" style="height: 70px; width: 70%;"></textarea>
+					<textarea name="moviePlot" rows="1" cols="1" style="height: 70px; width: 70%;">${movie.moviePlot }</textarea>
 					<br>
 				</div>
 				<div class="helpV17">
@@ -111,18 +111,14 @@
 		e.preventDefault();
 		
 		$.ajax({
-			url: "<c:url value='/admin/plotRegist' />",
-			method: "POST",
+			url:"<c:url value='/admin/plotUpdate' />",
+			method:"POST",
 			data: {
-				moviePlot: $("#plotForm textarea").val(),
-				movieSeq: "${movie.movieSeq}"
+				movieSeq:"${movie.movieSeq}",
+				moviePlot:$("#plotForm textarea").val()
 			},
-			dataType: "json"
+			dataType:"json"
 		})
-		
-		.done(function (result){
-			$("#plotForm textarea[name='moviePlot']").val("");
-		});
 	});
 	
 	</script>
