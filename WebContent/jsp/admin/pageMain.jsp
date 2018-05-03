@@ -14,15 +14,15 @@
 	     <div class="page-header">
            <h1>관리자 페이지<h6>관리할 영화목록을 선택하세요</h6></h1>
               </div>
-           <div class="form-group" > 
-             <div class="col-sm-4"></div>
-             <div class="col-sm-6">
-               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-               <span id = "index">4월 2주</span>
-               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-             </div>
-              <div class="col-sm-3"></div>
-           </div>
+<!--            <div class="form-group" >  -->
+<!--              <div class="col-sm-4"></div> -->
+<!--              <div class="col-sm-6"> -->
+<!--                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+<!--                <span id = "index">4월 2주</span> -->
+<!--                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+<!--              </div> -->
+<!--               <div class="col-sm-3"></div> -->
+<!--            </div> -->
            
              <table class = "table table-hover" class="nav nav-tabs nav-justified">
              	<tr id = "tableTitle">
@@ -35,7 +35,7 @@
     	         		<td>${movie.movieSeq }</td>
         	     		<td>${movie.movieTitle }</td>
             	 		<td>
-             			<a href="detail?movieSeq="${movie.movieSeq }">관리</a> / <a href="">삭제</a>
+             			<a href="detail?movieSeq=${movie.movieSeq}">관리</a> / <a href="">삭제</a>
              			</td>
              		</tr>
              	</c:forEach>

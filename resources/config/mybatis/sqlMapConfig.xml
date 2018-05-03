@@ -13,7 +13,6 @@
 		<typeAlias alias="comment" type="kr.co.mlec.repository.domain.Comment" />
 		<typeAlias alias="actors" type="kr.co.mlec.repository.domain.Actors" />
 		<typeAlias alias="genres" type="kr.co.mlec.repository.domain.Genres" />
-		<typeAlias alias="plot" type="kr.co.mlec.repository.domain.Plot" />
 		<typeAlias alias="stilcut" type="kr.co.mlec.repository.domain.StilCut" />
 		<typeAlias alias="trailer" type="kr.co.mlec.repository.domain.Trailer" />
 		<typeAlias alias="movieposter" type="kr.co.mlec.repository.domain.MoviePoster" />
@@ -50,7 +49,6 @@
 		<mapper resource="config/sqlmap/oracle/comment.xml"/>
 		<mapper resource="config/sqlmap/oracle/actors.xml"/>
 		<mapper resource="config/sqlmap/oracle/genres.xml"/>
-		<mapper resource="config/sqlmap/oracle/plot.xml"/>
 		<mapper resource="config/sqlmap/oracle/moviePoster.xml"/>
 		<mapper resource="config/sqlmap/oracle/stilCut.xml"/>
 		<mapper resource="config/sqlmap/oracle/trailer.xml"/>

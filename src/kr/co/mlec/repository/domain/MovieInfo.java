@@ -1,5 +1,9 @@
 package kr.co.mlec.repository.domain;
 
+/**
+ * @author eunj2n
+ *
+ */
 public class MovieInfo {
     //  영화고유번호
     private int movieSeq;
@@ -19,8 +23,20 @@ public class MovieInfo {
     private String movieNation;
     //  예매율
     private String movieSalesShare;
+    // 줄거리
+    private String moviePlot;
+    
+    
 
-    public int getMovieSeq() {
+    public String getMoviePlot() {
+		return moviePlot;
+	}
+
+	public void setMoviePlot(String moviePlot) {
+		this.moviePlot = moviePlot;
+	}
+
+	public int getMovieSeq() {
         return movieSeq;
     }
 
