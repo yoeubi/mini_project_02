@@ -1,3 +1,4 @@
+<%@page import="com.google.gson.Gson"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -85,7 +86,7 @@
 						},
 						click: function () { //Click event
 							if (this.status() == 'available') { //optional seat
-								$('<li>'+(this.settings.row+1)+'-'+this.settings.label+'자리</li>')
+								$('<li>'+(this.settings.row+1)+'-'+this.settings.label+' </li>')
 									.attr('id', 'cart-item-'+this.settings.id)
 									.data('seatId', this.settings.id)
 									.appendTo($cart);
@@ -131,42 +132,59 @@
 						alert("좌석을 선택하세요.")
 					}else{
 						var result = confirm("예매하시겠습니까?");
-						if(result){
-							var IMP = window.IMP;
-							IMP.init('imp19043807');
-							IMP.request_pay({
-							    pg : 'kakao',
-							    pay_method : 'card',
-							    merchant_uid : 'merchant_' + new Date().getTime(),
-							    name : '주문명:결제테스트',
-							    amount : $("#total").text(),
-							    buyer_email : 'iamport@siot.do',
-							    buyer_name : "테스트용",
-							    buyer_tel : '010-1234-5678',
-							    buyer_addr : '서울특별시 강남구 삼성동',
-							    buyer_postcode : '123-456'
-							}, function(rsp) {
-							    if ( rsp.success ) {
-							        var msg = '결제가 완료되었습니다.';
-							        msg += '고유ID : ' + rsp.imp_uid;
-							        msg += '상점 거래ID : ' + rsp.merchant_uid;
-							        msg += '결제 금액 : ' + rsp.paid_amount;
-							        msg += '카드 승인번호 : ' + rsp.apply_num;
-							        $.ajax({
-							        	url : "/minipro2/controller/confirm",
-							        	data : `{ "" : "" }`,
-							        	dataType : "",
-							        	success : function(data){
-							        		location.assign("/minipro2/main");
-							        	}
-							        });
-							    } else {
-							        var msg = '결제에 실패하였습니다.';
-							        msg += '에러내용 : ' + rsp.error_msg;
-							    }
-								alert(msg);
-							});
-						}
+						$.ajax({
+							type : "POST",
+				        	url : "/minipro2/controller/confirm",
+				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
+				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
+				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
+					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
+					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
+				        			"price" : $("#total").text(),"cardNum": "test" ,
+				        			"memberId":"test","seat": $("#selected-seats > li").text()
+				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
+				        	dataType : "json",
+				        	success : function(data){
+				        		alert("예매가 완료되었습니다.")
+				        		location.assign("/minipro2/main");
+				        	}
+				        });
+// 						if(result){
+// 							var IMP = window.IMP;
+// 							IMP.init('imp19043807');
+// 							IMP.request_pay({
+// 							    pg : 'kakao',
+// 							    pay_method : 'card',
+// 							    merchant_uid : 'merchant_' + new Date().getTime(),
+// 							    name : '주문명:결제테스트',
+// 							    amount : $("#total").text(),
+// 							    buyer_email : 'iamport@siot.do',
+// 							    buyer_name : "테스트용",
+// 							    buyer_tel : '010-1234-5678',
+// 							    buyer_addr : '서울특별시 강남구 삼성동',
+// 							    buyer_postcode : '123-456'
+// 							}, function(rsp) {
+// 							    if ( rsp.success ) {
+// 							        var msg = '결제가 완료되었습니다.';
+// 							        msg += '고유ID : ' + rsp.imp_uid;
+// 							        msg += '상점 거래ID : ' + rsp.merchant_uid;
+// 							        msg += '결제 금액 : ' + rsp.paid_amount;
+// 							        msg += '카드 승인번호 : ' + rsp.apply_num;
+// 							        $.ajax({
+// 							        	url : "/minipro2/controller/confirm",
+// 							        	data : `{ "" : "" }`,
+// 							        	dataType : "",
+// 							        	success : function(data){
+// 							        		location.assign("/minipro2/main");
+// 							        	}
+// 							        });
+// 							    } else {
+// 							        var msg = '결제에 실패하였습니다.';
+// 							        msg += '에러내용 : ' + rsp.error_msg;
+// 							    }
+// 								alert(msg);
+// 							});
+// 						}
 					}
 				});
 			</script>

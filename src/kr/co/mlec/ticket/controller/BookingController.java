@@ -31,30 +31,36 @@ public class BookingController extends HttpServlet {
 		String locationCode = codes[0];
 		LocationMapper locationMapper = MyAppSqlConfig.getSqlSession().getMapper(LocationMapper.class);
 		String locationName = locationMapper.selectLocationName(locationCode);
+		request.setAttribute("locationCode", locationCode);
 		request.setAttribute("locationName", locationName);
 		
 		String branchCode = String.format("%s-%s", codes[0], codes[1]);
 		BranchMapper branchMapper = MyAppSqlConfig.getSqlSession().getMapper(BranchMapper.class);
 		String branchName = branchMapper.selectBranchName(branchCode);
+		request.setAttribute("branchCode", branchCode);
 		request.setAttribute("branchName", branchName);
 		
 		String screeningCode = String.format("%s-%s-%s", codes[0],codes[1],codes[2]);
 		ScreeningMapper screeningMapper = MyAppSqlConfig.getSqlSession().getMapper(ScreeningMapper.class);
 		String screeningDate = screeningMapper.selectScreeningDate(screeningCode);
+		request.setAttribute("screeningCode", screeningCode);
 		request.setAttribute("screeningDate", screeningDate);
 		
 		String filmCode = String.format("%s-%s-%s-%s", codes[0],codes[1],codes[2],codes[3]);
 		FilmMapper filmMapper = MyAppSqlConfig.getSqlSession().getMapper(FilmMapper.class);
 		String filmName = filmMapper.selectFilmName(filmCode);
+		request.setAttribute("filmCode", filmCode);
 		request.setAttribute("filmName", filmName);
 		
 		String theaterCode = String.format("%s-%s-%s-%s-%s", codes[0],codes[1],codes[2],codes[3],codes[4]);
 		TheaterMapper theaterMapper = MyAppSqlConfig.getSqlSession().getMapper(TheaterMapper.class);
 		String theaterName = theaterMapper.selectTheaterName(theaterCode);
+		request.setAttribute("theaterCode", theaterCode);
 		request.setAttribute("theaterName", theaterName);
 		
 		ShowtimesMapper showtimesMapper = MyAppSqlConfig.getSqlSession().getMapper(ShowtimesMapper.class);
 		String showTime = showtimesMapper.selectShowTime(showCode);
+		request.setAttribute("showCode", showCode);
 		request.setAttribute("showTime", showTime);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/ticket/selectSeat.jsp");

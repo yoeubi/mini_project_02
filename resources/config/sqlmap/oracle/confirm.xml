@@ -2,5 +2,59 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="kr.co.mlec.repository.mapper.ConfirmMapper">
+	<resultMap type="confirm" id="confirmMap">
+		<result column="confirm_seq" property="confirmSeq" />
+		<result column="member_id" property="memberId" />
+		<result column="confirm_date" property="confirmDate" />
+		<result column="location_code" property="locationCode" />
+		<result column="location_name" property="locationName" />
+		<result column="branch_code" property="branchCode" />
+		<result column="branch_name" property="branchName" />
+		<result column="screening_code" property="screeningCode" />
+		<result column="screening_date" property="screeningDate" />
+		<result column="film_code" property="filmCode" />
+		<result column="film_name" property="filmName" />
+		<result column="show_code" property="showCode" />
+		<result column="show_time" property="showTime"/>
+		<result column="price" property="price"/>
+		<result column="card_num" property="cardNum"/>
+		<result column="seat" property="seat"/>
+	</resultMap>
 	
+	<insert id="insertConfirm">
+		insert into tb_confirm(
+			confirm_seq,
+			member_id,
+			location_code,
+			location_name,
+			branch_code,
+			branch_name,
+			screening_code,
+			screening_date,
+			film_code,
+			film_name,
+			show_code,
+			show_time,
+			price,
+			card_num,
+			seat
+		) values (
+			s_confirm_seq.nextval,
+			#{memberId},
+			#{locationCode},
+			#{locationName},
+			#{branchCode},
+			#{branchName},
+			#{screeningCode},
+			#{screeningDate},
+			#{filmCode},
+			#{filmName},
+			#{showCode},
+			#{showTime},
+			#{price},
+			#{cardNum},
+			#{seat}		
+		)
+		
+	</insert>
 </mapper>

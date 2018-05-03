@@ -16,10 +16,10 @@ public class SelectMainController extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String filmName = request.getParameter("filmName");
 		if(filmName != null) {
-			
-		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ticket/selectFilm.jsp");
-			rd.forward(request, response);
+			request.setAttribute("filmName", filmName);
+			System.out.println(filmName);
 		}
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/ticket/selectFilm.jsp");
+		rd.forward(request, response);
 	}
 }

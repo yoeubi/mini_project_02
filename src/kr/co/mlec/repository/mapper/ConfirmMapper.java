@@ -1,5 +1,7 @@
 package kr.co.mlec.repository.mapper;
 
-public interface ConfirmMapper {
+import kr.co.mlec.repository.domain.Confirm;
 
+public interface ConfirmMapper {
+	void insertConfirm(Confirm confirm);
 }

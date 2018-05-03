@@ -44,6 +44,7 @@
 	</div>
 </div>
 <script>
+
 var locations = $("#location");
 var branches = $("#branch");
 var screenings = $("#screening");

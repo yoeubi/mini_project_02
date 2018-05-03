@@ -4,103 +4,182 @@ import java.util.Date;
 
 public class Confirm {
 
-    //  예매번호
     private int confirmSeq;
 
-    //  사용자명
     private String memberId;
 
-    //  영화번호
-    private int movieSeq;
+    private Date confirmDate;
 
-    //  지점번호
-    private int branchSeq;
+    private String locationCode;
 
-    //  상영시간
+    private String locationName;
+
+    private String branchCode;
+
+    private String branchName;
+
+    private String screeningCode;
+
+    private String screeningDate;
+
+    private String filmCode;
+
+    private String filmName;
+
+    private String showCode;
+
     private String showTime;
 
-    //  좌석들
-    private String seats;
-
-    //  금액
     private int price;
 
-    //  예매날짜
-    private Date regDate;
+    private String cardNum;
 
-    //  상영날짜
-    private String showingDays;
+    private String seat;
 
-    public int getConfirmSeq() {
-        return confirmSeq;
-    }
+	public int getConfirmSeq() {
+		return confirmSeq;
+	}
 
-    public void setConfirmSeq(int confirmSeq) {
-        this.confirmSeq = confirmSeq;
-    }
+	public Confirm setConfirmSeq(int confirmSeq) {
+		this.confirmSeq = confirmSeq;
+		return this;
+	}
 
-    public String getMemberId() {
-        return memberId;
-    }
+	public String getMemberId() {
+		return memberId;
+	}
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
-    }
+	public Confirm setMemberId(String memberId) {
+		this.memberId = memberId;
+		return this;
+	}
 
-    public int getMovieSeq() {
-        return movieSeq;
-    }
+	public Date getConfirmDate() {
+		return confirmDate;
+	}
 
-    public void setMovieSeq(int movieSeq) {
-        this.movieSeq = movieSeq;
-    }
+	public Confirm setConfirmDate(Date confirmDate) {
+		this.confirmDate = confirmDate;
+		return this;
+	}
 
-    public int getBranchSeq() {
-        return branchSeq;
-    }
+	public String getLocationCode() {
+		return locationCode;
+	}
 
-    public void setBranchSeq(int branchSeq) {
-        this.branchSeq = branchSeq;
-    }
+	public Confirm setLocationCode(String locationCode) {
+		this.locationCode = locationCode;
+		return this;
+	}
 
-    public String getShowTime() {
-        return showTime;
-    }
+	public String getLocationName() {
+		return locationName;
+	}
 
-    public void setShowTime(String showTime) {
-        this.showTime = showTime;
-    }
+	public Confirm setLocationName(String locationName) {
+		this.locationName = locationName;
+		return this;
+	}
 
-    public String getSeats() {
-        return seats;
-    }
+	public String getBranchCode() {
+		return branchCode;
+	}
 
-    public void setSeats(String seats) {
-        this.seats = seats;
-    }
+	public Confirm setBranchCode(String branchCode) {
+		this.branchCode = branchCode;
+		return this;
+	}
 
-    public int getPrice() {
-        return price;
-    }
+	public String getBranchName() {
+		return branchName;
+	}
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+	public Confirm setBranchName(String branchName) {
+		this.branchName = branchName;
+		return this;
+	}
 
-    public Date getRegDate() {
-        return regDate;
-    }
+	public String getScreeningCode() {
+		return screeningCode;
+	}
 
-    public void setRegDate(Date regDate) {
-        this.regDate = regDate;
-    }
+	public Confirm setScreeningCode(String screeningCode) {
+		this.screeningCode = screeningCode;
+		return this;
+	}
 
-    public String getShowingDays() {
-        return showingDays;
-    }
+	public String getScreeningDate() {
+		return screeningDate;
+	}
 
-    public void setShowingDays(String showingDays) {
-        this.showingDays = showingDays;
-    }
+	public Confirm setScreeningDate(String screeningDate) {
+		this.screeningDate = screeningDate;
+		return this;
+	}
+
+	public String getFilmCode() {
+		return filmCode;
+	}
+
+	public Confirm setFilmCode(String filmCode) {
+		this.filmCode = filmCode;
+		return this;
+	}
+
+	public String getFilmName() {
+		return filmName;
+	}
+
+	public Confirm setFilmName(String filmName) {
+		this.filmName = filmName;
+		return this;
+	}
+
+	public String getShowCode() {
+		return showCode;
+	}
+
+	public Confirm setShowCode(String showCode) {
+		this.showCode = showCode;
+		return this;
+	}
+
+	public String getShowTime() {
+		return showTime;
+	}
+
+	public Confirm setShowTime(String showTime) {
+		this.showTime = showTime;
+		return this;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public Confirm setPrice(int price) {
+		this.price = price;
+		return this;
+	}
+
+	public String getCardNum() {
+		return cardNum;
+	}
+
+	public Confirm setCardNum(String cardNum) {
+		this.cardNum = cardNum;
+		return this;
+	}
+
+	public String getSeat() {
+		return seat;
+	}
+
+	public Confirm setSeat(String seat) {
+		this.seat = seat;
+		return this;
+	}
+
+   
 
 }
