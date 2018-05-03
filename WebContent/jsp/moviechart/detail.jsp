@@ -61,11 +61,11 @@ ul {
 			<h4>${movie.movieTitleEng }</h4>
 			<h3 style="text-align: right;">예매율 : ${movie.movieSalesShare }%</h3>
 			<hr style="border-top: 1px solid black;">
-			<h4>개봉일  :  ${movie.movieReleaseDate}</h4>
-			<h4>개요  :  ${movie.movieRating}, ${movie.movieRuntime }분,
+			<h4>개봉일 : ${movie.movieReleaseDate}</h4>
+			<h4>개요 : ${movie.movieRating}, ${movie.movieRuntime }분,
 				${movie.movieNation }</h4>
 			<h4>
-				장르  :  
+				장르 :
 				<c:forEach var="genre" items="${gen }" varStatus="sta">
 					<c:if test="${!sta.first}">,</c:if>
 					${genre.movieGenre }
@@ -77,9 +77,9 @@ ul {
 			<hr style="border-top: 1px solid black; width: 94%;">
 			<div class="btn-group" role="group">
 				<button type="button" class="btn btn-default"
-					onclick="show('detail')">상세정보</button>
+					onclick="show('detail')">줄거리</button>
 				<button type="button" class="btn btn-default"
-					onclick="show('detail')">배우 / 감독</button>
+					onclick="show('actdir')">감독 / 출연진</button>
 				<button type="button" class="btn btn-default"
 					onclick="show('trailer') ">트레일러</button>
 				<button type="button" class="btn btn-default"
@@ -90,22 +90,29 @@ ul {
 			<hr style="border-top: 1px solid black; width: 94%;">
 		</div>
 		<div id="detail" class="bottom">
-			<h2>감독 : </h2>
-			<p> ${movie.movieDirector }</p>
-			<h2>
-				배우 :
-				<c:forEach var="actor" items="${act }" varStatus="vs">
-					<c:if test="${!vs.first}">,</c:if>
-				${actor.movieActor } 
-				</c:forEach>
-			</h2>
-			<h2>줄거리 : 2045년, 암울한 현실과 달리 가상현실 오아시스(OASIS)에서는 누구든 원하는 캐릭터로
+			<h1>줄거리</h1>
+			<hr>
+			<p class="txt">2045년, 암울한 현실과 달리 가상현실 오아시스(OASIS)에서는 누구든 원하는 캐릭터로
 				어디든지 갈 수 있고, 뭐든지 할 수 있고 상상하는 모든 게 가능하다. 웨이드 와츠(타이 쉐리던) 역시 유일한 낙은
 				대부분의 사람들이 하루를 보내는 오아시스에 접속하는 것이다. 어느 날 오아시스의 창시자인 괴짜 천재 제임스 할리데이(마크
 				라이런스)는 자신이 가상현실 속에 숨겨둔 3개의 미션에서 우승하는 사람에게 오아시스의 소유권과 막대한 유산을 상속한다는
 				유언을 남기고, 그가 사랑했던 80년대 대중문화 속에 힌트가 있음을 알린다. 제임스 할리데이를 선망했던 소년 ‘웨이드
 				와츠’가 첫 번째 수수께끼를 푸는 데 성공하자 이를 저지하기 위해 현실에서 살인도 마다하지 않는 ‘IOI’라는 거대 기업이
-				뛰어든다. 모두의 꿈과 희망이 되는 오아시스를 지키기 위해서는 반드시 우승해야 한다! 그리고 우승을 위해서는</h2>
+				뛰어든다. 모두의 꿈과 희망이 되는 오아시스를 지키기 위해서는 반드시 우승해야 한다! 그리고 우승을 위해서는</p>
+		</div>
+		<div id="actdir" class="bottom" style="display: none;">
+			<h1>감독</h1>
+			<hr>
+			<p class="txt">${movie.movieDirector }</p>
+			<br>
+			<h1>출연진</h1>
+			<hr>
+			<p class="txt">
+				<c:forEach var="actor" items="${act }" varStatus="vs">
+					<c:if test="${!vs.first}">,</c:if>
+				${actor.movieActor } 
+			</c:forEach>
+			</p>
 		</div>
 		<div id="stilcut" class="bottom" style="display: none;">
 			<div class="item">
@@ -150,20 +157,16 @@ ul {
 			<div class="tra">트레일러</div>
 			<div class="tra">트레일러</div>
 			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
 		</div>
+	
 		<div id="review" class="bottom" style="display: none;">
 			<div class="review_write">
-				<form action="commentRegist" method="post">
-					<input type="hidden" name="movieSeq" value="${movie.movieSeq }" />
-					<input type="hidden" name="id" value="c" /> <select name="star"
+				<form id="rForm">
+<%-- 					<input type="hidden" name="movieSeq" value="${movie.movieSeq }" /> --%>
+<!-- 					<input type="hidden" name="id" value="c" />  -->
+					<select name="star"
 						class="form-control"
-						style="height: 70px; width: 20%; float: left;">
+						style="height: 70px; width: 20%; float: left;" >
 						<option value=1>★☆☆☆☆</option>
 						<option value=2>★★☆☆☆</option>
 						<option value=3>★★★☆☆</option>
@@ -171,65 +174,35 @@ ul {
 						<option value=5>★★★★★</option>
 					</select>
 					<textarea name="content" id="text" class="form-control" rows="1"
-						cols="1" rows="1"
+						cols="1" rows="1" resize="none"
 						style="height: 70px; width: 70%; float: left; margin-right: 10px;"
 						placeholder="최대 한글 150자까지 가능하며, 로그인  후 이용가능합니다."></textarea>
 					<p class="txt-len">
 						<span id="txt-cnt">0</span>/150
 					</p>
-					<button class="btn btn-primary" style="height: 38px;">등록</button>
+					<button id="combu" class="btn btn-primary" style="height: 38px;">등록</button>
 				</form>
 
 			</div>
-			<table class="table-bordered" style="text-align: center;" >
-				<tr style="height: 40px;">
-					<th style="width: 10%; text-align: center;">평점</th>
-					<th style="width: 60%; text-align: center;">한줄평</th>
-					<th style="width: 10%; text-align: center;">글쓴이</th>
-					<th style="width: 10%; text-align: center;">등록일</th>
-					<th style="width: 10%; text-align: center;">수정 / 삭제</th>
-				</tr>
-				<c:forEach var="comment" items="${com }">
-					<tr style="height: 40px;">
-						<c:choose>
-							<c:when test="${'1' eq comment.commentStar}">
-								<td>★☆☆☆☆</td>
-							</c:when>
-							<c:when test="${'2' eq comment.commentStar}">
-								<td>★★☆☆☆</td>
-							</c:when>
-							<c:when test="${'3' eq comment.commentStar}">
-								<td>★★★☆☆</td>
-							</c:when>
-							<c:when test="${'4' eq comment.commentStar}">
-								<td>★★★★☆</td>
-							</c:when>
-							<c:when test="${'5' eq comment.commentStar}">
-								<td>★★★★★</td>
-							</c:when>
-						</c:choose>
-						<td>${comment.content}</td>
-						<td valign="middle">${comment.memberId}</td>
-						<td valign="middle"><fmt:formatDate
-								value="${comment.commentRegdate }" pattern="yyyy.MM.dd" /></td>
-						<td valign="middle"><a
-							href="detail?movieSeq=${movie.movieSeq }&commentSeq=${comment.commentSeq}">수정</a>
-							/ <a
-							href="commentDelete?movieSeq=${movie.movieSeq }&commentSeq=${comment.commentSeq}">삭제</a></td>
-					</tr>
-				</c:forEach>
-
-			</table>
+			<form action="commentUpdate" method="post">
+				<input type="hidden" name="movieSeq" value="${movie.movieSeq }" />
+				<input type="hidden" name="commentSeq" value="${commentSeq }" />
+				
+				<!--   댓글 목록이 들어갈곳-->
+				<div id="commentList"></div>
+			</form>
 		</div>
 	</div>
 	<script>
 		function show(kind) {
 			var detail = document.querySelector("#detail");
+			var actdir = document.querySelector("#actdir");
 			var trailer = document.querySelector("#trailer");
 			var stilcut = document.querySelector("#stilcut");
 			var review = document.querySelector("#review");
 
 			detail.style.display = "none";
+			actdir.style.display = "none";
 			trailer.style.display = "none";
 			stilcut.style.display = "none";
 			review.style.display = "none";
@@ -241,6 +214,184 @@ ul {
 				$("#text").val($("#text").val().substring(0, 150));
 			}
 			$("#txt-cnt").text($("#text").val().length);
+		})
+
+		$("button:eq(2)").click(function() {
+			console.log("눌림")
+		})
+
+		// 댓글 목록을 만드는 함수
+		function makeCommentList(result) {
+			var html = "";
+			html += '<table class="table-bordered" style="text-align: center;">';
+			html += '    <tr style="height: 40px;">';
+			html += '        <th style="width: 10%; text-align: center;">평점</th>';
+			html += '        <th style="width: 60%; text-align: center;">한줄평</th>';
+			html += '        <th style="width: 10%; text-align: center;">글쓴이</th>';			
+			html += '        <th style="width: 10%; text-align: center;">등록일</th>';
+			html += '        <th style="width: 10%; text-align: center;">수정 / 삭제</th>';
+			html += '    </tr>';
+			for(var i = 0; i < result.length; i++){
+				var com = result[i];
+				html += '<tr id="row' + com.commentSeq + '" style="height: 40px;">';
+				switch (com.commentStar) {
+					case 1:
+						html += '<td>★☆☆☆☆</td>';
+						break;
+					case 2:
+						html += '<td>★★☆☆☆</td>';
+						break;
+					case 3:
+						html += '<td>★★★☆☆</td>';
+						break;
+					case 4:
+						html += '<td>★★★★☆</td>';
+						break;
+					case 5:
+						html += '<td>★★★★★</td>';
+						break;
+				}
+				html += '<td>'+com.content+'</td>';
+				html += '<td>'+com.memberId+'</td>';
+				var date = new Date(com.commentRegdate);
+				var time = date.getFullYear() + "."
+				  		 + (date.getMonth() + 1) + "."
+				  		 + date.getDate() + "<br>"
+				  		 + date.getHours() + ":"
+				  		 + date.getMinutes() + ":"
+				  		 + date.getSeconds();
+				html += '<td>'+ time +'</td>';
+				html += '<td>';
+				html += '    <a href="javascript:commentUpdateForm(' + com.commentSeq + ')">수정</a>';
+				html += '    /';
+				html += '    <a href="javascript:commentDelete(' + com.commentSeq + ')">삭제</a>';
+				html += '</td>';
+				html += '</tr>';
+			}
+			if(result.length == 0){
+				html += '<tr><td colspan="5">현재 입력된 댓글이 존재하지 않습니다.</td></tr>';
+			}
+			html += "</table>";
+			$("#commentList").html(html);
+		}
+		
+		// 댓글 목록을 조회
+		function commentList(){
+			$.ajax({
+				url: "<c:url value='/moviechart/commentList'/>",
+				data: {movieSeq: "${movie.movieSeq}"},
+				dataType: "json",
+				success: makeCommentList
+			})
+		}
+		
+		// 디테일 로딩시 댓글 목록 불러옴
+		commentList();
+		
+		// 댓글등록
+		$("#rForm").submit(function (e) {
+			// 기본적인 이벤트를 취소함
+			e.preventDefault();
+			
+			$.ajax({
+				url: "<c:url value='/moviechart/commentRegist'/>",
+				type: "POST",
+				data: {
+					movieSeq: "${movie.movieSeq}",
+					memberId: "c",
+					commentStar: $("#rForm select").val(),
+					content: $("#rForm textarea").val()
+				},
+				dataType: "json"
+			})
+			// ajax 성공시 실행함수
+			.done(function (result) {
+// 				if (!'${user.id}') {
+// 					$("#rForm input[name='writer']").val("");
+// 				}
+				$("#rForm textarea[name='content']").val("");
+				
+				makeCommentList(result);
+			});
+		});		
+		
+		function commentCancel(commentSeq) {
+			$("#row" + commentSeq).show();
+			$("#modRow" + commentSeq).remove();
+		}
+		
+		
+		// 댓글 수정 하는 폼
+		function commentUpdateForm(commentSeq) {
+			// display 속성을 block으로 바꿈
+			// row로 시작하나
+			$("#commentList tr[id^=row]").show();
+			// 특정요소를 제거한다
+			$("#commentList tr[id^=modRow]").remove();
+			
+			var modId = $("#row" + commentSeq + " > td:eq(0)").text();
+			var modContent = $("#row" + commentSeq + " > td:eq(1)").text();
+// 			최대한글 지정, 별점 체크 slected
+			var html = '';
+			html += '<tr id="modRow' + commentSeq + '">';
+			html += '	<td>'
+			html += '		<select name="star">'
+			html += '			<option value=1>★☆☆☆☆</option>';
+			html += '			<option value=2>★★☆☆☆</option>';
+			html += '			<option value=3>★★★☆☆</option>';
+			html += '			<option value=4>★★★★☆</option>';
+			html += '			<option value=5>★★★★★</option>';
+			html += '		</select>';	
+			html += '   </td>';
+			html += '	<td>';
+			html += '		<div class="form-group">';
+			html += '			<input type="text" id="uptext" name="content" value="' + modContent + '" class="form-control input-wp2" placeholder="내용을 입력하세요">';
+			html += '		</div>';
+			html += '	</td>';
+			html += '	<td colspan="3">'; 
+			html += '		<a href="javascript:commentUpdate(' + commentSeq + ');">수정</a>';
+			html += '		/';
+			html += '		<a href="javascript:commentCancel(' + commentSeq + ');">취소</a>';
+			html += '	</td>';
+			html += '</tr>';
+			$("#row" + commentSeq).after(html);	
+			$("#row" + commentSeq).hide();
+		}
+		
+		// 댓글수정
+		function commentUpdate(commentSeq) {
+			$.ajax({
+				url: "<c:url value='/moviechart/commentUpdate'/>",
+				type: "POST",
+				data: {
+					movieSeq: "${movie.movieSeq}", 
+					content: $("#modRow" + commentSeq + " input[name=content]").val(), 
+					commentSeq: commentSeq
+				},
+				dataType: "json",
+				success: function (result) {
+					makeCommentList(result);
+				} 
+			});
+		}
+		
+		// 댓글삭제
+		function commentDelete(commentSeq) {
+			$.ajax({
+				url: "<c:url value='/moviechart/commentDelete'/>",
+				data: {
+					movieSeq: "${movie.movieSeq}", 
+					commentSeq: commentSeq
+				},
+				dataType: "json",
+				success: makeCommentList
+			});
+		}
+			
+		$("#uptext").keyup(function() {
+			if ($("#uptext").val().length >= 150) {
+				$("#uptext").val($("#uptext").val().substring(0, 150));
+			}
 		})
 	</script>
 </body>

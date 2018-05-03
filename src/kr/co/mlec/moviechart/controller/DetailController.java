@@ -27,18 +27,23 @@ public class DetailController extends HttpServlet{
 		MovieInfoMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(MovieInfoMapper.class);
 		ActorsMapper actmapper = MyAppSqlConfig.getSqlSession().getMapper(ActorsMapper.class);
 		GenresMapper genmapper = MyAppSqlConfig.getSqlSession().getMapper(GenresMapper.class);
-		CommentMapper commapper = MyAppSqlConfig.getSqlSession().getMapper(CommentMapper.class);
+//		CommentMapper commapper = MyAppSqlConfig.getSqlSession().getMapper(CommentMapper.class);
 		
 		int movieSeq = Integer.parseInt(request.getParameter("movieSeq"));
 		MovieInfo movie = mapper.selectMovieInfoByRank(movieSeq);
+		request.setAttribute("movie", movie);
+		
 		List<Actors> act = actmapper.selectActors(movieSeq);
 		List<Genres> gen = genmapper.selectGenres(movieSeq);
-		List<Comment> com = commapper.selectComment(movieSeq);
+//		List<Comment> com = commapper.selectComment(movieSeq);
 		
-		request.setAttribute("movie", movie);
 		request.setAttribute("act", act);
 		request.setAttribute("gen", gen);
-		request.setAttribute("com", com);
+//		request.setAttribute("com", com);
+		
+		// 댓글 목록에서 수정 링크 클릭시 값이 넘어옴
+		request.setAttribute("commentSeq", request.getParameter("commentSeq"));
+//		System.out.println(request.getParameter("commentSeq"));
 		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/moviechart/detail.jsp");

@@ -12,24 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import kr.co.mlec.common.db.MyAppSqlConfig;
-import kr.co.mlec.repository.domain.Comment;
 import kr.co.mlec.repository.mapper.CommentMapper;
 
-@WebServlet("/moviechart/commentUpdate")
-public class CommentUpdateController extends HttpServlet{
+@WebServlet("/moviechart/commentList")
+public class CommentListController extends HttpServlet{
 
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CommentMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(CommentMapper.class);
-		
-		int commentSeq = Integer.parseInt(request.getParameter("commentSeq"));
+	
 		int movieSeq = Integer.parseInt(request.getParameter("movieSeq"));
-
-		Comment comment = new Comment();
-		comment.setContent(request.getParameter("content"));
-		comment.setCommentSeq(commentSeq);
-		
-		mapper.updateComment(comment);
 		
 		response.setContentType("application/json; charset=utf-8"); 
 		PrintWriter out = response.getWriter();

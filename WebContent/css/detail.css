@@ -1,3 +1,8 @@
+/* 댓글리스트 */
+#commentList{
+	width: 500px;
+}
+
 /* 로고 */
 h1.movie_chart{
 	font-size: 50px;
@@ -15,7 +20,7 @@ button:focus{
 /* 중간 내용창 시작 주요정보(팝업창)*/
 #middle{
 	width : 83%;
-	height: 1000px ;
+	height: 1200px ;
 /* 	background: #dbdbdb ; */
 	margin : 0 auto;
 	padding-top: 30px;
@@ -65,7 +70,7 @@ button:focus{
 /*중간 5개 버튼*/
 #midbutton div{
 	float: none;
-	
+	margin: 0 14%;
 }
 .btn-group button {
 	margin: 0 auto;
@@ -86,29 +91,21 @@ button:focus{
 	outline : none;
 }
 
-#detail{
-	padding-top: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
 /* 아래영역지정 */
 .bottom{
-	overflow: scroll;
-	overflow-x:hidden;
 	width: 94%;
-	height: 500px;
+	height: 700px;
 	margin: 0 auto;
 	margin-top: 20px;
 /* 	border: 1px solid; */
 	
 }
 
-/* 디테일의 주요정보내용 */
-#scroll p{
+.txt{
 	font-size: 20px;
-	padding: 30px;
-	letter-spacing: 2px;
+	line-height: 40px;
+	margin-right: 15px;
 }
 
 /*메인 구간*/
@@ -128,18 +125,10 @@ button:focus{
 	float: left;
 }
 
-.item{
-	margin-top: 30px;
-}
-
 .clearfix {
 	margin:0 auto;
 }
 
-#chart{
-	padding-left:30px; 
-	padding-right: 30px;
-}
 
 /*리뷰 write*/
 .review_write{
