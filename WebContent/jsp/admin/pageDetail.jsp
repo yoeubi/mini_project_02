@@ -11,12 +11,17 @@
   <div class="container">
       
 	     <div class="page-header">
-           <h1>영화 이미지 상세페이지 <h6></h1>
            <div class="form-group">  
-                <h3 id = "movieTitle">어벤져스:인피니트 워</h3>
+                <h3 id = "movieTitle">영화 제 목</h3>
            </div>
         </div>
+      <form id="deForm" action="" enctype="application/x-www-form-urlencoded">
         <div class="page-body">
+        
+          <div class="form-group" id="movie-plot">
+          	<div class="col-sm-2">줄거리</div>
+          	<textarea rows="1" cols="1" style="height: 70px; width: 70%;"></textarea>
+          </div>
           <div class="form-group" id = "poster-box">   
              <div class="col-sm-2">포스터</div>
              <div class="col-sm-9">
@@ -49,7 +54,13 @@
 	        	<p class="ftRt"><p class="text-right"><button type="submit" class="btn btn-warning btn-lg">업로드</button></p>
 	        </div>
         </div>
+      </form>
    
     </div>
+    
+    <script>
+    
+    
+    </script>
 </body>
 </html>

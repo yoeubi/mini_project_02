@@ -174,8 +174,7 @@ ul {
 						<option value=5>★★★★★</option>
 					</select>
 					<textarea name="content" id="text" class="form-control" rows="1"
-						cols="1" rows="1" resize="none"
-						style="height: 70px; width: 70%; float: left; margin-right: 10px;"
+						cols="1" style="height: 70px; width: 70%; float: left; margin-right: 10px;"
 						placeholder="최대 한글 150자까지 가능하며, 로그인  후 이용가능합니다."></textarea>
 					<p class="txt-len">
 						<span id="txt-cnt">0</span>/150
