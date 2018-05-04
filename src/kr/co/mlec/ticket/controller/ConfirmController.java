@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import kr.co.mlec.common.db.MyAppSqlConfig;
 import kr.co.mlec.repository.domain.Confirm;
 import kr.co.mlec.repository.mapper.ConfirmMapper;
+import kr.co.mlec.repository.mapper.TheaterMapper;
 
 @WebServlet("/controller/confirm")
 public class ConfirmController extends HttpServlet {
@@ -39,6 +40,9 @@ public class ConfirmController extends HttpServlet {
 			   .setCardNum(request.getParameter("cardNum"))
 			   .setSeat(request.getParameter("seat"));
 		mapper.insertConfirm(confirm);
+		String theaterCode = request.getParameter("theaterCode");
+		TheaterMapper theaterMapper = MyAppSqlConfig.getSqlSession().getMapper(TheaterMapper.class);
+//		theaterMapper.updateSeat(theaterCode);
 		PrintWriter out = response.getWriter();
 		out.write(new Gson().toJson("성공"));
 		out.close();

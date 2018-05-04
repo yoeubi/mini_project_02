@@ -112,18 +112,11 @@
 							}
 						}
 					});
-// 					//sold seat
-					
-<%-- 					var theater = <%= request.getAttribute("theater") %> --%>
-// 					var soldSeat = theater.theaterSoldSeat.split(" ");
-// 					var result = "";
-// 					for(var i = 0 ; i < soldSeat.length; i++){
-// 						result += soldSeat[i];
-// 						if(i != soldSeat.length - 1){
-// 							result += ","
-// 						}
-// 					}
-					sc.get([result]).status('unavailable');
+					//sold seat
+					var theater = "${theater.theaterSoldSeat}"
+					var seat = theater.split(" ");
+					console.log(seat);
+					sc.get([]).status('unavailable');
 					// sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
 						
 				});
