@@ -6,5 +6,5 @@ import kr.co.mlec.repository.domain.Theater;
 
 public interface TheaterMapper {
 	List<Theater> selectTheater(String filmCode);
-	String selectTheaterName(String theaterCode);
+	Theater selectTheaterOne(String theaterCode);
 }

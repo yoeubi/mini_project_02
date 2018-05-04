@@ -1,13 +1,15 @@
 package kr.co.mlec.ticket.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import kr.co.mlec.common.db.MyAppSqlConfig;
 import kr.co.mlec.repository.domain.Confirm;
@@ -20,22 +22,25 @@ public class ConfirmController extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		ConfirmMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(ConfirmMapper.class);
-		
+		response.setContentType("application/json; charset=utf-8");
 		Confirm confirm = new Confirm();
 		confirm.setMemberId(request.getParameter("memberId"))
-			   .setLocationCode(request.getParameter("memberId"))
-			   .setLocationName(request.getParameter("memberId"))
-			   .setBranchCode(request.getParameter("memberId"))
-			   .setBranchName(request.getParameter("memberId"))
-			   .setScreeningCode(request.getParameter("memberId"))
-			   .setScreeningDate(request.getParameter("memberId"))
-			   .setFilmCode(request.getParameter("memberId"))
-			   .setFilmName(request.getParameter("memberId"))
-			   .setShowCode(request.getParameter("memberId"))
-			   .setShowTime(request.getParameter("memberId"))
-			   .setPrice(Integer.parseInt(request.getParameter("memberId")))
-			   .setCardNum(request.getParameter("memberId"))
-			   .setSeat(request.getParameter("memberId"));
+			   .setLocationCode(request.getParameter("locationCode"))
+			   .setLocationName(request.getParameter("locationName"))
+			   .setBranchCode(request.getParameter("branchCode"))
+			   .setBranchName(request.getParameter("branchName"))
+			   .setScreeningCode(request.getParameter("screeningCode"))
+			   .setScreeningDate(request.getParameter("screeningDate"))
+			   .setFilmCode(request.getParameter("filmCode"))
+			   .setFilmName(request.getParameter("filmName"))
+			   .setShowCode(request.getParameter("showCode"))
+			   .setShowTime(request.getParameter("showTime"))
+			   .setPrice(Integer.parseInt(request.getParameter("price")))
+			   .setCardNum(request.getParameter("cardNum"))
+			   .setSeat(request.getParameter("seat"));
 		mapper.insertConfirm(confirm);
+		PrintWriter out = response.getWriter();
+		out.write(new Gson().toJson("성공"));
+		out.close();
 	}
 }

@@ -112,8 +112,18 @@
 							}
 						}
 					});
-					//sold seat
-					sc.get([<% %>]).status('unavailable');
+// 					//sold seat
+					
+<%-- 					var theater = <%= request.getAttribute("theater") %> --%>
+// 					var soldSeat = theater.theaterSoldSeat.split(" ");
+// 					var result = "";
+// 					for(var i = 0 ; i < soldSeat.length; i++){
+// 						result += soldSeat[i];
+// 						if(i != soldSeat.length - 1){
+// 							result += ","
+// 						}
+// 					}
+					sc.get([result]).status('unavailable');
 					// sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
 						
 				});
@@ -145,10 +155,13 @@
 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
 				        	dataType : "json",
 				        	success : function(data){
-				        		alert("예매가 완료되었습니다.")
-				        		location.assign("/minipro2/main");
+				        		
+				        	},
+				        	error : function(error){
+				        		
 				        	}
-				        });
+				        })
+						
 // 						if(result){
 // 							var IMP = window.IMP;
 // 							IMP.init('imp19043807');
@@ -171,13 +184,22 @@
 // 							        msg += '결제 금액 : ' + rsp.paid_amount;
 // 							        msg += '카드 승인번호 : ' + rsp.apply_num;
 // 							        $.ajax({
-// 							        	url : "/minipro2/controller/confirm",
-// 							        	data : `{ "" : "" }`,
-// 							        	dataType : "",
-// 							        	success : function(data){
-// 							        		location.assign("/minipro2/main");
-// 							        	}
-// 							        });
+// 			 							type : "POST",
+// 			 				        	url : "/minipro2/controller/confirm",
+// 			 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
+// 			 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
+// 			 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
+// 			 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
+// 			 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
+// 			 				        			"price" : $("#total").text(),"cardNum": "test" ,
+// 			 				        			"memberId":"test","seat": $("#selected-seats > li").text()
+// 			 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
+// 			 				        	dataType : "json",
+// 			 				        	success : function(data){
+// 			 				        		alert("예매가 완료되었습니다.")
+// 			 				        		location.assign("/minipro2/main");
+// 			 				        	}
+// 			 				        });
 // 							    } else {
 // 							        var msg = '결제에 실패하였습니다.';
 // 							        msg += '에러내용 : ' + rsp.error_msg;

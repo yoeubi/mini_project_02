@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.co.mlec.common.db.MyAppSqlConfig;
+import kr.co.mlec.repository.domain.Theater;
 import kr.co.mlec.repository.mapper.BranchMapper;
 import kr.co.mlec.repository.mapper.FilmMapper;
 import kr.co.mlec.repository.mapper.LocationMapper;
@@ -54,9 +55,9 @@ public class BookingController extends HttpServlet {
 		
 		String theaterCode = String.format("%s-%s-%s-%s-%s", codes[0],codes[1],codes[2],codes[3],codes[4]);
 		TheaterMapper theaterMapper = MyAppSqlConfig.getSqlSession().getMapper(TheaterMapper.class);
-		String theaterName = theaterMapper.selectTheaterName(theaterCode);
+		Theater theater = theaterMapper.selectTheaterOne(theaterCode);
 		request.setAttribute("theaterCode", theaterCode);
-		request.setAttribute("theaterName", theaterName);
+		request.setAttribute("theater", theater);
 		
 		ShowtimesMapper showtimesMapper = MyAppSqlConfig.getSqlSession().getMapper(ShowtimesMapper.class);
 		String showTime = showtimesMapper.selectShowTime(showCode);

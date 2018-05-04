@@ -16,8 +16,8 @@
 		where film_code = #{filmCode}
 	</select>
 	
-	<select id="selectTheaterName" parameterType="string" resultType="string">
-		select theater_name
+	<select id="selectTheaterOne" parameterType="string" resultMap="theaterMap">
+		select *
 		from tb_theater
 		where theater_code = #{theaterCode}
 	</select>
