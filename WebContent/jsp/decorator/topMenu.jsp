@@ -16,7 +16,7 @@
 			  		   </c:when>
 			  		   <c:otherwise>
 			  		   <c:choose>
-			  		   		<c:when test="${sessionScope.user.memberType}.equals(S)">
+			  		   		<c:when test="${sessionScope.user.memberType eq \"S\"}">
 								<li><a>${sessionScope.user.memberName}님 환영합니다</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/main">관리자페이지</a></li>
 			  		   		</c:when>

@@ -13,7 +13,7 @@
 	     <div class="page-header">
            <h1>회원로그인 <h6>아이디와 비밀번호를 입력하세요.비밀번호는 대소문자를 구분합니다.</h6></h1>
         </div>
-        <form class="form-horizontal" action="${pageContext.request.contextPath}/login">
+        <form class="form-horizontal" mrthod="post"  action="${pageContext.request.contextPath}/login">
           <div class = "loginBox" >
           <div class="form-group"> 
             <label for="inputIdl3" class="col-sm-2 control-label">아이디</label>
@@ -81,18 +81,20 @@
      
 </body>
 <script>
+
 $("#loginBtn").click(function(){
-	$.ajax({
-		url:"/minipro2/loginCheck",
-		data:{"inputId3":$("#inputId3"), "inputPassword3":$("#inputPassword3")},
-		dataType:"json", 
-		success:function(data){
-			console.log("에이작스 성공");
-			if(data == ""){
-			alert("로그인 실패");
-			}
-		}
-	});
+// 	$.ajax({
+// 		url:"/minipro2/loginCheck",
+// 		data:{"inputId3":$("#inputId3"), "inputPassword3":$("#inputPassword3")},
+// 		dataType:"json", 
+// 		success:function(data){
+// 			console.log("에이작스 성공");
+// 			if(data == ""){
+// 			alert("로그인 실패");
+// 			}
+// 		}
+// 	});
+// alert("sessionScope.user.memberType");
 });
 </script>
 </html>
