@@ -20,57 +20,49 @@
 				</h1>
 			</div>
 			<div class="helpV17">
-				<div class="historyTable" style="overflow: scroll; height: 350px;">
-					<table class="table">
-						<tr class="active">
-							<th>날짜</th>
-							<th>예매번호</th>
-							<th>제목</th>
-							<th>금액</th>
-							<th></th>
-						</tr>
+				<div class="historyTable"style="overflow: scroll; height: 350px;">
+					<button  type="submit" class="btn btn-default" id="myBtn">예매티켓</button>
+					<table class="table" id="tableMovie">
+<!-- 						<tr class="active"> -->
+<!-- 							<th>날짜</th> -->
+<!-- 							<th>예매번호</th> -->
+<!-- 							<th>제목</th> -->
+<!-- 							<th>금액</th> -->
+<!-- 							<th></th> -->
+<!-- 						</tr> -->
 						<!-- 예매내역 리스트 -->
-						<tr class="hisList">
-							<td>2018-01-23</td>
-							<td>45645146</td>
-							<td>어벤져스:인피니트 워</td>
-							<td>18000원</td>
-							<td>
-								<div id="rightBtn">
-									<button type="submit" class="btn btn-default" id="myBtn">예매티켓</button>
-								</div>
-							</td>
-						</tr>
+<!-- 						<tr class="hisList"> -->
+<!-- 							<td>2018-01-23</td> -->
+<!-- 							<td>45645146</td> -->
+<!-- 							<td>어벤져스:인피니트 워</td> -->
+<!-- 							<td>18000원</td> -->
+<!-- 							<td> -->
+<!-- 								<div id="rightBtn"> -->
+<!-- 									<button type="submit" class="btn btn-default" id="myBtn">예매티켓</button> -->
+<!-- 								</div> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 
-						<tr class="hisList">
-							<td>2018-01-23</td>
-							<td>45645146</td>
-							<td>어벤져스:인피니트 워</td>
-							<td>18000원</td>
-							<td>
-								<div>취소불가</div>
-							</td>
-						</tr>
+<!-- 						<tr class="hisList"> -->
+<!-- 							<td>2018-01-23</td> -->
+<!-- 							<td>45645146</td> -->
+<!-- 							<td>어벤져스:인피니트 워</td> -->
+<!-- 							<td>18000원</td> -->
+<!-- 							<td> -->
+<!-- 								<div>취소불가</div> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 
-						<tr class="hisList">
-							<td>2018-01-23</td>
-							<td>45645146</td>
-							<td>어벤져스:인피니트 워</td>
-							<td>18000원</td>
-							<td>
-								<div>취소불가</div>
-							</td>
-						</tr>
+<!-- 						<tr class="hisList"> -->
+<!-- 							<td>2018-01-23</td> -->
+<!-- 							<td>45645146</td> -->
+<!-- 							<td>어벤져스:인피니트 워</td> -->
+<!-- 							<td>18000원</td> -->
+<!-- 							<td> -->
+<!-- 								<div>취소불가</div> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 
-						<tr class="hisList">
-							<td>2018-01-23</td>
-							<td>45645146</td>
-							<td>어벤져스:인피니트 워</td>
-							<td>18000원</td>
-							<td>
-								<div>취소불가</div>
-							</td>
-						</tr>
 
 					</table>
 				</div>
@@ -271,7 +263,8 @@
 	
 
 	<script>
-		$("#profileUploadBtn").click(function(){
+	
+	$("#profileUploadBtn").click(function(){
 			$('#imgInput').click();
 		});
 		$("#profileResetBtn").click(function(){
@@ -297,31 +290,33 @@
 		    readURL(this);
 		});
 
-		// Get the modal
-		var modal = document.getElementById('myModal');
+		//$(document).on("이벤트종류","#myBtn",함수)
+		
+// 		// Get the modal
+// 		var modal = document.getElementById('myModal');
 
-		// Get the button that opens the modal
-		var btn = document.getElementById("myBtn");
+// 		// Get the button that opens the modal
+// 		var btn = document.getElementById("myBtn");
 
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+// 		// Get the <span> element that closes the modal
+// 		var span = document.getElementsByClassName("close")[0];
 
-		// When the user clicks on the button, open the modal 
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
+// 		// When the user clicks on the button, open the modal 
+// 		btn.onclick = function() {
+// 			modal.style.display = "block";
+// 		}
 
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
+// 		// When the user clicks on <span> (x), close the modal
+// 		span.onclick = function() {
+// 			modal.style.display = "none";
+// 		}
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+// 		// When the user clicks anywhere outside of the modal, close it
+// 		window.onclick = function(event) {
+// 			if (event.target == modal) {
+// 				modal.style.display = "none";
+// 			}
+// 		}
 
 		$("#updateInfoBtn").click(function() {
 			$("#updateInfoBtn").click(function() {
@@ -388,7 +383,67 @@
 							console.log("에러는 ", e)
 						}
 					});
+
 				});
+		function makeList(movieHis){
+			console.dir(movieHis);
+			var html="";
+			html+='<tr class="active">';
+			html+='<th>날짜</th>';
+			html+='<th>예매번호</th>';
+			html+='<th>제목</th>';
+			html+='<th>금액</th>';
+			html+='<th>금액</th>';
+			html+='<th></th>';
+			html+='</tr>';
+			for (var i = 0; i < movieHis.length; i++){
+// 				console.log("tr생성");
+				var confirm=movieHis[i];
+				html += '<tr class="hisList">';
+				html += '<td>'+confirm.screeningDate+'</td>';
+				html += '<td>'+confirm.filmCode+'</td>';
+				html += '<td>'+confirm.filmName+'</td>';
+				html += '<td>'+confirm.price+'원</td>';
+// 				SimpleDateFormat dateFormat = new  SimpleDateFormat("MM/dd HH:mm", java.util.Locale.getDefault());
+// 				var strDate = confirm.screeningDate;
+// 				strDate += " ";
+// 				strDate += confirm.showTime;
+// 				console.log(strDate);
+// 				Date date = dateFormat.parse(strDate);
+// // 				if(confirm.screeningDate)
+	
+// 				var test = new Date(2018,4,8);
+// 				console.log(test.toString());
+
+				if(confirm.wheaterTicket == 'N'){
+					html += '<td><div>취소불가</div></td>';
+				}else{
+					html+='<div id="rightBtn"><button type="submit" class="btn btn-default" id="myBtn">예매티켓</button></div>'
+					
+				}
+				html += '</tr>'
+			}
+			if(movieHis.length==0){
+				html += '<tr><td colspan="4">예매내역이 존재하지 않습니다.</td></tr>';
+			}
+			$("#tableMovie").html(html);
+			
+			
+		};
+		//영화 예매내역 보여주기
+		function historyList(){
+		 	console.log("에이작스 호출");
+			$.ajax({
+				url:"/minipro2/movieHistory",
+				data:{"id":`${sessionScope.user.memberId}`},
+				dataType:"json",
+				success: makeList,
+				error:function(e){
+					console.log(e);
+				}
+			});
+		}
+		historyList();
 	</script>
 </body>
 </html>

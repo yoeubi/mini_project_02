@@ -29,6 +29,8 @@ public class Confirm {
     private String showCode;
 
     private String showTime;
+    
+    private String wheaterTicket;
 
     private int price;
 
@@ -178,6 +180,14 @@ public class Confirm {
 	public Confirm setSeat(String seat) {
 		this.seat = seat;
 		return this;
+	}
+
+	public String getWheaterTicket() {
+		return wheaterTicket;
+	}
+
+	public void setWheaterTicket(String wheaterTicket) {
+		this.wheaterTicket = wheaterTicket;
 	}
 
    
