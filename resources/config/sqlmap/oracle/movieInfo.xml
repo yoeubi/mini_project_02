@@ -46,7 +46,20 @@
 		 where movie_seq = #{movieSeq}
 	</select>
 	
+	<resultMap type="movieposter" id="movieposterMap">
+		<result column="movie_seq" property="movieSeq"/>
+		<result column="poster_no" property="posterNo"/>
+		<result column="poster_path" property="posterPath"/>
+		<result column="poster_sys_name" property="posterSysName"/>
+		<result column="poster_ori_name" property="posterOriName"/>
+	</resultMap>
 	
+	<select id="selectMoviePosterByMovieSeq" parameterType="int" resultMap="movieposterMap">
+		select *
+		  from tb_movie_poster
+		 where movie_Seq = #{movieSeq}
+		   and rownum = 1
+	</select>
 	
 	
 

@@ -20,6 +20,7 @@
 		<result column="show_time" property="showTime"/>
 		<result column="price" property="price"/>
 		<result column="card_num" property="cardNum"/>
+		<result column="wheater_ticket" property="wheaterTicket"/>
 		<result column="seat" property="seat"/>
 	</resultMap>
 	
@@ -63,4 +64,16 @@
 		)
 		
 	</insert>
+	<select id="selectMovieHistory" parameterType="string" resultMap="confirmMap">
+		select a.*,
+		 case when to_date(screening_date || show_time, 'mmddhh24mi')  
+		 from tb_confirm a
+		where member_id = #{memberId}
+	</select>
+	
+<!-- 	<select id="wheaterMovieTicket"> -->
+<!-- 		select * -->
+<!-- 		  case when to_date('05) -->
+<!-- 		  from tb_confirm -->
+<!-- 	</select> -->
 </mapper>

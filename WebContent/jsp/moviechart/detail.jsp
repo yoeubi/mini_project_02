@@ -54,7 +54,7 @@ ul {
 
 	<div id="middle">
 		<div class="pos">
-			<img src="/minipro2/images/poster/moonlight poster.jpg">
+			<img src="${pageContext.request.contextPath}/common/file/down?path=${poster.posterPath}&sName=${poster.posterSysName}">
 		</div>
 		<div class="title">
 			<h1>${movie.movieTitle }</h1>
@@ -167,7 +167,7 @@ ul {
 						<option value=4>★★★★☆</option>
 						<option value=5>★★★★★</option>
 					</select>
-					<textarea name="content" id="text" class="form-control" rows="1"
+					<textarea name="content" class="form-control text" rows="1"
 						cols="1" style="height: 70px; width: 70%; float: left; margin-right: 10px;"
 						placeholder="최대 한글 150자까지 가능하며, 로그인  후 이용가능합니다."></textarea>
 					<p class="txt-len">
@@ -202,12 +202,19 @@ ul {
 
 			document.querySelector("#" + kind).style.display = "block";
 		}
-		$("#text").keyup(function() {
-			if ($("#text").val().length >= 150) {
-				$("#text").val($("#text").val().substring(0, 150));
+		$(document).on("keyup",".text",function(){
+			if ($(this).val().length >= 150) {
+				$(this).val($(this).val().substring(0, 150));
 			}
-			$("#txt-cnt").text($("#text").val().length);
+			$("#txt-cnt").text($(this).val().length);
 		})
+		
+// 		$(".text").keyup(function() {
+// 			if ($(".text").val().length >= 150) {
+// 				$(".text").val($(".text").val().substring(0, 150));
+// 			}
+// 			$("#txt-cnt").text($(".text").val().length);
+// 		})
 
 		$("button:eq(2)").click(function() {
 			console.log("눌림")
@@ -338,7 +345,7 @@ ul {
 			html += '   </td>';
 			html += '	<td>';
 			html += '		<div class="form-group">';
-			html += '			<input type="text" id="uptext" name="content" value="' + modContent + '" class="form-control input-wp2" placeholder="내용을 입력하세요">';
+			html += '			<input type="text" class="text" name="content" value="' + modContent + '" class="form-control input-wp2" placeholder="내용을 입력하세요">';
 			html += '		</div>';
 			html += '	</td>';
 			html += '	<td colspan="3">'; 
@@ -368,6 +375,7 @@ ul {
 			});
 		}
 		
+// 		
 		// 댓글삭제
 		function commentDelete(commentSeq) {
 			$.ajax({

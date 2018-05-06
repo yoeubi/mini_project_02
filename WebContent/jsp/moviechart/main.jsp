@@ -71,7 +71,7 @@ h1 {
 				<c:forEach var="movie" items="${chart}" varStatus="m">
 					<li onclick="location.href='/minipro2/moviechart/detail?movieSeq=${movie.movieSeq }'">
 						<h1>${m.index + 1}</h1> 
-						<img src="/minipro2/images/poster/carol poster.jpg">
+						<img src="${pageContext.request.contextPath}/common/file/down?path=${movie.poster.posterPath}&sName=${movie.poster.posterSysName}">
 						<h3>${movie.movieTitle}</h3>
 						<h4>${movie.movieReleaseDate }개봉</h4>
 						<h4>예매율: ${movie.movieSalesShare }%</h4>
