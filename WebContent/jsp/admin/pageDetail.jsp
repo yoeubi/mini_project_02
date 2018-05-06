@@ -77,15 +77,14 @@
 
 
 
-			<form id="steelForm" class="listDiv"
-				enctype="application/x-www-form-urlencoded">
+			<form id="steelForm" class="listDiv" method="post"
+				enctype="multipart/form-data" action="/minipro2/admin/steelRegist">
 				<div class="form-group" id="steelCut-box">
 					<div class="col-sm-2">스틸컷</div>
+					<input type="button" onclick="add()" value="추가">
 					<div class="col-sm-12">&nbsp;</div>
 					<div class="col-sm-8">
-						<input type="file" id="steelCut_1">
 					</div>
-					<input type="button" onclick="add()" value="추가">
 				</div>
 				<div class="helpV17">
 					<p class="ftRt">
@@ -95,6 +94,24 @@
 				</div>
 				<hr>
 			</form>
+			<div>
+				<h4>등록된 포스터</h4>
+				<c:forEach var="steel" items="${steel}">
+				<div id="ste">
+					<a
+						href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutPath}&sName=${steel.stilcutSysName}">(${movie.movieTitle })
+						스틸컷</a>
+					<a
+						href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}">(${movie.movieTitle })
+						썸네일</a>
+					<img
+						src="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}"
+						width="50" height="50">
+					<input id = "no" type="hidden" value="${poster.posterNo }">
+					<button id="posterDel">삭제</button>
+					<br>
+				</div>
+				</c:forEach>
 
 			<br>
 
@@ -126,7 +143,7 @@
 		function add() {
 			var steelEle = $("#steelCut-box");
 			var divEle = $("<div>").addClass('col-sm-12').attr("id","steel_"+ ++count);
-			var inputEle = $("<input>").attr("type","file").attr("style","display:inline");
+			var inputEle = $("<input>").attr("type","file").attr("style","display:inline").attr("name","steelCut_"+ count)
 			var inputEle2 = $("<input>").attr("type","button").attr("value","삭제").addClass("del");
 			divEle.append(inputEle);
 			divEle.append(inputEle2);

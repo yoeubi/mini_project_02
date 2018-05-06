@@ -26,9 +26,17 @@ public class MovieInfo {
     // 줄거리
     private String moviePlot;
     
-    
+    private MoviePoster poster;
 
-    public String getMoviePlot() {
+    public MoviePoster getPoster() {
+		return poster;
+	}
+
+	public void setPoster(MoviePoster poster) {
+		this.poster = poster;
+	}
+
+	public String getMoviePlot() {
 		return moviePlot;
 	}
 
