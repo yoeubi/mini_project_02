@@ -114,11 +114,11 @@ button:focus{
 
 /* 트레일러 구간*/
 .tra{
-	width: 240px;
-	height: 180px;
-	border: 1px solid;
-	margin: 35px 35px 35px 35px;
-	float: left;
+	width: 940px;
+	height: 530px;
+	padding-top: 50px;
+	margin: 0 auto;
+	
 }
 
 .clearfix {

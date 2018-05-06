@@ -31,6 +31,12 @@
 		   set movie_plot = #{moviePlot}
 		 where movie_seq = #{movieSeq}
 	</update>
+	
+	<update id="updateMovieTrailer" parameterType="movieinfo">
+		update tb_movieinfo
+		   set movie_trailer = #{movieTrailer}
+		 where movie_seq = #{movieSeq}
+	</update>
 
 	<select id="selectMovieInfo" resultMap="removie">
 		select *

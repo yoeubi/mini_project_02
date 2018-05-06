@@ -81,7 +81,7 @@ ul {
 				<button type="button" class="btn btn-default"
 					onclick="show('actdir')">감독 / 출연진</button>
 				<button type="button" class="btn btn-default"
-					onclick="show('trailer') ">트레일러</button>
+					onclick="show('trailer') ">예고편</button>
 				<button type="button" class="btn btn-default"
 					onclick="show('stilcut') ">스틸컷</button>
 				<button type="button" class="btn btn-default"
@@ -112,45 +112,49 @@ ul {
 			<div class="item">
 				<div class="clearfix" style="max-width: 606px; height: 450px;">
 					<ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<!-- 70 * 50 --> <img
-							src="/minipro2/images/stil/movie_image (1).jpg" /> <!-- 605 * 400 -->
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
-						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg">
-							<img src="/minipro2/images/stil/movie_image (1).jpg" />
-						</li>
+						<c:forEach var="st" items="${st }">
+							<li data-thumb="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutThumbPath}&sName=${st.stilcutThumbSysName}"> <!-- 70 * 50 --> 
+							<img src="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutPath}&sName=${st.stilcutSysName}" /> <!-- 605 * 400 -->
+							</li>
+						</c:forEach>
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
+<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
+<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
+<!-- 						</li> -->
 					</ul>
 				</div>
 			</div>
 		</div>
+
 		<div id="trailer" class="bottom" style="display: none;">
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
-			<div class="tra">트레일러</div>
+			<div class="tra">
+			<iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=83444F91DCF72819DE58ED51FD7A4A9AC4E9&outKey=V1230f299d9ea91f1c716ff1914f809af2490f44253cc4082d829ff1914f809af2490&controlBarMovable=true&jsCallable=true&isAutoPlay=false&skinName=tvcast_white' WIDTH='936' HEIGHT='526' allow='autoplay' allowfullscreen></iframe>
+			</div>
+<!-- 			<div class="tra">트레일러</div> -->
+<!-- 			<div class="tra">트레일러</div> -->
+<!-- 			<div class="tra">트레일러</div> -->
+<!-- 			<div class="tra">트레일러</div> -->
+<!-- 			<div class="tra">트레일러</div> -->
 		</div>
 	
 		<div id="review" class="bottom" style="display: none;">

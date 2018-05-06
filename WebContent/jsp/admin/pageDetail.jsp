@@ -92,10 +92,9 @@
 						<button type="submit" class="btn btn-warning btn-lg">업로드</button>
 					</p>
 				</div>
-				<hr>
 			</form>
 			<div>
-				<h4>등록된 포스터</h4>
+				<h4>등록된 스틸컷</h4>
 				<c:forEach var="steel" items="${steel}">
 				<div id="ste">
 					<a
@@ -104,37 +103,38 @@
 					<a
 						href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}">(${movie.movieTitle })
 						썸네일</a>
-					<img
-						src="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}"
-						width="50" height="50">
 					<input id = "no" type="hidden" value="${poster.posterNo }">
 					<button id="posterDel">삭제</button>
 					<br>
 				</div>
 				</c:forEach>
-
+			</div>
+			<hr>
 			<br>
 
-			<form id="trailerForm" action=""
-				enctype="application/x-www-form-urlencoded">
+
+			<form id="trailerForm">
 				<div class="form-group" id="trailer-box">
-					<div class="col-sm-2">트레일러</div>
-					<div class="col-sm-10">
-						<input type="file" id="trailer">
-					</div>
+					<div class="col-sm-2">트레일러 주소</div>
+					<textarea name="moviePlot" rows="1" cols="1"
+						style="height: 70px; width: 70%;">${movie.movieTrailer }</textarea>
+					<div class="col-sm-10"></div>
 				</div>
 				<div class="helpV17">
 					<p class="ftRt">
 					<p class="text-right">
 						<button type="submit" class="btn btn-warning btn-lg">업로드</button>
 					</p>
+					<div class="col-sm-12"></div>
 				</div>
-				<hr>
 			</form>
 
-			<br>
 
 		</div>
+					<div class="col-sm-12">
+			<br>
+				<hr>
+					</div>
 
 	</div>
 
@@ -171,6 +171,21 @@
 			})
 		});
 		
+		$("#trailerForm").submit(function(e) {
+			e.preventDefault();
+
+			$.ajax({
+				url : "<c:url value='/admin/trailerUpdate' />",
+				method : "POST",
+				data : {
+					movieSeq : "${movie.movieSeq}",
+					movieTrailer : $("#trailerForm textarea").val()
+				},
+				dataType : "json",
+				success : alert("( ${movie.movieTitle} ) 트레일러 주소 수정이 완료되었습니다.")
+			})
+		});
+
 		$("#posterDel").click(function (e) {
 			$("#")
 		})

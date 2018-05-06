@@ -27,8 +27,20 @@ public class MovieInfo {
     private String moviePlot;
     
     private MoviePoster poster;
+    
+    private String movieTrailer;
+    
+    
 
-    public MoviePoster getPoster() {
+    public String getMovieTrailer() {
+		return movieTrailer;
+	}
+
+	public void setMovieTrailer(String movieTrailer) {
+		this.movieTrailer = movieTrailer;
+	}
+
+	public MoviePoster getPoster() {
 		return poster;
 	}
 
