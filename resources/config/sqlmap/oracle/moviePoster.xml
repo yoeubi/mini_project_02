@@ -7,9 +7,22 @@
 		<result column="poster_no" property="posterNo"/>
 		<result column="poster_path" property="posterPath"/>
 		<result column="poster_sys_name" property="posterSysName"/>
+		<result column="poster_ori_name" property="posterOriName"/>
 	</resultMap>
 
+	<select id="selectMoviePosterAll" parameterType="int" resultMap="removieposter">
+		select *
+		  from tb_movie_poster
+		 order by movie_seq
+	</select>
+
 	<select id="selectMoviePoster" parameterType="int" resultMap="removieposter">
+		select *
+		  from tb_movie_poster
+		 where movie_Seq = #{movieSeq}
+	</select>
+
+	<select id="selectMoviePosterBySeq" parameterType="int" resultMap="removieposter">
 		select *
 		  from tb_movie_poster
 		 where movie_Seq = #{movieSeq}
@@ -17,9 +30,9 @@
 	
 	<insert id="insertMoviePoster" parameterType="movieposter">
 		insert into tb_movie_poster(
-			movie_seq, poster_no, poster_path, poster_sys_name
+			movie_seq, poster_no, poster_path, poster_sys_name, poster_ori_name
 		) values (
-			#{movieSeq}, s_movieposter_no.nextval, #{posterPath}, #{posterSysName}
+			#{movieSeq}, s_poster_no.nextval, #{posterPath}, #{posterSysName}, #{posterOriName}
 		)
 	</insert>
 
