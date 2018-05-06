@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 
 import kr.co.mlec.common.db.MyAppSqlConfig;
 import kr.co.mlec.repository.domain.Confirm;
+import kr.co.mlec.repository.domain.Theater;
 import kr.co.mlec.repository.mapper.ConfirmMapper;
 import kr.co.mlec.repository.mapper.TheaterMapper;
 
@@ -25,6 +26,7 @@ public class ConfirmController extends HttpServlet {
 		ConfirmMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(ConfirmMapper.class);
 		response.setContentType("application/json; charset=utf-8");
 		Confirm confirm = new Confirm();
+		System.out.println("영화명 : " + request.getParameter("theaterName"));
 		confirm.setMemberId(request.getParameter("memberId"))
 			   .setLocationCode(request.getParameter("locationCode"))
 			   .setLocationName(request.getParameter("locationName"))
@@ -34,6 +36,8 @@ public class ConfirmController extends HttpServlet {
 			   .setScreeningDate(request.getParameter("screeningDate"))
 			   .setFilmCode(request.getParameter("filmCode"))
 			   .setFilmName(request.getParameter("filmName"))
+			   .setTheaterCode(request.getParameter("theaterCode"))
+			   .setTheaterName(request.getParameter("theaterName"))
 			   .setShowCode(request.getParameter("showCode"))
 			   .setShowTime(request.getParameter("showTime"))
 			   .setPrice(Integer.parseInt(request.getParameter("price")))
@@ -41,8 +45,9 @@ public class ConfirmController extends HttpServlet {
 			   .setSeat(request.getParameter("seat"));
 		mapper.insertConfirm(confirm);
 		String theaterCode = request.getParameter("theaterCode");
+		String theaterSoldSeat = request.getParameter("seat");
 		TheaterMapper theaterMapper = MyAppSqlConfig.getSqlSession().getMapper(TheaterMapper.class);
-//		theaterMapper.updateSeat(theaterCode);
+		theaterMapper.updateSeat(new Theater().setTheaterCode(theaterCode).setTheaterSoldSeat(theaterSoldSeat));
 		PrintWriter out = response.getWriter();
 		out.write(new Gson().toJson("성공"));
 		out.close();

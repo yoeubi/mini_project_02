@@ -47,6 +47,24 @@
 				<div id="legend"></div>
 			</div>
 			<div style="clear:both"></div>
+			<form action="/minipro2/controller/showresult" method="post" id="hiform">
+				<input type="text" id="lcode" name="lcode" value="" hidden="hidden">
+				<input type="text" id="lname" name="lname" value="" hidden="hidden">
+				<input type="text" id="bcode" name="bcode" value="" hidden="hidden">
+				<input type="text" id="bname" name="bname" value="" hidden="hidden">
+				<input type="text" id="sccode" name="sccode" value="" hidden="hidden">
+				<input type="text" id="sdate" name="sdate" value="" hidden="hidden">
+				<input type="text" id="tcode" name="tcode" value="" hidden="hidden">
+				<input type="text" id="tname" name="tname" value="" hidden="hidden">
+				<input type="text" id="fcode" name="fcode" value="" hidden="hidden">
+				<input type="text" id="fname" name="fname" value="" hidden="hidden">
+				<input type="text" id="shcode" name="shcode" value="" hidden="hidden">
+				<input type="text" id="shtime" name="shtime" value="" hidden="hidden">
+				<input type="text" id="price" name="price" value="" hidden="hidden">
+				<input type="text" id="card" name="card" value="" hidden="hidden">
+				<input type="text" id="memberid" name="memberid" value="" hidden="hidden">
+				<input type="text" id="seat" name="seat" value="" hidden="hidden">
+			</form>
 	    </div>
 
 			<script type="text/javascript">
@@ -86,7 +104,7 @@
 						},
 						click: function () { //Click event
 							if (this.status() == 'available') { //optional seat
-								$('<li>'+(this.settings.row+1)+'-'+this.settings.label+' </li>')
+								$('<li>'+(this.settings.row+1)+'_'+this.settings.label+' </li>')
 									.attr('id', 'cart-item-'+this.settings.id)
 									.data('seatId', this.settings.id)
 									.appendTo($cart);
@@ -116,7 +134,7 @@
 					var theater = "${theater.theaterSoldSeat}"
 					var seat = theater.split(" ");
 					console.log(seat);
-					sc.get([]).status('unavailable');
+					sc.get(seat).status('unavailable');
 					// sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
 						
 				});
@@ -135,71 +153,102 @@
 						alert("좌석을 선택하세요.")
 					}else{
 						var result = confirm("예매하시겠습니까?");
-						$.ajax({
-							type : "POST",
-				        	url : "/minipro2/controller/confirm",
-				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
-				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
-				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
-					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
-					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
-				        			"price" : $("#total").text(),"cardNum": "test" ,
-				        			"memberId":"test","seat": $("#selected-seats > li").text()
-				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
-				        	dataType : "json",
-				        	success : function(data){
-				        		
-				        	},
-				        	error : function(error){
-				        		
-				        	}
-				        })
 						
-// 						if(result){
-// 							var IMP = window.IMP;
-// 							IMP.init('imp19043807');
-// 							IMP.request_pay({
-// 							    pg : 'kakao',
-// 							    pay_method : 'card',
-// 							    merchant_uid : 'merchant_' + new Date().getTime(),
-// 							    name : '주문명:결제테스트',
-// 							    amount : $("#total").text(),
-// 							    buyer_email : 'iamport@siot.do',
-// 							    buyer_name : "테스트용",
-// 							    buyer_tel : '010-1234-5678',
-// 							    buyer_addr : '서울특별시 강남구 삼성동',
-// 							    buyer_postcode : '123-456'
-// 							}, function(rsp) {
-// 							    if ( rsp.success ) {
-// 							        var msg = '결제가 완료되었습니다.';
-// 							        msg += '고유ID : ' + rsp.imp_uid;
-// 							        msg += '상점 거래ID : ' + rsp.merchant_uid;
-// 							        msg += '결제 금액 : ' + rsp.paid_amount;
-// 							        msg += '카드 승인번호 : ' + rsp.apply_num;
-// 							        $.ajax({
-// 			 							type : "POST",
-// 			 				        	url : "/minipro2/controller/confirm",
-// 			 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
-// 			 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
-// 			 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
-// 			 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
-// 			 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
-// 			 				        			"price" : $("#total").text(),"cardNum": "test" ,
-// 			 				        			"memberId":"test","seat": $("#selected-seats > li").text()
-// 			 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
-// 			 				        	dataType : "json",
-// 			 				        	success : function(data){
-// 			 				        		alert("예매가 완료되었습니다.")
-// 			 				        		location.assign("/minipro2/main");
-// 			 				        	}
-// 			 				        });
-// 							    } else {
-// 							        var msg = '결제에 실패하였습니다.';
-// 							        msg += '에러내용 : ' + rsp.error_msg;
-// 							    }
-// 								alert(msg);
-// 							});
-// 						}
+// 						$.ajax({
+// 							type : "POST",
+// 				        	url : "/minipro2/controller/confirm",
+// 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
+// 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
+// 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
+// 				        			"theaterCode" : `${theaterCode}`, "theaterName" : `${theater.theaterName}`,
+// 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
+// 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
+// 				        			"price" : $("#total").text(),"cardNum": "test" ,
+// 				        			"memberId":"test","seat": $("#selected-seats > li").text()
+// 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
+// 				        	dataType : "json",
+// 				        	success : function(data){
+// 				        		$("#lcode").attr("value",`${locationCode}`);
+// 				        		$("#lname").attr("value",`${locationName}`);
+// 				        		$("#bcode").attr("value",`${branchCode}`);
+// 				        		$("#bname").attr("value", `${branchName}`);
+// 				        		$("#sccode").attr("value",`${screeningCode}`);
+// 				        		$("#sdate").attr("value",`${screeningDate}`);
+// 				        		$("#tcode").attr("value",`${theaterCode}`);
+// 				        		$("#tname").attr("value",`${theater.theaterName}`);
+// 				        		$("#fcode").attr("value",`${filmCode}`);
+// 				        		$("#fname").attr("value", `${filmName}`);
+// 				        		$("#shcode").attr("value",`${showCode}`);
+// 				        		$("#shtime").attr("value", `${showTime}`);
+// 				        		$("#price").attr("value",$("#total").text());
+// 				        		$("#card").attr("value", "test" );
+// 				        		$("#memberid").attr("value","test");
+// 				        		$("#seat").attr("value",$("#selected-seats > li").text());
+// 				        		$("#hiform").submit();
+// 				        	}
+// 				        })
+						
+						if(result){
+							var IMP = window.IMP;
+							IMP.init('imp19043807');
+							IMP.request_pay({
+							    pg : 'kakao',
+							    pay_method : 'card',
+							    merchant_uid : 'merchant_' + new Date().getTime(),
+							    name : '주문명:결제테스트',
+							    amount : $("#total").text(),
+							    buyer_email : 'iamport@siot.do',
+							    buyer_name : "테스트용",
+							    buyer_tel : '010-1234-5678',
+							    buyer_addr : '서울특별시 강남구 삼성동',
+							    buyer_postcode : '123-456'
+							}, function(rsp) {
+							    if ( rsp.success ) {
+							        var msg = '결제가 완료되었습니다.';
+							        msg += '고유ID : ' + rsp.imp_uid;
+							        msg += '상점 거래ID : ' + rsp.merchant_uid;
+							        msg += '결제 금액 : ' + rsp.paid_amount;
+							        msg += '카드 승인번호 : ' + rsp.apply_num;
+							        $.ajax({
+			 							type : "POST",
+			 				        	url : "/minipro2/controller/confirm",
+			 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
+			 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
+			 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
+			 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
+			 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
+			 				        			"price" : $("#total").text(),"cardNum": rsp.apply_num ,
+			 				        			"memberId": `${sessionScope.user.memberId}`,"seat": $("#selected-seats > li").text()
+			 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
+			 				        	dataType : "json",
+			 				        	success : function(data){
+			 				        		$("#lcode").attr("value",`${locationCode}`);
+							        		$("#lname").attr("value",`${locationName}`);
+							        		$("#bcode").attr("value",`${branchCode}`);
+							        		$("#bname").attr("value", `${branchName}`);
+							        		$("#sccode").attr("value",`${screeningCode}`);
+							        		$("#sdate").attr("value",`${screeningDate}`);
+							        		$("#tcode").attr("value",`${theaterCode}`);
+							        		$("#tname").attr("value",`${theater.theaterName}`);
+							        		$("#fcode").attr("value",`${filmCode}`);
+							        		$("#fname").attr("value", `${filmName}`);
+							        		$("#shcode").attr("value",`${showCode}`);
+							        		$("#shtime").attr("value", `${showTime}`);
+							        		$("#price").attr("value",$("#total").text());
+							        		$("#card").attr("value", "test" );
+							        		$("#memberid").attr("value","test");
+							        		$("#seat").attr("value",$("#selected-seats > li").text());
+							        		$("#hiform").submit();
+			 				        	}
+			 				        });
+							    } else {
+							        var msg = '결제에 실패하였습니다.';
+							        msg += '에러내용 : ' + rsp.error_msg;
+							    }
+							});
+						}
+						
+						
 					}
 				});
 			</script>

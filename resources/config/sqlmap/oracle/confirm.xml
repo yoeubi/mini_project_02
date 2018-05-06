@@ -14,6 +14,8 @@
 		<result column="screening_date" property="screeningDate" />
 		<result column="film_code" property="filmCode" />
 		<result column="film_name" property="filmName" />
+		<result column="theater_code" property="theaterCode"/>
+		<result column="theater_name" property="theaterName"/>
 		<result column="show_code" property="showCode" />
 		<result column="show_time" property="showTime"/>
 		<result column="price" property="price"/>
@@ -33,6 +35,8 @@
 			screening_date,
 			film_code,
 			film_name,
+			theater_code,
+			theater_name,
 			show_code,
 			show_time,
 			price,
@@ -49,6 +53,8 @@
 			#{screeningDate},
 			#{filmCode},
 			#{filmName},
+			#{theaterCode},
+			#{theaterName},
 			#{showCode},
 			#{showTime},
 			#{price},

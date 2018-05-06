@@ -21,4 +21,10 @@
 		from tb_theater
 		where theater_code = #{theaterCode}
 	</select>
+	
+	<update id="updateSeat" parameterType="theater">
+		update tb_theater
+		set theater_sold_seat = theater_sold_seat || #{theaterSoldSeat}
+		where theater_code = #{theaterCode} 
+	</update>
 </mapper>

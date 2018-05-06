@@ -27,48 +27,54 @@ public class Theater {
 		return timeTable;
 	}
 
-	public void setTimeTable(List<Showtimes> timeTable) {
+	public Theater setTimeTable(List<Showtimes> timeTable) {
 		this.timeTable = timeTable;
+		return this;
 	}
 
 	public String getFilmCode() {
         return filmCode;
     }
 
-    public void setFilmCode(String filmCode) {
+    public Theater setFilmCode(String filmCode) {
         this.filmCode = filmCode;
+        return this;
     }
 
     public String getTheaterCode() {
         return theaterCode;
     }
 
-    public void setTheaterCode(String theaterCode) {
+    public Theater setTheaterCode(String theaterCode) {
         this.theaterCode = theaterCode;
+        return this;
     }
 
     public String getTheaterName() {
         return theaterName;
     }
 
-    public void setTheaterName(String theaterName) {
+    public Theater setTheaterName(String theaterName) {
         this.theaterName = theaterName;
+        return this;
     }
 
     public String getTheaterTotalSeat() {
         return theaterTotalSeat;
     }
 
-    public void setTheaterTotalSeat(String theaterTotalSeat) {
+    public Theater setTheaterTotalSeat(String theaterTotalSeat) {
         this.theaterTotalSeat = theaterTotalSeat;
+        return this;
     }
 
     public String getTheaterSoldSeat() {
         return theaterSoldSeat;
     }
 
-    public void setTheaterSoldSeat(String theaterSoldSeat) {
+    public Theater setTheaterSoldSeat(String theaterSoldSeat) {
         this.theaterSoldSeat = theaterSoldSeat;
+        return this;
     }
 
 }
