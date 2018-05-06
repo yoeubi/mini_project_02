@@ -9,6 +9,16 @@ public class MoviePoster {
 	private String posterPath;
 	// 포스터저장이름
     private String posterSysName;
+    private String posterOriName;
+    
+
+	public String getPosterOriName() {
+		return posterOriName;
+	}
+
+	public void setPosterOriName(String posterOriName) {
+		this.posterOriName = posterOriName;
+	}
 
 	public int getMovieSeq() {
 		return movieSeq;
