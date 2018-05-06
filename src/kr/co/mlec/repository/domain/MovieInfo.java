@@ -25,10 +25,10 @@ public class MovieInfo {
     private String movieSalesShare;
     // 줄거리
     private String moviePlot;
+    // 트레일러 주소
+    private String movieTrailer;
     
     private MoviePoster poster;
-    
-    private String movieTrailer;
     
     
 

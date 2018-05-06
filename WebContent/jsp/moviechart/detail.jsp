@@ -148,13 +148,8 @@ ul {
 
 		<div id="trailer" class="bottom" style="display: none;">
 			<div class="tra">
-			<iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=83444F91DCF72819DE58ED51FD7A4A9AC4E9&outKey=V1230f299d9ea91f1c716ff1914f809af2490f44253cc4082d829ff1914f809af2490&controlBarMovable=true&jsCallable=true&isAutoPlay=false&skinName=tvcast_white' WIDTH='936' HEIGHT='526' allow='autoplay' allowfullscreen></iframe>
+				<iframe src='${movie.movieTrailer }' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='936' HEIGHT='526' allow='autoplay' allowfullscreen></iframe>
 			</div>
-<!-- 			<div class="tra">트레일러</div> -->
-<!-- 			<div class="tra">트레일러</div> -->
-<!-- 			<div class="tra">트레일러</div> -->
-<!-- 			<div class="tra">트레일러</div> -->
-<!-- 			<div class="tra">트레일러</div> -->
 		</div>
 	
 		<div id="review" class="bottom" style="display: none;">
@@ -220,9 +215,6 @@ ul {
 // 			$("#txt-cnt").text($(".text").val().length);
 // 		})
 
-		$("button:eq(2)").click(function() {
-			console.log("눌림")
-		})
 
 		// 댓글 목록을 만드는 함수
 		function makeCommentList(result) {

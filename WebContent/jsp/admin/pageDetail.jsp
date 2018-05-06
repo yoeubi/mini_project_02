@@ -59,17 +59,16 @@
 			<div>
 				<h4>등록된 포스터</h4>
 				<c:forEach var="poster" items="${poster }">
-				<div id="pos">
-					<a
-						href="${pageContext.request.contextPath}/common/file/down?path=${poster.posterPath}&sName=${poster.posterSysName}">(${movie.movieTitle })
-						포스터</a>
-					<img
-						src="${pageContext.request.contextPath}/common/file/down?path=${poster.posterPath}&sName=${poster.posterSysName}"
-						width="50" height="50">
-					<input id = "no" type="hidden" value="${poster.posterNo }">
-					<button id="posterDel">삭제</button>
-					<br>
-				</div>
+					<div id="pos">
+						<a
+							href="${pageContext.request.contextPath}/common/file/down?path=${poster.posterPath}&sName=${poster.posterSysName}">(${movie.movieTitle })
+							포스터</a> <img
+							src="${pageContext.request.contextPath}/common/file/down?path=${poster.posterPath}&sName=${poster.posterSysName}"
+							width="50" height="50"> <input id="no" type="hidden"
+							value="${poster.posterNo }">
+						<button id="posterDel">삭제</button>
+						<br>
+					</div>
 				</c:forEach>
 			</div>
 			<hr>
@@ -83,8 +82,7 @@
 					<div class="col-sm-2">스틸컷</div>
 					<input type="button" onclick="add()" value="추가">
 					<div class="col-sm-12">&nbsp;</div>
-					<div class="col-sm-8">
-					</div>
+					<div class="col-sm-8"></div>
 				</div>
 				<div class="helpV17">
 					<p class="ftRt">
@@ -96,17 +94,15 @@
 			<div>
 				<h4>등록된 스틸컷</h4>
 				<c:forEach var="steel" items="${steel}">
-				<div id="ste">
-					<a
-						href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutPath}&sName=${steel.stilcutSysName}">(${movie.movieTitle })
-						스틸컷</a>
-					<a
-						href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}">(${movie.movieTitle })
-						썸네일</a>
-					<input id = "no" type="hidden" value="${poster.posterNo }">
-					<button id="posterDel">삭제</button>
-					<br>
-				</div>
+					<div id="ste">
+						<a
+							href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutPath}&sName=${steel.stilcutSysName}">(${movie.movieTitle })
+							스틸컷</a> <a
+							href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}">(${movie.movieTitle })
+							썸네일</a> <input id="no" type="hidden" value="${poster.posterNo }">
+						<button id="posterDel">삭제</button>
+						<br>
+					</div>
 				</c:forEach>
 			</div>
 			<hr>
@@ -129,12 +125,11 @@
 				</div>
 			</form>
 
-
 		</div>
-					<div class="col-sm-12">
+		<div class="col-sm-12">
 			<br>
-				<hr>
-					</div>
+			<hr>
+		</div>
 
 	</div>
 
