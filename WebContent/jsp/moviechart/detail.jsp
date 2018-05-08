@@ -268,8 +268,8 @@ ul {
 				url: "<c:url value='/moviechart/commentRegist'/>",
 				type: "POST",
 				data: {
-					movieSeq: ${movie.movieSeq},
-					memberId: ${user.memberId},
+					movieSeq: "${movie.movieSeq}",
+					memberId: "${user.memberId}",
 					commentStar: $("#rForm select").val(),
 					content: $("#rForm textarea").val()
 				},
