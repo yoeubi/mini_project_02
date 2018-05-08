@@ -48,22 +48,22 @@
 			</div>
 			<div style="clear:both"></div>
 			<form action="/minipro2/controller/showresult" method="post" id="hiform">
-				<input type="text" id="lcode" name="lcode" value="" hidden="hidden">
-				<input type="text" id="lname" name="lname" value="" hidden="hidden">
-				<input type="text" id="bcode" name="bcode" value="" hidden="hidden">
-				<input type="text" id="bname" name="bname" value="" hidden="hidden">
-				<input type="text" id="sccode" name="sccode" value="" hidden="hidden">
-				<input type="text" id="sdate" name="sdate" value="" hidden="hidden">
-				<input type="text" id="tcode" name="tcode" value="" hidden="hidden">
-				<input type="text" id="tname" name="tname" value="" hidden="hidden">
-				<input type="text" id="fcode" name="fcode" value="" hidden="hidden">
-				<input type="text" id="fname" name="fname" value="" hidden="hidden">
-				<input type="text" id="shcode" name="shcode" value="" hidden="hidden">
-				<input type="text" id="shtime" name="shtime" value="" hidden="hidden">
-				<input type="text" id="price" name="price" value="" hidden="hidden">
-				<input type="text" id="card" name="card" value="" hidden="hidden">
-				<input type="text" id="memberid" name="memberid" value="" hidden="hidden">
-				<input type="text" id="seat" name="seat" value="" hidden="hidden">
+				<input type="text" id="lcode" name="lcode" value="" >
+				<input type="text" id="lname" name="lname" value="" >
+				<input type="text" id="bcode" name="bcode" value="" >
+				<input type="text" id="bname" name="bname" value="" >
+				<input type="text" id="sccode" name="sccode" value="" >
+				<input type="text" id="sdate" name="sdate" value="" >
+				<input type="text" id="tcode" name="tcode" value="" >
+				<input type="text" id="tname" name="tname" value="" >
+				<input type="text" id="fcode" name="fcode" value="" >
+				<input type="text" id="fname" name="fname" value="" >
+				<input type="text" id="shcode" name="shcode" value="" >
+				<input type="text" id="shtime" name="shtime" value="" >
+				<input type="text" id="price" name="price" value="" >
+				<input type="text" id="card" name="card" value="" >
+				<input type="text" id="memberid" name="memberid" value="" >
+				<input type="text" id="seat" name="seat" value="" >
 			</form>
 	    </div>
 
@@ -153,33 +153,33 @@
 						alert("좌석을 선택하세요.")
 					}else{
 						var result = confirm("예매하시겠습니까?");
-						
 // 						$.ajax({
 // 							type : "POST",
 // 				        	url : "/minipro2/controller/confirm",
-// 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
-// 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
-// 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
-// 				        			"theaterCode" : `${theaterCode}`, "theaterName" : `${theater.theaterName}`,
-// 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
-// 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
+// 				        	data : { "locationCode" : "${locationCode}","locationName" : "${locationName}",
+// 				        			"branchCode" : "${branchCode}", "branchName" : "${branchName}",
+// 				        			"screeningCode" : "${screeningCode}", "screeningDate" : "${screeningDate}",
+// 				        			"theaterCode" : "${theaterCode}", "theaterName" : "${theater.theaterName}",
+// 					        		"filmCode": "${filmCode}" ,"filmName": "${filmName}" ,
+// 					        		"showCode":"${showCode}", "showTime": "${showTime}",
 // 				        			"price" : $("#total").text(),"cardNum": "test" ,
 // 				        			"memberId":"test","seat": $("#selected-seats > li").text()
 // 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
 // 				        	dataType : "json",
 // 				        	success : function(data){
-// 				        		$("#lcode").attr("value",`${locationCode}`);
-// 				        		$("#lname").attr("value",`${locationName}`);
-// 				        		$("#bcode").attr("value",`${branchCode}`);
-// 				        		$("#bname").attr("value", `${branchName}`);
-// 				        		$("#sccode").attr("value",`${screeningCode}`);
-// 				        		$("#sdate").attr("value",`${screeningDate}`);
-// 				        		$("#tcode").attr("value",`${theaterCode}`);
-// 				        		$("#tname").attr("value",`${theater.theaterName}`);
-// 				        		$("#fcode").attr("value",`${filmCode}`);
-// 				        		$("#fname").attr("value", `${filmName}`);
-// 				        		$("#shcode").attr("value",`${showCode}`);
-// 				        		$("#shtime").attr("value", `${showTime}`);
+// 				        		alert("성공후 실패");
+// 				        		$("#lcode").attr("value","${locationCode}");
+// 				        		$("#lname").attr("value","${locationName}");
+// 				        		$("#bcode").attr("value","${branchCode}");
+// 				        		$("#bname").attr("value", "${branchName}");
+// 				        		$("#sccode").attr("value","${screeningCode}");
+// 				        		$("#sdate").attr("value","${screeningDate}");
+// 				        		$("#tcode").attr("value","${theaterCode}");
+// 				        		$("#tname").attr("value","${theater.theaterName}");
+// 				        		$("#fcode").attr("value","${filmCode}");
+// 				        		$("#fname").attr("value", "${filmName}");
+// 				        		$("#shcode").attr("value","${showCode}");
+// 				        		$("#shtime").attr("value", "${showTime}");
 // 				        		$("#price").attr("value",$("#total").text());
 // 				        		$("#card").attr("value", "test" );
 // 				        		$("#memberid").attr("value","test");
@@ -210,37 +210,38 @@
 							        msg += '결제 금액 : ' + rsp.paid_amount;
 							        msg += '카드 승인번호 : ' + rsp.apply_num;
 							        $.ajax({
-			 							type : "POST",
-			 				        	url : "/minipro2/controller/confirm",
-			 				        	data : { "locationCode" : `${locationCode}`,"locationName" : `${locationName}`,
-			 				        			"branchCode" : `${branchCode}`, "branchName" : `${branchName}`,
-			 				        			"screeningCode" : `${screeningCode}`, "screeningDate" : `${screeningDate}`,
-			 					        		"filmCode": `${filmCode}` ,"filmName": `${filmName}` ,
-			 					        		"showCode":`${showCode}`, "showTime": `${showTime}`,
-			 				        			"price" : $("#total").text(),"cardNum": rsp.apply_num ,
-			 				        			"memberId": `${sessionScope.user.memberId}`,"seat": $("#selected-seats > li").text()
-			 				        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
-			 				        	dataType : "json",
-			 				        	success : function(data){
-			 				        		$("#lcode").attr("value",`${locationCode}`);
-							        		$("#lname").attr("value",`${locationName}`);
-							        		$("#bcode").attr("value",`${branchCode}`);
-							        		$("#bname").attr("value", `${branchName}`);
-							        		$("#sccode").attr("value",`${screeningCode}`);
-							        		$("#sdate").attr("value",`${screeningDate}`);
-							        		$("#tcode").attr("value",`${theaterCode}`);
-							        		$("#tname").attr("value",`${theater.theaterName}`);
-							        		$("#fcode").attr("value",`${filmCode}`);
-							        		$("#fname").attr("value", `${filmName}`);
-							        		$("#shcode").attr("value",`${showCode}`);
-							        		$("#shtime").attr("value", `${showTime}`);
+										type : "POST",
+							        	url : "/minipro2/controller/confirm",
+							        	data : { "locationCode" : "${locationCode}","locationName" : "${locationName}",
+							        			"branchCode" : "${branchCode}", "branchName" : "${branchName}",
+							        			"screeningCode" : "${screeningCode}", "screeningDate" : "${screeningDate}",
+							        			"theaterCode" : "${theaterCode}", "theaterName" : "${theater.theaterName}",
+								        		"filmCode": "${filmCode}" ,"filmName": "${filmName}" ,
+								        		"showCode":"${showCode}", "showTime": "${showTime}",
+							        			"price" : $("#total").text(),"cardNum": rsp.apply_num ,
+							        			"memberId":"${sessionScope.user.memberId}","seat": $("#selected-seats > li").text()
+							        	} , /* 영화명 ,상영시간, 결재 금액 , 자리 , 카드승인번호 , 유저명    */
+							        	dataType : "json",
+							        	success : function(data){
+							        		$("#lcode").attr("value","${locationCode}");
+							        		$("#lname").attr("value","${locationName}");
+							        		$("#bcode").attr("value","${branchCode}");
+							        		$("#bname").attr("value", "${branchName}");
+							        		$("#sccode").attr("value","${screeningCode}");
+							        		$("#sdate").attr("value","${screeningDate}");
+							        		$("#tcode").attr("value","${theaterCode}");
+							        		$("#tname").attr("value","${theater.theaterName}");
+							        		$("#fcode").attr("value","${filmCode}");
+							        		$("#fname").attr("value", "${filmName}");
+							        		$("#shcode").attr("value","${showCode}");
+							        		$("#shtime").attr("value", "${showTime}");
 							        		$("#price").attr("value",$("#total").text());
 							        		$("#card").attr("value", "test" );
 							        		$("#memberid").attr("value","test");
 							        		$("#seat").attr("value",$("#selected-seats > li").text());
 							        		$("#hiform").submit();
-			 				        	}
-			 				        });
+							        	}
+							        })
 							    } else {
 							        var msg = '결제에 실패하였습니다.';
 							        msg += '에러내용 : ' + rsp.error_msg;

@@ -82,11 +82,11 @@ from tb_branch
 where location_code = 1;
 
 
-insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc1','04/29');
-insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc2','04/30');
-insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc3','05/01');
-insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc4','05/02');
-insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc5','05/03');
+insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc1','05/08');
+insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc2','05/09');
+insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc3','05/10');
+insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc4','05/11');
+insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc5','05/12');
 insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc6','05/04');
 insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc7','05/05');
 insert into tb_screening(branch_code , screening_code , screening_date ) values ('Lo1-br1','Lo1-br1-sc8','05/06');
@@ -146,6 +146,8 @@ on ti.theater_code = fi.theater_code
 where th.film_name = '어벤저스'; 
 
 
-
+select *
+		from tb_film
+		where screening_code = 'Lo1-br1-sc1';
 
 

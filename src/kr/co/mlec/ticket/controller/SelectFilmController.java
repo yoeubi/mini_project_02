@@ -22,9 +22,11 @@ public class SelectFilmController extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FilmMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(FilmMapper.class);
 		response.setContentType("application/json; charset=utf-8");
+		System.out.println("screeningCode/" + request.getParameter("screeningCode")+"/");
 		List<Film> films = mapper.selectFilms(request.getParameter("screeningCode"));
 		PrintWriter out = response.getWriter();
 		out.write(new Gson().toJson(films));
+		System.out.println(new Gson().toJson(films));
 		out.close();
 	}
 }

@@ -26,7 +26,7 @@ public class ConfirmController extends HttpServlet {
 		ConfirmMapper mapper = MyAppSqlConfig.getSqlSession().getMapper(ConfirmMapper.class);
 		response.setContentType("application/json; charset=utf-8");
 		Confirm confirm = new Confirm();
-		System.out.println("영화명 : " + request.getParameter("theaterName"));
+		System.out.println("들어왔당" + request.getParameter("locationCode"));
 		confirm.setMemberId(request.getParameter("memberId"))
 			   .setLocationCode(request.getParameter("locationCode"))
 			   .setLocationName(request.getParameter("locationName"))

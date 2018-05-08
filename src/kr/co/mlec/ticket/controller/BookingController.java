@@ -44,6 +44,7 @@ public class BookingController extends HttpServlet {
 		String screeningCode = String.format("%s-%s-%s", codes[0],codes[1],codes[2]);
 		ScreeningMapper screeningMapper = MyAppSqlConfig.getSqlSession().getMapper(ScreeningMapper.class);
 		String screeningDate = screeningMapper.selectScreeningDate(screeningCode);
+		System.out.println(screeningCode);
 		request.setAttribute("screeningCode", screeningCode);
 		request.setAttribute("screeningDate", screeningDate);
 		
