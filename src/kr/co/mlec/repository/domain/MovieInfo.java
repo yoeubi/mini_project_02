@@ -1,9 +1,5 @@
 package kr.co.mlec.repository.domain;
 
-/**
- * @author eunj2n
- *
- */
 public class MovieInfo {
     //  영화고유번호
     private int movieSeq;
@@ -30,7 +26,7 @@ public class MovieInfo {
     
     private MoviePoster poster;
     
-    
+     
 
     public String getMovieTrailer() {
 		return movieTrailer;

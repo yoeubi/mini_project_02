@@ -113,8 +113,8 @@ ul {
 				<div class="clearfix" style="max-width: 606px; height: 450px;">
 					<ul id="image-gallery" class="gallery list-unstyled cS-hidden">
 						<c:forEach var="st" items="${st }">
-							<li data-thumb="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutThumbPath}&sName=${st.stilcutThumbSysName}"> <!-- 70 * 50 --> 
-							<img src="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutPath}&sName=${st.stilcutSysName}" /> <!-- 605 * 400 -->
+							<li data-thumb="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutThumbPath}&sName=${st.stilcutThumbSysName}" /> <!-- 70 * 50 --> 
+							<img style="width:605; height: 400;" src="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutPath}&sName=${st.stilcutSysName}" /> <!-- 605 * 400 -->
 							</li>
 						</c:forEach>
 <!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
@@ -148,7 +148,7 @@ ul {
 
 		<div id="trailer" class="bottom" style="display: none;">
 			<div class="tra">
-				<iframe src='${movie.movieTrailer }' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='936' HEIGHT='526' allow='autoplay' allowfullscreen></iframe>
+				<iframe src="${movie.movieTrailer }" frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='936' HEIGHT='526' allow='autoplay' allowfullscreen></iframe>
 			</div>
 		</div>
 	

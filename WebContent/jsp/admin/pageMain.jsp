@@ -28,14 +28,14 @@
              	<tr id = "tableTitle">
              		<th style="width: 20%;">영화등록번호</th>
              		<th style="width: 60%;">영화이름</th>
-             		<th style="width: 20%;">관리 / 삭제</th>
+             		<th style="width: 20%;">관리</th>
              	</tr>
              	<c:forEach var="movie" items="${chart }">
  	            	<tr>
     	         		<td>${movie.movieSeq }</td>
         	     		<td>${movie.movieTitle }</td>
             	 		<td>
-             			<a href="detail?movieSeq=${movie.movieSeq}">관리</a> / <a href="">삭제</a>
+             			<a href="detail?movieSeq=${movie.movieSeq}">관리</a>
              			</td>
              		</tr>
              	</c:forEach>

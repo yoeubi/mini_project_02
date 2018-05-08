@@ -81,6 +81,7 @@
 				<div class="form-group" id="steelCut-box">
 					<div class="col-sm-2">스틸컷</div>
 					<input type="button" onclick="add()" value="추가">
+						<input type="hidden" name="movieSeq" value="${movie.movieSeq }" />
 					<div class="col-sm-12">&nbsp;</div>
 					<div class="col-sm-8"></div>
 				</div>
@@ -97,9 +98,10 @@
 					<div id="ste">
 						<a
 							href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutPath}&sName=${steel.stilcutSysName}">(${movie.movieTitle })
-							스틸컷</a> <a
+							스틸컷</a> 
+						/  <a
 							href="${pageContext.request.contextPath}/common/file/down?path=${steel.stilcutThumbPath}&sName=${steel.stilcutThumbSysName}">(${movie.movieTitle })
-							썸네일</a> <input id="no" type="hidden" value="${poster.posterNo }">
+							썸네일</a> 
 						<button id="posterDel">삭제</button>
 						<br>
 					</div>

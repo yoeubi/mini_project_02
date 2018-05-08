@@ -10,6 +10,6 @@ public interface MovieInfoMapper {
 	List<MovieInfo> selectMovieInfo();
 	MovieInfo selectMovieInfoByRank(int movieNo);
 	void updateMoviePlot(MovieInfo movieinfo);
-	void updateMovieTrailer(MovieInfo movieinfo);
 	MoviePoster selectMoviePosterByMovieSeq(int movieSeq);
+	void updateMovieTrailer(MovieInfo movieinfo);
 }

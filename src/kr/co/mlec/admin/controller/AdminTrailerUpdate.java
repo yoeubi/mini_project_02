@@ -23,12 +23,13 @@ public class AdminTrailerUpdate extends HttpServlet{
 		MovieInfoMapper mapper =MyAppSqlConfig.getSqlSession().getMapper(MovieInfoMapper.class);
 		
 		int movieSeq = Integer.parseInt(request.getParameter("movieSeq"));
+		
 		MovieInfo movie = new MovieInfo();
 		
 		movie.setMovieSeq(movieSeq);
 		movie.setMovieTrailer(request.getParameter("movieTrailer"));
 		
-		mapper.updateMoviePlot(movie);
+		mapper.updateMovieTrailer(movie);
 		
 		response.setContentType("application/json; charset=utf-8"); 
 		PrintWriter out = response.getWriter();

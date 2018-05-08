@@ -33,9 +33,10 @@ public class AdminPageDetail extends HttpServlet{
 		StilCutMapper stmapper = MyAppSqlConfig.getSqlSession().getMapper(StilCutMapper.class);
 		List<StilCut> steel = stmapper.selectStilCut(movieSeq);
 		
+		
+		request.setAttribute("steel", steel);
 		request.setAttribute("movie", movie);
 		request.setAttribute("poster", poster);
-		request.setAttribute("steel", steel);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/admin/pageDetail.jsp");
 		rd.forward(request, response);

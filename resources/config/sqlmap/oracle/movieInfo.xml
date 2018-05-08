@@ -13,6 +13,7 @@
 		<result column="movie_nation" property="movieNation"/>
 		<result column="movie_sales_share" property="movieSalesShare"/>
 		<result column="movie_plot" property="moviePlot"/>
+		<result column="movie_trailer" property="movieTrailer"/>
 	</resultMap>
 
 	<insert id="insertMovieInfo" parameterType="movieinfo">
