@@ -46,8 +46,11 @@ public class LoginController extends HttpServlet{
 			HttpSession session=request.getSession();
 			session.setAttribute("user", user);
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/main/main.jsp");
-		rd.forward(request, response);
+		System.out.println("힘내 친구야 우리가 있어");
+//		RequestDispatcher rd = request.getRequestDispatcher("/jsp/main/main.jsp");
+//		rd.forward(request, response);
+		
+		response.sendRedirect("/minipro2/main");
 		
 	}
 	
