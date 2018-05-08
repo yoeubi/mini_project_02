@@ -33,7 +33,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
               <div class="checkbox">
-                 <input id="idSaveCheck" type="checkbox" style="visibility: hidden;"> 아이디 기억하기
+                 <input id="idSaveCheck" type="checkbox" style="visibility: hidden;"> <!-- 아이디 기억하기-->
                 </div>
               </div>
               <div class="col-sm-3"> </div>

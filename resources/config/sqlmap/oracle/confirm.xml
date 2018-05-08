@@ -65,9 +65,8 @@
 		
 	</insert>
 	<select id="selectMovieHistory" parameterType="string" resultMap="confirmMap">
-		select a.*,
-		 case when to_date(screening_date || show_time, 'mmddhh24mi')  
-		 from tb_confirm a
+		select *
+		 from tb_confirm 
 		where member_id = #{memberId}
 	</select>
 	
