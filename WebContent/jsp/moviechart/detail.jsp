@@ -302,9 +302,6 @@ ul {
 			})
 			// ajax 성공시 실행함수
 			.done(function (result) {
-// 				if (!'${user.id}') {
-// 					$("#rForm input[name='writer']").val("");
-// 				}
 				$("#rForm textarea[name='content']").val("");
 				
 				makeCommentList(result);
