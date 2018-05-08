@@ -21,7 +21,7 @@
 			</div>
 			<div class="helpV17">
 				<div class="historyTable"style="overflow: scroll; height: 350px;">
-					<button  type="submit" class="btn btn-default" id="myBtn">예매티켓</button>
+<!-- 					<button  type="submit" class="btn btn-default" id="myBtn">예매티켓</button> -->
 					<table class="table" id="tableMovie">
 <!-- 						<tr class="active"> -->
 <!-- 							<th>날짜</th> -->
@@ -392,7 +392,7 @@
 			html+='<th>예매번호</th>';
 			html+='<th>제목</th>';
 			html+='<th>금액</th>';
-			html+='<th>금액</th>';
+// 			html+='<th>금액</th>';
 // 			html+='<th></th>';
 			html+='</tr>';
 			for (var i = 0; i < movieHis.length; i++){
