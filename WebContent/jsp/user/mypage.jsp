@@ -207,8 +207,7 @@
 						<div class="helpV17">
 							<p class="ftRt">
 							<p class="text-right">
-								<button type="button" class="btn btn-default" id="updateInfoBtn">나의
-									정보 수정</button>
+								<button type="button" class="btn btn-default" id="updateInfoBtn">나의정보 수정</button>
 							</p>
 						</div>
 					</div>
@@ -394,7 +393,7 @@
 			html+='<th>제목</th>';
 			html+='<th>금액</th>';
 			html+='<th>금액</th>';
-			html+='<th></th>';
+// 			html+='<th></th>';
 			html+='</tr>';
 			for (var i = 0; i < movieHis.length; i++){
 // 				console.log("tr생성");
