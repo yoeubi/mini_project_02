@@ -250,7 +250,7 @@
 						<div class="helpV17">
 							<p class="ftRt">
 							<p class="text-right">
-								<button type="submit" class="btn btn-default" id="updatePassBtn">수정</button>
+								<button type="button" class="btn btn-default" id="updatePassBtn">수정</button>
 							</p>
 						</div>
 					</div>
