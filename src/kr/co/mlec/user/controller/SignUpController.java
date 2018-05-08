@@ -32,7 +32,7 @@ public class SignUpController extends HttpServlet{
 		member.setMemberName(memberName);
 		
 		mapper.insertMember(member);
-		response.sendRedirect("login");
+		response.sendRedirect("loginForm");
 	}
 	
 }
