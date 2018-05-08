@@ -1,19 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="/minipro2/css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" href="/minipro2/css/flexslider.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/minipro2/css2/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/minipro2/css2/flexslider.css" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="/minipro2/js/modernizr.js"></script>
-<script src='/minipro2/js/jquery.min.js'></script>
-<script src='/minipro2/js/jquery.color-RGBa-patch.js'></script>
-<script src='/minipro2/js/example.js'></script>
+<script src="/minipro2/js2/modernizr.js"></script>
+<script src='/minipro2/js2/jquery.min.js'></script>
+<script src='/minipro2/js2/jquery.color-RGBa-patch.js'></script>
+<script src='/minipro2/js2/example.js'></script>
 <!-- jQuery -->
 <!-- FlexSlider -->
-  <script defer src="/minipro2/js/jquery.flexslider.js"></script>
+  <script defer src="/minipro2/js2/jquery.flexslider.js"></script>
   <script type="text/javascript">
     $(function(){
       SyntaxHighlighter.all();
@@ -33,13 +34,13 @@
 <script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/jquery.min.js"></script> <!-- (do not call twice) -->
  <!-- DC Tabs JS -->
 <!--<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/tabs/js/tsc_tabs.js"></script>-->
-<link rel="stylesheet" href="/minipro2/css/tsc_tabs.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/minipro2/css2/tsc_tabs.css" type="text/css" media="all" />
 <!-- 영화차트 스타일 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../../css/detail.css"> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet"  href="./css/lightslider.css"/>
+<link rel="stylesheet"  href="./css2/lightslider.css"/>
 <style>
 		.content-slider li{
 			height: 600px;
@@ -57,9 +58,6 @@
 		h1{
 		color: black;
 		}
-		.chart{
-			height: 650px;
-		}
 		.rank{
 			height: 60px;
 			width: 60px;
@@ -74,7 +72,7 @@
 		}
     </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="../../js/lightslider.js"></script> 
+<script src="../../js2/lightslider.js"></script> 
 <script>
     	 $(document).ready(function() {
 			$("#content-slider").lightSlider({
@@ -138,178 +136,238 @@
    </div>
 </div>
 </div>
-<div class="content">
 	<div class="chart" id = "chart1">
-      <div class="form-group"> 
-    
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-            <div class = "rank">1</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/carol poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>캐롤 CAROL</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-            <div class = "rank">2</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/galaxy poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>가디언즈 갤럭시</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-            <div class = "rank">3</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/getout poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>갯아웃 GetOut</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-            <div class = "rank">4</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/her poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>그녀 her</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-             <div class="col-sm-2"></div>
-      </div>
-	
-	</div>
-	<div class="chart" id = "chart2">
-      <div class="form-group"> 
-    
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-            <div class = "rank">5</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/adline poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>캐롤 CAROL</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">6</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/gravity poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>가디언즈 갤럭시</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">7</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/imitation poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>갯아웃 GetOut</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">8</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/joy_poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>그녀 her</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-             <div class="col-sm-2"></div>
-      </div>
-	
-	</div>
-	
-	<div class="chart" id = "chart3">
-      <div class="form-group"> 
-    
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-             <div class = "rank">9</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/massion poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>캐롤 CAROL</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">10</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/sing poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>가디언즈 갤럭시</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">11</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/moonlight poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>갯아웃 GetOut</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-             <div class = "rank">12</div>
-              <div class="thumbnail" style = "float:left;">
-                <img src="/minipro2/images/poster/her poster.jpg" alt="...">
-                <div class="caption">
-                  <h3>그녀 her</h3>
-                  <p>18.03.12개봉</p>
-                  <p>예매율 : 12%</p>
-                  <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p>
-                </div>
-              </div>
-            </div>
-             <div class="col-sm-2"></div>
-      </div>
-	
-	</div>
-	
+<!-- 		<div class="col-sm-2" style="margin: 20px;"> -->
+<div class="content" style="width:80%; margin:0 auto; height: 1500px;">
+<!--       <div style="width:80%; margin:0 auto;">  -->
+					<c:forEach var="movie" items="${movie}" varStatus="m">
+						<div class="thumbnail" style="float: left; margin-top:50px; width: 200px; height: 450px; margin: 20px;" onclick="location.href='/minipro2/moviechart/detail?movieSeq=${movie.movieSeq }'">
+						<div class="rank">${m.index + 1}</div>
+							<img src="${pageContext.request.contextPath}/common/file/down?path=${movie.poster.posterPath}&sName=${movie.poster.posterSysName}">
+							<div class="caption">
+								<h3>${movie.movieTitle}</h3>
+								<p>${movie.movieReleaseDate }개봉</p>
+								<p>예매율 : ${movie.movieSalesShare }%</p>
+						</div>
+					</div>
+					</c:forEach>
+					</div>
+<!-- 				</div> -->
 </div>
+<div style="float:none;"></div>
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">2</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/galaxy poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>가디언즈 갤럭시</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">3</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/getout poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>갯아웃 GetOut</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">4</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/her poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>그녀 her</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              <div class="col-sm-2"></div> -->
+<!--       </div> -->
+	
+<!-- 	</div> -->
+
+	
+<!-- 	<div class="chart" id = "chart1"> -->
+<!--       <div class="form-group">  -->
+    
+<!--             <div class="col-sm-2"></div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">1</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/carol poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>캐롤 CAROL</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">2</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/galaxy poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>가디언즈 갤럭시</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">3</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/getout poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>갯아웃 GetOut</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">4</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/her poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>그녀 her</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              <div class="col-sm-2"></div> -->
+<!--       </div> -->
+	
+<!-- 	</div> -->
+<!-- 	<div class="chart" id = "chart2"> -->
+<!--       <div class="form-group">  -->
+    
+<!--             <div class="col-sm-2"></div> -->
+<!--             <div class="col-sm-2"> -->
+<!--             <div class = "rank">5</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/adline poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>캐롤 CAROL</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">6</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/gravity poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>가디언즈 갤럭시</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">7</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/imitation poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>갯아웃 GetOut</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">8</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/joy_poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>그녀 her</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              <div class="col-sm-2"></div> -->
+<!--       </div> -->
+	
+<!-- 	</div> -->
+	
+<!-- 	<div class="chart" id = "chart3"> -->
+<!--       <div class="form-group">  -->
+    
+<!--             <div class="col-sm-2"></div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">9</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/massion poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>캐롤 CAROL</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">10</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/sing poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>가디언즈 갤럭시</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">11</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/moonlight poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>갯아웃 GetOut</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div class="col-sm-2"> -->
+<!--              <div class = "rank">12</div> -->
+<!--               <div class="thumbnail" style = "float:left;"> -->
+<!--                 <img src="/minipro2/images/poster/her poster.jpg" alt="..."> -->
+<!--                 <div class="caption"> -->
+<!--                   <h3>그녀 her</h3> -->
+<!--                   <p>18.03.12개봉</p> -->
+<!--                   <p>예매율 : 12%</p> -->
+<!--                   <p><a href="#" class="btn btn-primary" role="button">예매</a> <a href="#" class="btn btn-default" role="button">영화정보</a></p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              <div class="col-sm-2"></div> -->
+<!--       </div> -->
+	
+<!-- 	</div> -->
+<!-- </div> -->
+	
 <!-- <div class="footer"> -->
 <!-- 	<div class="wrap"> -->
 <!-- 			<div class="footer-top"> -->
@@ -356,6 +414,5 @@
 <!-- 		<p>© 2013 Theater. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p> -->
 <!-- 	</div> -->
 <!--  	</div> -->
-</div>
 </body>
 </html>
