@@ -362,6 +362,8 @@ ul {
 				$("#uptext").val($("#uptext").val().substring(0, 150));
 			}
 		})
+	
+		
 	</script>
 </body>
 </html>
