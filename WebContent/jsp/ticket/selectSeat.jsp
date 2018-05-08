@@ -48,22 +48,22 @@
 			</div>
 			<div style="clear:both"></div>
 			<form action="/minipro2/controller/showresult" method="post" id="hiform">
-				<input type="text" id="lcode" name="lcode" value="" >
-				<input type="text" id="lname" name="lname" value="" >
-				<input type="text" id="bcode" name="bcode" value="" >
-				<input type="text" id="bname" name="bname" value="" >
-				<input type="text" id="sccode" name="sccode" value="" >
-				<input type="text" id="sdate" name="sdate" value="" >
-				<input type="text" id="tcode" name="tcode" value="" >
-				<input type="text" id="tname" name="tname" value="" >
-				<input type="text" id="fcode" name="fcode" value="" >
-				<input type="text" id="fname" name="fname" value="" >
-				<input type="text" id="shcode" name="shcode" value="" >
-				<input type="text" id="shtime" name="shtime" value="" >
-				<input type="text" id="price" name="price" value="" >
-				<input type="text" id="card" name="card" value="" >
-				<input type="text" id="memberid" name="memberid" value="" >
-				<input type="text" id="seat" name="seat" value="" >
+				<input type="text" id="lcode" name="lcode" value="" hidden="hidden">
+				<input type="text" id="lname" name="lname" value="" hidden="hidden">
+				<input type="text" id="bcode" name="bcode" value="" hidden="hidden">
+				<input type="text" id="bname" name="bname" value="" hidden="hidden">
+				<input type="text" id="sccode" name="sccode" value="" hidden="hidden">
+				<input type="text" id="sdate" name="sdate" value="" hidden="hidden">
+				<input type="text" id="tcode" name="tcode" value="" hidden="hidden">
+				<input type="text" id="tname" name="tname" value="" hidden="hidden">
+				<input type="text" id="fcode" name="fcode" value="" hidden="hidden">
+				<input type="text" id="fname" name="fname" value="" hidden="hidden">
+				<input type="text" id="shcode" name="shcode" value="" hidden="hidden">
+				<input type="text" id="shtime" name="shtime" value="" hidden="hidden">
+				<input type="text" id="price" name="price" value="" hidden="hidden">
+				<input type="text" id="card" name="card" value="" hidden="hidden">
+				<input type="text" id="memberid" name="memberid" value="" hidden="hidden">
+				<input type="text" id="seat" name="seat" value="" hidden="hidden">
 			</form>
 	    </div>
 
