@@ -80,7 +80,7 @@
     <select id="doubleCheckId" parameterType="string" resultType="int">
     	select count(*)
     	  from tb_member
-    	 where member_id = #{id} 
+    	 where member_id = #{memberId} 
     </select>
     <select id="passCheck" parameterType="string" resultType="string">
     	select member_pass
