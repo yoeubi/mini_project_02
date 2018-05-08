@@ -71,7 +71,6 @@ ul {
 					${genre.movieGenre }
 				</c:forEach>
 			</h4>
-			<button>예매</button>
 		</div>
 		<div id="midbutton">
 			<hr style="border-top: 1px solid black; width: 94%;">
