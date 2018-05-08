@@ -116,30 +116,6 @@ ul {
 							<img style="width:605; height: 400;" src="${pageContext.request.contextPath}/common/file/down?path=${st.stilcutPath}&sName=${st.stilcutSysName}" /> <!-- 605 * 400 -->
 							</li>
 						</c:forEach>
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
-<!-- 						<li data-thumb="/minipro2/images/stil/thumb/movie_image (1).jpg"> -->
-<!-- 							<img src="/minipro2/images/stil/movie_image (1).jpg" /> -->
-<!-- 						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -158,7 +134,7 @@ ul {
 <!-- 					<input type="hidden" name="id" value="c" />  -->
 					<select name="star"
 						class="form-control"
-						style="height: 70px; width: 20%; float: left;" >
+						style="height: 70px; width: 18%; float: left;" >
 						<option value=1>★☆☆☆☆</option>
 						<option value=2>★★☆☆☆</option>
 						<option value=3>★★★☆☆</option>
@@ -218,7 +194,7 @@ ul {
 		// 댓글 목록을 만드는 함수
 		function makeCommentList(result) {
 			var html = "";
-			html += '<table class="table-bordered" style="text-align: center;">';
+			html += '<table class="table-bordered" style="text-align: center; width:100%; table-layout: fixed;">';
 			html += '    <tr style="height: 40px;">';
 			html += '        <th style="width: 10%; text-align: center;">평점</th>';
 			html += '        <th style="width: 60%; text-align: center;">한줄평</th>';
@@ -293,7 +269,7 @@ ul {
 				type: "POST",
 				data: {
 					movieSeq: "${movie.movieSeq}",
-					memberId: "c",
+					memberId: "${user.memberId}",
 					commentStar: $("#rForm select").val(),
 					content: $("#rForm textarea").val()
 				},
@@ -326,21 +302,21 @@ ul {
 // 			최대한글 지정, 별점 체크 slected
 			var html = '';
 			html += '<tr id="modRow' + commentSeq + '">';
-			html += '	<td>'
-			html += '		<select name="star">'
-			html += '			<option value=1>★☆☆☆☆</option>';
-			html += '			<option value=2>★★☆☆☆</option>';
-			html += '			<option value=3>★★★☆☆</option>';
-			html += '			<option value=4>★★★★☆</option>';
-			html += '			<option value=5>★★★★★</option>';
-			html += '		</select>';	
-			html += '   </td>';
-			html += '	<td>';
+// 			html += '	<td>'
+// 			html += '		<select name="star">'
+// 			html += '			<option value=1>★☆☆☆☆</option>';
+// 			html += '			<option value=2>★★☆☆☆</option>';
+// 			html += '			<option value=3>★★★☆☆</option>';
+// 			html += '			<option value=4>★★★★☆</option>';
+// 			html += '			<option value=5>★★★★★</option>';
+// 			html += '		</select>';	
+// 			html += '   </td>';
+			html += '	<td colspan="3">';
 			html += '		<div class="form-group">';
-			html += '			<input type="text" class="text" name="content" value="' + modContent + '" class="form-control input-wp2" placeholder="내용을 입력하세요">';
+			html +=	'			<textarea name="content" class="form-control text" style="width: 400px;">' + modContent + '</textarea>'
 			html += '		</div>';
 			html += '	</td>';
-			html += '	<td colspan="3">'; 
+			html += '	<td colspan="2">'; 
 			html += '		<a href="javascript:commentUpdate(' + commentSeq + ');">수정</a>';
 			html += '		/';
 			html += '		<a href="javascript:commentCancel(' + commentSeq + ');">취소</a>';
@@ -357,7 +333,7 @@ ul {
 				type: "POST",
 				data: {
 					movieSeq: "${movie.movieSeq}", 
-					content: $("#modRow" + commentSeq + " input[name=content]").val(), 
+					content: $("#modRow" + commentSeq + " textarea[name=content]").val(), 
 					commentSeq: commentSeq
 				},
 				dataType: "json",
